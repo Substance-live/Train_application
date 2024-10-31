@@ -1,9 +1,13 @@
 import sys
-from typing import Dict, Any
+
 from PySide6.QtWidgets import QApplication
 
+#  Импорт форм окон
 from windows import WindowsEngine
-from layouts import Ui_MainWindow
+from layouts import Ui_Start, Ui_Profile
+
+#  Имопрт скрипта для обновления ui файлов (УДАЛИТЬ ПОЗЖЕ)
+# import convet_ui_files
 
 
 class Main:
@@ -26,7 +30,9 @@ class Main:
 
     def __init__(self):
         """"""
-        self.engine = WindowsEngine(Ui_MainWindow)
+        self.engine = WindowsEngine(Ui_Profile,
+                                    Ui_Start,
+                                    )
 
 
 class DataBase:
@@ -142,5 +148,5 @@ class Staff(User):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     main = Main()
-    main.engine.show_window("MainWindow")
+    main.engine.show_window("Start")
     sys.exit(app.exec())

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>Start</class>
+ <widget class="QMainWindow" name="Start">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -90,7 +90,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Текущий пользватель: None</string>
+     <string>Текущий пользватели: None</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_photo">
@@ -112,8 +112,6 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources>
-  <include location="../dir1/images/test.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

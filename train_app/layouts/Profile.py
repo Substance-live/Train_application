@@ -18,12 +18,12 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QLabel, QMainWindow, QPushButton,
     QSizePolicy, QWidget)
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        if not MainWindow.objectName():
-            MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(507, 300)
-        self.centralwidget = QWidget(MainWindow)
+class Ui_Profile(object):
+    def setupUi(self, Profile):
+        if not Profile.objectName():
+            Profile.setObjectName(u"Profile")
+        Profile.resize(507, 300)
+        self.centralwidget = QWidget(Profile)
         self.centralwidget.setObjectName(u"centralwidget")
         self.label_photo = QLabel(self.centralwidget)
         self.label_photo.setObjectName(u"label_photo")
@@ -31,8 +31,8 @@ class Ui_MainWindow(object):
         font = QFont()
         font.setPointSize(19)
         self.label_photo.setFont(font)
-        self.label_photo.setLayoutDirection(Qt.LeftToRight)
-        self.label_photo.setAlignment(Qt.AlignCenter)
+        self.label_photo.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.label_photo.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label_user = QLabel(self.centralwidget)
         self.label_user.setObjectName(u"label_user")
         self.label_user.setGeometry(QRect(190, 60, 161, 51))
@@ -54,22 +54,22 @@ class Ui_MainWindow(object):
         self.but_logout = QPushButton(self.centralwidget)
         self.but_logout.setObjectName(u"but_logout")
         self.but_logout.setGeometry(QRect(442, 260, 51, 28))
-        MainWindow.setCentralWidget(self.centralwidget)
+        Profile.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(MainWindow)
+        self.retranslateUi(Profile)
 
-        QMetaObject.connectSlotsByName(MainWindow)
+        QMetaObject.connectSlotsByName(Profile)
     # setupUi
 
-    def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.label_photo.setText(QCoreApplication.translate("MainWindow", u"\u0424\u041e\u0422\u041e", None))
-        self.label_user.setText(QCoreApplication.translate("MainWindow", u"\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c:******", None))
-        self.label_data.setText(QCoreApplication.translate("MainWindow", u"\u0414\u0430\u0442\u0430 \u0438 \u0432\u0440\u0435\u043c\u044f:******", None))
-        self.but_view_1.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0440\u043e\u0441\u043c\u043e\u0442\u0440 1", None))
-        self.but_view_2.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0440\u043e\u0441\u043c\u043e\u0442\u0440 2", None))
-        self.but_task_1.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u043f\u0440\u043e\u0441 1", None))
-        self.but_notification.setText(QCoreApplication.translate("MainWindow", u"?", None))
-        self.but_logout.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0439\u0442\u0438", None))
+    def retranslateUi(self, Profile):
+        Profile.setWindowTitle(QCoreApplication.translate("Profile", u"MainWindow", None))
+        self.label_photo.setText(QCoreApplication.translate("Profile", u"\u0424\u041e\u0422\u041e", None))
+        self.label_user.setText(QCoreApplication.translate("Profile", u"\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c:******", None))
+        self.label_data.setText(QCoreApplication.translate("Profile", u"\u0414\u0430\u0442\u0430 \u0438 \u0432\u0440\u0435\u043c\u044f:******", None))
+        self.but_view_1.setText(QCoreApplication.translate("Profile", u"\u041f\u0440\u043e\u0441\u043c\u043e\u0442\u0440 1", None))
+        self.but_view_2.setText(QCoreApplication.translate("Profile", u"\u041f\u0440\u043e\u0441\u043c\u043e\u0442\u0440 2", None))
+        self.but_task_1.setText(QCoreApplication.translate("Profile", u"\u0417\u0430\u043f\u0440\u043e\u0441 1", None))
+        self.but_notification.setText(QCoreApplication.translate("Profile", u"?", None))
+        self.but_logout.setText(QCoreApplication.translate("Profile", u"\u0412\u044b\u0439\u0442\u0438", None))
     # retranslateUi
 
