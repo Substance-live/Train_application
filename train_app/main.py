@@ -148,5 +148,5 @@ class Staff(User):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     main = Main()
-    main.engine.show_window("Start")
+    main.engine.show_window(all_windows=True)
     sys.exit(app.exec())

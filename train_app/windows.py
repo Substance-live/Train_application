@@ -28,15 +28,23 @@ class WindowsEngine:
         self.windows = {str(name_class)[str(name_class).find('Ui')+3:-2]:
                         self.create_window(name_class)() for name_class in windows}
 
-    def hide_window(self, *name_windows: str):
+    def hide_window(self, *name_windows: str, all_windows=False):
         """Скрывает выбранные окна"""
-        for name in name_windows:
-            self.windows[name].hide()
+        if all_windows:
+            for window in self.windows.values():
+                window.hide()
+        else:
+            for name in name_windows:
+                self.windows[name].hide()
 
-    def show_window(self, *name_windows: str):
+    def show_window(self, *name_windows: str, all_windows=False):
         """Отображает выбранные окна"""
-        for name in name_windows:
-            self.windows[name].show()
+        if all_windows:
+            for window in self.windows.values():
+                window.show()
+        else:
+            for name in name_windows:
+                self.windows[name].show()
 
     @staticmethod
     def create_window(name_file: Any):
