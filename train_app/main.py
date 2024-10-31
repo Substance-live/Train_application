@@ -2,7 +2,7 @@ import sys
 from typing import Dict, Any
 from PySide6.QtWidgets import QApplication
 
-from Windows import WindowsEngine
+from windows import WindowsEngine
 from layouts import Ui_MainWindow
 
 
