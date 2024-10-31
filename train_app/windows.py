@@ -8,20 +8,18 @@ class WindowsEngine:
 
     АТРИБУТЫ:
     ---------
-
+    self.windows    :   Dict[str, Window] - Словарь с окнами (Ключ название Ui файла без префикса,
+    например Ui_Window1 -> Window1)
 
     МЕТОДЫ:
     -------
-    hide_window
-    show_window
-    create_window
-
-    ПРИМЕЧАНИЕ:
-    -----------
+    hide_window(self, *name_windows: str) - Скрывает выбранные окна\n
+    show_window(self, *name_windows: str) - Отображает выбранные окна\n
+    create_window(name_file: Any) - Создает уникальный класс по преобразованному ui файлу в переменной name_file\n
 
     ОШИБКИ:
     -------
-
+    Передача в функции в качества аргумента не существующие название окна
 
     """
 
@@ -55,16 +53,13 @@ class WindowsEngine:
 
             МЕТОДЫ:
             -------
-            insert_info
-            get_info
-            clear_windget
-
-            ПРИМЕЧАНИЕ:
-            -----------
+            insert_info(self, **name_widgets: str) - Вставляет информацию в виджеты\n
+            get_info(self, *name_widgets: str) -> Dict[str, any] - Возвращает информацию из виджет\n
+            clear_windget(self, *name_widgets: str) - Очищает выбранные виджеты\n
 
             ОШИБКИ:
             -------
-
+            При вызове функций с передачей виджета в виде аргумента, который не поддерживает данную операцию
 
             """
 
