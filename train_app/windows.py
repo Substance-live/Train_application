@@ -8,7 +8,7 @@ class WindowsEngine:
 
     АТРИБУТЫ:
     ---------
-    self.windows    :   Dict[str, Window] - Словарь с окнами (Ключ название Ui файла без префикса,
+    self._windows    :   Dict[str, Window] - Словарь с окнами (Ключ название Ui файла без префикса,
     например Ui_Window1 -> Window1)
 
     МЕТОДЫ:
@@ -16,6 +16,8 @@ class WindowsEngine:
     hide_window(self, *name_windows: str) - Скрывает выбранные окна\n
     show_window(self, *name_windows: str) - Отображает выбранные окна\n
     create_window(name_file: Any) - Создает уникальный класс по преобразованному ui файлу в переменной name_file\n
+    get_widget(self, name_window: str, name_widget: str) -> QWidget -
+    Возвращает объекта виджета для точечной настройки\n
 
     ОШИБКИ:
     -------
@@ -25,7 +27,7 @@ class WindowsEngine:
 
     def __init__(self, *windows: Any):
         """Создание экземпляра каждого окна"""
-        self.windows = {str(name_class)[str(name_class).find('Ui')+3:-2]:
+        self.windows = {str(name_class)[str(name_class).find('Ui') + 3: -2]:
                         self.create_window(name_class)() for name_class in windows}
 
     def hide_window(self, *name_windows: str, all_windows=False):
@@ -45,6 +47,10 @@ class WindowsEngine:
         else:
             for name in name_windows:
                 self.windows[name].show()
+
+    def get_widget(self, name_window: str, name_widget: str) -> Any:
+        """Возвращает объекта виджета для точечной настройки"""
+        return self.windows[name_window].__dict__[name_widget]
 
     @staticmethod
     def create_window(name_file: Any):
