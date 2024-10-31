@@ -1,7 +1,7 @@
 import sys
 from typing import Dict, Any
 from PySide6.QtWidgets import QApplication, QMainWindow
-from src.train_app.layouts.Profile import Ui_MainWindow
+from layouts import Ui_MainWindow
 
 
 class Main:
@@ -98,21 +98,19 @@ class WindowsEngine:
                 super().__init__()
                 self.setupUi(self)
 
-            @staticmethod
-            def insert_info(**name_widgets: str):
+            def insert_info(self, **name_widgets: str):
                 """Вставляет информацию в виджеты"""
                 for widget, value in name_widgets.items():
-                    widget.setText(value)
+                    self.__dict__[widget].setText(value)
 
             def get_info(self, *name_widgets: str) -> Dict[str, any]:
                 """Возвращает информацию из виджет"""
                 return {name: self.__dict__[name].text() for name in name_widgets}
 
-            @staticmethod
-            def clear_windget(*name_widgets: str):
+            def clear_windget(self, *name_widgets: str):
                 """Очищает выбранные виджеты"""
                 for widget in name_widgets:
-                    widget.clear()
+                    self.__dict__[widget].clear()
 
         return Window
 
