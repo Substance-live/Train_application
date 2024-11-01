@@ -32,6 +32,10 @@ class WindowsEngine:
 
     def hide_window(self, *name_windows: str, all_windows=False):
         """Скрывает выбранные окна"""
+
+        #  Проверка name_windows
+        assert set(name_windows).issubset(self.windows.keys()), 'Имя окна не найдено'
+
         if all_windows:
             for window in self.windows.values():
                 window.hide()
@@ -41,6 +45,10 @@ class WindowsEngine:
 
     def show_window(self, *name_windows: str, all_windows=False):
         """Отображает выбранные окна"""
+
+        #  Проверка name_windows
+        assert set(name_windows).issubset(self.windows.keys()), 'Имя окна не найдено'
+
         if all_windows:
             for window in self.windows.values():
                 window.show()
@@ -83,11 +91,19 @@ class WindowsEngine:
 
             def insert_info(self, **name_widgets: str):
                 """Вставляет информацию в виджеты"""
+
+                #  Проверка name_widgets
+                assert set(name_widgets.keys()).issubset(self.__dict__.keys()), "Неверное имя виджета"
+
                 for widget, value in name_widgets.items():
                     self.__dict__[widget].setText(value)
 
             def get_info(self, *name_widgets: str) -> Dict[str, any]:
                 """Возвращает информацию из виджет"""
+
+                #  Проверка name_widgets
+                assert set(name_widgets).issubset(self.__dict__.keys()), "Неверное имя виджета"
+
                 return {name: self.__dict__[name].text() for name in name_widgets}
 
             def clear_windget(self, *name_widgets: str):
