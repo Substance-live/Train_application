@@ -1,6 +1,7 @@
-import pymysql
+from pymysql import connect, Error
 import os
 from dotenv import load_dotenv
+from typing import Any
 
 
 class DataBase:
@@ -14,9 +15,10 @@ class DataBase:
 
         self.conection = self.connect_to_base()
 
-    def connect_to_base(self):
+    def connect_to_base(self) -> connect:
+        """Осуществляет подключение к базе данных"""
         try:
-            base = pymysql.connect(
+            base = connect(
                 host=self.DB_HOST,
                 user=self.DB_USER,
                 db=self.DB_NAME,
@@ -26,8 +28,36 @@ class DataBase:
             print('Соединение установленно')
             return base
 
-        except pymysql.Error as e:
-            raise e
+        except Error as message:
+            raise message
+
+    def update_data(self, query: str):
+        """Вставляет, удаляет или обновляет данные в соответствии с запросом"""
+        try:
+            with self.conection.cursor() as cursor:
+                cursor.execute(query)
+
+            self.conection.commit()
+
+        except Error as message:
+            raise message
+
+    def get_data(self, query: str, single_line=False) -> Any:
+        """Возвращает результат запроса SQL"""
+        try:
+            with self.conection.cursor() as cursor:
+                cursor.execute(query)
+
+                #  Проверка параметра single_line
+                if single_line:
+                    ret = cursor.fetchall()
+                else:
+                    ret = cursor.fetchall()
+
+            return ret
+
+        except Error as message:
+            raise message
 
 
 if __name__ == '__main__':

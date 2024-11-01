@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="Added assertion in WindowEngine">
+    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="Added DataBase connection and .env file support">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_base.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730443180028</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added DataBase connection and .env file support">
+      <option name="closed" value="true" />
+      <created>1730448673614</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1730448673614</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -270,6 +278,7 @@
     <MESSAGE value="Added requirements file with versions of library" />
     <MESSAGE value="Windows Engine has been moved to a separate folder" />
     <MESSAGE value="Added assertion in WindowEngine" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added assertion in WindowEngine" />
+    <MESSAGE value="Added DataBase connection and .env file support" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added DataBase connection and .env file support" />
   </component>
 </project>
