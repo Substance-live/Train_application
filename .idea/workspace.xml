@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="Added methods in DataBase">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="Removed not uses file &quot;config.py&quot;">
+      <change beforePath="$PROJECT_DIR$/data_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_base.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,7 +265,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730450267661</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Connect data_base.py in main.py">
+      <option name="closed" value="true" />
+      <created>1730450854994</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1730450854994</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Removed not uses file &quot;config.py&quot;">
+      <option name="closed" value="true" />
+      <created>1730450924746</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1730450924746</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -287,6 +302,8 @@
     <MESSAGE value="Windows Engine has been moved to a separate folder" />
     <MESSAGE value="Added assertion in WindowEngine" />
     <MESSAGE value="Added methods in DataBase" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added methods in DataBase" />
+    <MESSAGE value="Connect data_base.py in main.py" />
+    <MESSAGE value="Removed not uses file &quot;config.py&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed not uses file &quot;config.py&quot;" />
   </component>
 </project>

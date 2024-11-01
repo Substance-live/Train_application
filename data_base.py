@@ -5,6 +5,30 @@ from typing import Any
 
 
 class DataBase:
+    """Отвечает за взаимодействие между окнами и данными
+
+        АТРИБУТЫ:
+        ---------
+        DB_HOST    :   str - Хост сервера базы данных\n
+        DB_USER    :   str - Имя пользователя базы данных\n
+        DB_PASSWORD    :   str - Пароль к базе данных\n
+        DB_NAME    :   str - Имя базы данных\n
+
+        connection   :   PyMySQL.connection - Хранит объект для работы с БД\n
+
+        МЕТОДЫ:
+        -------
+        connect_to_base(self) -> connect - Осуществляет подключение к базе данных\n
+        update_data(self, query: str) - Вставляет, удаляет или обновляет данные в соответствии с запросом\n
+        get_data(self, query: str, single_line=False) -> Any - Возвращает результат запроса SQL\n
+
+        ПРИМЕЧАНИЕ:
+        -----------
+
+        ОШИБКИ:
+        -------
+
+        """
 
     def __init__(self):
         load_dotenv()
@@ -13,7 +37,7 @@ class DataBase:
         self.DB_PASSWORD = os.getenv('DB_PASSWORD')
         self.DB_NAME = os.getenv('DB_NAME')
 
-        self.conection = self.connect_to_base()
+        self.connection = self.connect_to_base()
 
     def connect_to_base(self) -> connect:
         """Осуществляет подключение к базе данных"""
@@ -34,10 +58,10 @@ class DataBase:
     def update_data(self, query: str):
         """Вставляет, удаляет или обновляет данные в соответствии с запросом"""
         try:
-            with self.conection.cursor() as cursor:
+            with self.connection.cursor() as cursor:
                 cursor.execute(query)
 
-            self.conection.commit()
+            self.connection.commit()
 
         except Error as message:
             raise message
@@ -45,7 +69,7 @@ class DataBase:
     def get_data(self, query: str, single_line=False) -> Any:
         """Возвращает результат запроса SQL"""
         try:
-            with self.conection.cursor() as cursor:
+            with self.connection.cursor() as cursor:
                 cursor.execute(query)
 
                 #  Проверка параметра single_line
