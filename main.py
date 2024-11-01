@@ -31,9 +31,10 @@ class Main:
 
     def __init__(self):
         """"""
-        self.engine = WindowsEngine(Ui_Profile,
-                                    Ui_Start,
-                                    )
+        self.engine = WindowsEngine(
+            Ui_Profile,
+            Ui_Start,
+        )
         self.db = DataBase()
 
 
