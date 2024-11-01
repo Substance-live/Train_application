@@ -5,6 +5,7 @@ from PySide6.QtWidgets import QApplication
 #  Импорт форм окон
 from windows import WindowsEngine
 from layouts import Ui_Start, Ui_Profile
+from data_base import DataBase
 
 #  Имопрт скрипта для обновления ui файлов (УДАЛИТЬ ПОЗЖЕ)
 # import convet_ui_files
@@ -33,37 +34,7 @@ class Main:
         self.engine = WindowsEngine(Ui_Profile,
                                     Ui_Start,
                                     )
-
-
-class DataBase:
-    """Осуществляет взаимодействие с базой данных
-
-    АТРИБУТЫ:
-    ---------
-
-    МЕТОДЫ:
-    -------
-    get_info(self, query: str)\n
-    insert_info(self, query)\n
-
-
-    ПРИМЕЧАНИЕ:
-    -----------
-
-    ОШИБКИ:
-    -------
-
-
-    """
-
-    def __init__(self):
-        pass
-
-    def get_info(self, query: str):
-        pass
-
-    def insert_info(self, query: str):
-        pass
+        self.db = DataBase()
 
 
 class User:
