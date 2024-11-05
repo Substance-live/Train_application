@@ -74,7 +74,7 @@ class DataBase:
 
                 #  Проверка параметра single_line
                 if single_line:
-                    ret = cursor.fetchall()
+                    ret = cursor.fetchone()
                 else:
                     ret = cursor.fetchall()
 
