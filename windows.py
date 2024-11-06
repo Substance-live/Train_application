@@ -1,6 +1,7 @@
 import sys
 from typing import Dict, Any
 from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtCore import Qt
 
 
 class WindowsEngine:
@@ -88,6 +89,13 @@ class WindowsEngine:
             def __init__(self):
                 super().__init__()
                 self.setupUi(self)
+
+            def mousePressEvent(self, event):
+                """Перегружаем метод нажатия на пустое место в окне для сброса фокуса"""
+
+                if event.button() == Qt.MouseButton.LeftButton:
+                    self.clearFocus()  # Сбрасываем фокус со всех виджетов
+                    self.setFocus()  # Устанавливаем фокус на окно
 
             def insert_info(self, **name_widgets: str):
                 """Вставляет информацию в виджеты"""
