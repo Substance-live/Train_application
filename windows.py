@@ -90,6 +90,11 @@ class WindowsEngine:
                 super().__init__()
                 self.setupUi(self)
 
+            def set_focus_event(self, widget, function):
+                """Назначить виджету функцию при появлении фокуса на нам"""
+
+                self.__dict__[widget].focusInEvent = function
+
             def mousePressEvent(self, event):
                 """Перегружаем метод нажатия на пустое место в окне для сброса фокуса"""
 
