@@ -4,7 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="Minor correction" />
+    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/Delay.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/DriverTable.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/Med.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/PassangerTable.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/StaffTable.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/Start.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Start.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/TableAlter.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/TableStatic.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/Delay.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/DriverTable.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/Login.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/Med.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/NewLogin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/PassangerTable.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/Profile.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/StaffTable.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/Start.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/TableAlter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/TableStatic.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,49 +66,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Connecter.executor&quot;: &quot;Run&quot;,
-    &quot;Python.blank.executor&quot;: &quot;Run&quot;,
-    &quot;Python.convet_ui_files.executor&quot;: &quot;Run&quot;,
-    &quot;Python.data_base.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Connecter.executor": "Run",
+    "Python.blank.executor": "Run",
+    "Python.blank2.executor": "Run",
+    "Python.blank3.executor": "Run",
+    "Python.combo_line (1).executor": "Run",
+    "Python.combo_line.executor": "Run",
+    "Python.convet_ui_files.executor": "Run",
+    "Python.data_base.executor": "Run",
+    "Python.date_line.executor": "Run",
+    "Python.main (1).executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\serg1\PycharmProjects\TrainApplication\train_app" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="Connecter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TrainApplication" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../pythonProject/oaip/PyQt/kursk/database_dir" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../pythonProject/oaip/PyQt/kursk/database_dir/Connecter.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="blank" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TrainApplication" />
       <option name="ENV_FILES" value="" />
@@ -95,11 +101,33 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/workbench" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/blank.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/workbench/blank.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="combo_line" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="TrainApplication" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/workbench" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/workbench/combo_line.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -130,7 +158,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="data_base" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="date_line" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TrainApplication" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -139,11 +167,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/workbench" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_base.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/workbench/date_line.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -152,7 +180,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TrainApplication" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -175,18 +203,18 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.Connecter" />
-      <item itemvalue="Python.blank" />
-      <item itemvalue="Python.convet_ui_files" />
-      <item itemvalue="Python.data_base" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.blank" />
+      <item itemvalue="Python.date_line" />
+      <item itemvalue="Python.combo_line" />
+      <item itemvalue="Python.convet_ui_files" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.data_base" />
         <item itemvalue="Python.convet_ui_files" />
-        <item itemvalue="Python.Connecter" />
+        <item itemvalue="Python.date_line" />
+        <item itemvalue="Python.combo_line" />
         <item itemvalue="Python.blank" />
       </list>
     </recent_temporary>
@@ -295,7 +323,31 @@
       <option name="project" value="LOCAL" />
       <updated>1730451922869</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Fix bug in data_base.py in method get_data">
+      <option name="closed" value="true" />
+      <created>1730793960448</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1730793960448</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Added drop focus if LeftMouseButton was clicked on empty space on window">
+      <option name="closed" value="true" />
+      <created>1730896008716</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1730896008716</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Added function in WindowEngine to connect outer function in widget when focus set">
+      <option name="closed" value="true" />
+      <created>1730981763765</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1730981763765</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -356,6 +408,9 @@
     <MESSAGE value="Removed not uses file &quot;config.py&quot;" />
     <MESSAGE value="Added documentation in data_base.py" />
     <MESSAGE value="Minor correction" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor correction" />
+    <MESSAGE value="Fix bug in data_base.py in method get_data" />
+    <MESSAGE value="Added drop focus if LeftMouseButton was clicked on empty space on window" />
+    <MESSAGE value="Added function in WindowEngine to connect outer function in widget when focus set" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added function in WindowEngine to connect outer function in widget when focus set" />
   </component>
 </project>
