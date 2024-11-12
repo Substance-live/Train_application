@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>507</width>
-    <height>300</height>
+    <height>295</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -41,7 +41,7 @@
    <widget class="QLabel" name="label_user">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>160</x>
       <y>60</y>
       <width>161</width>
       <height>51</height>
@@ -54,27 +54,27 @@
    <widget class="QLabel" name="label_data">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>160</x>
       <y>110</y>
       <width>141</width>
       <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>Дата и время:******</string>
+     <string>Почта:******</string>
     </property>
    </widget>
    <widget class="QPushButton" name="but_view_1">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>72</x>
       <y>190</y>
-      <width>93</width>
+      <width>151</width>
       <height>28</height>
      </rect>
     </property>
     <property name="text">
-     <string>Просмотр 1</string>
+     <string>Редактировать профиль</string>
     </property>
    </widget>
    <widget class="QPushButton" name="but_view_2">
@@ -82,51 +82,38 @@
      <rect>
       <x>240</x>
       <y>190</y>
-      <width>93</width>
+      <width>121</width>
       <height>28</height>
      </rect>
     </property>
     <property name="text">
-     <string>Просмотр 2</string>
+     <string>Расписание и цены</string>
     </property>
    </widget>
    <widget class="QPushButton" name="but_task_1">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>390</x>
       <y>190</y>
       <width>93</width>
       <height>28</height>
      </rect>
     </property>
     <property name="text">
-     <string>Запрос 1</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="but_notification">
-    <property name="geometry">
-     <rect>
-      <x>470</x>
-      <y>10</y>
-      <width>31</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>?</string>
+     <string>Мои билеты</string>
     </property>
    </widget>
    <widget class="QPushButton" name="but_logout">
     <property name="geometry">
      <rect>
-      <x>442</x>
+      <x>382</x>
       <y>260</y>
-      <width>51</width>
+      <width>111</width>
       <height>28</height>
      </rect>
     </property>
     <property name="text">
-     <string>Выйти</string>
+     <string>Выйти из аккаунта</string>
     </property>
    </widget>
   </widget>

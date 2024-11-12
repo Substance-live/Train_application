@@ -4,34 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="">
+    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="New file Passenger">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/Delay.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/DriverTable.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/Med.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/PassangerTable.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/StaffTable.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/Start.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Start.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/TableAlter.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/TableStatic.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/Delay.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/DriverTable.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/Login.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/Med.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/NewLogin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/PassangerTable.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/Profile.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/StaffTable.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/Start.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/TableAlter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/TableStatic.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/Passenger.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Passenger.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/Profile.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Profile.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -66,32 +52,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Connecter.executor": "Run",
-    "Python.blank.executor": "Run",
-    "Python.blank2.executor": "Run",
-    "Python.blank3.executor": "Run",
-    "Python.combo_line (1).executor": "Run",
-    "Python.combo_line.executor": "Run",
-    "Python.convet_ui_files.executor": "Run",
-    "Python.data_base.executor": "Run",
-    "Python.date_line.executor": "Run",
-    "Python.main (1).executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Connecter.executor&quot;: &quot;Run&quot;,
+    &quot;Python.blank.executor&quot;: &quot;Run&quot;,
+    &quot;Python.blank2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.blank3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.combo_line (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.combo_line.executor&quot;: &quot;Run&quot;,
+    &quot;Python.convet_ui_files.executor&quot;: &quot;Run&quot;,
+    &quot;Python.data_base.executor&quot;: &quot;Run&quot;,
+    &quot;Python.date_line.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\serg1\PycharmProjects\TrainApplication\train_app" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.date_line">
     <configuration name="blank" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TrainApplication" />
       <option name="ENV_FILES" value="" />
@@ -211,9 +197,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.date_line" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.convet_ui_files" />
-        <item itemvalue="Python.date_line" />
         <item itemvalue="Python.combo_line" />
         <item itemvalue="Python.blank" />
       </list>
@@ -347,7 +333,31 @@
       <option name="project" value="LOCAL" />
       <updated>1730981763765</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Edit UI files">
+      <option name="closed" value="true" />
+      <created>1731313460762</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1731313460762</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Edit UI files">
+      <option name="closed" value="true" />
+      <created>1731313472208</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1731313472208</updated>
+    </task>
+    <task id="LOCAL-00017" summary="New file Passenger">
+      <option name="closed" value="true" />
+      <created>1731328848321</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1731328848321</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -411,6 +421,8 @@
     <MESSAGE value="Fix bug in data_base.py in method get_data" />
     <MESSAGE value="Added drop focus if LeftMouseButton was clicked on empty space on window" />
     <MESSAGE value="Added function in WindowEngine to connect outer function in widget when focus set" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added function in WindowEngine to connect outer function in widget when focus set" />
+    <MESSAGE value="Edit UI files" />
+    <MESSAGE value="New file Passenger" />
+    <option name="LAST_COMMIT_MESSAGE" value="New file Passenger" />
   </component>
 </project>
