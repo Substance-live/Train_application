@@ -11,7 +11,6 @@ __all__ = [
     EditProfile,
     Login,
     MyTickets,
-    NewLogin,
     Profile,
     Railcar,
     Registr,

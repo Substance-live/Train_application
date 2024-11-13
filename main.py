@@ -4,7 +4,7 @@ from PySide6.QtWidgets import QApplication
 
 #  Импорт форм окон
 from windows import WindowsEngine
-from layouts import Ui_Start, Ui_Profile
+from layouts import Ui_Login
 from data_base import DataBase
 
 #  Имопрт скрипта для обновления ui файлов (УДАЛИТЬ ПОЗЖЕ)
@@ -32,8 +32,7 @@ class Main:
     def __init__(self):
         """"""
         self.engine = WindowsEngine(
-            Ui_Profile,
-            Ui_Start,
+            Ui_Login,
         )
         self.db = DataBase()
 
@@ -120,5 +119,5 @@ class Staff(User):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     main = Main()
-    main.engine.show_window("Start")
+    main.engine.show_window("Login")
     sys.exit(app.exec())
