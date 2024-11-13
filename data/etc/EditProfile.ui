@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>EditProfile</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QSplitter" name="splitter_2">
@@ -94,7 +94,7 @@
           <item>
            <widget class="QLabel" name="label_6">
             <property name="text">
-             <string>Личные данные</string>
+             <string>Дата рождения</string>
             </property>
            </widget>
           </item>

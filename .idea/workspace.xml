@@ -4,10 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="New file Passenger">
+    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="Two window added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/EditProfile.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/EditProfile.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/Login.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Login.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/MyTickets.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/MyTickets.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/etc/Passenger.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Passenger.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/etc/Profile.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Profile.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/Railcar.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Railcar.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/Start.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Start.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/Ticket.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Ticket.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/Login.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/Profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Profile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/Start.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Start.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/Ticket.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Ticket.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +87,7 @@
       <recent name="C:\Users\serg1\PycharmProjects\TrainApplication\train_app" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.date_line">
+  <component name="RunManager" selected="Python.main">
     <configuration name="blank" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TrainApplication" />
       <option name="ENV_FILES" value="" />
@@ -197,9 +207,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.date_line" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.convet_ui_files" />
+        <item itemvalue="Python.date_line" />
         <item itemvalue="Python.combo_line" />
         <item itemvalue="Python.blank" />
       </list>
@@ -357,7 +367,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731328848321</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Two window added">
+      <option name="closed" value="true" />
+      <created>1731402302526</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1731402302526</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -423,6 +441,7 @@
     <MESSAGE value="Added function in WindowEngine to connect outer function in widget when focus set" />
     <MESSAGE value="Edit UI files" />
     <MESSAGE value="New file Passenger" />
-    <option name="LAST_COMMIT_MESSAGE" value="New file Passenger" />
+    <MESSAGE value="Two window added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Two window added" />
   </component>
 </project>

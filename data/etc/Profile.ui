@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Profile</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label_photo">
@@ -23,19 +23,22 @@
       <height>101</height>
      </rect>
     </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
     <property name="font">
      <font>
-      <pointsize>19</pointsize>
+      <pointsize>9</pointsize>
      </font>
     </property>
     <property name="layoutDirection">
-     <enum>Qt::LayoutDirection::LeftToRight</enum>
+     <enum>Qt::LeftToRight</enum>
     </property>
     <property name="text">
      <string>ФОТО</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="label_user">
@@ -47,11 +50,22 @@
       <height>51</height>
      </rect>
     </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Пользователь:******</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_data">
+   <widget class="QLabel" name="label_mail">
     <property name="geometry">
      <rect>
       <x>160</x>
@@ -60,44 +74,88 @@
       <height>41</height>
      </rect>
     </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Почта:******</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="but_view_1">
+   <widget class="QPushButton" name="but_edit">
     <property name="geometry">
      <rect>
-      <x>72</x>
+      <x>42</x>
       <y>190</y>
-      <width>151</width>
+      <width>181</width>
       <height>28</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Редактировать профиль</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="but_view_2">
+   <widget class="QPushButton" name="but_timetable">
     <property name="geometry">
      <rect>
       <x>240</x>
       <y>190</y>
-      <width>121</width>
+      <width>151</width>
       <height>28</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Расписание и цены</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="but_task_1">
+   <widget class="QPushButton" name="but_orders">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>400</x>
       <y>190</y>
       <width>93</width>
       <height>28</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Мои билеты</string>
@@ -106,11 +164,22 @@
    <widget class="QPushButton" name="but_logout">
     <property name="geometry">
      <rect>
-      <x>382</x>
+      <x>342</x>
       <y>260</y>
-      <width>111</width>
+      <width>151</width>
       <height>28</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Выйти из аккаунта</string>
