@@ -1,13 +1,15 @@
 import sys
-
 from PySide6.QtWidgets import QApplication
 
 #  Импорт форм окон
-from windows import WindowsEngine
 from layouts import Ui_Login
-from data_base import DataBase
 
-#  Имопрт скрипта для обновления ui файлов (УДАЛИТЬ ПОЗЖЕ)
+#  Импорт вспомогательных классов
+from windows import WindowsEngine
+from data_base import DataBase
+from user import User
+
+#  Импорт скрипта для обновления ui файлов (УДАЛИТЬ ПОЗЖЕ)
 # import convet_ui_files
 
 
@@ -35,85 +37,7 @@ class Main:
             Ui_Login,
         )
         self.db = DataBase()
-
-
-class User:
-    """
-
-    АТРИБУТЫ:
-    ---------
-
-    МЕТОДЫ:
-    -------
-
-    ПРИМЕЧАНИЕ:
-    -----------
-
-    ОШИБКИ:
-    -------
-
-
-    """
-    pass
-
-
-class Passanger(User):
-    """
-
-    АТРИБУТЫ:
-    ---------
-
-    МЕТОДЫ:
-    -------
-
-    ПРИМЕЧАНИЕ:
-    -----------
-
-    ОШИБКИ:
-    -------
-
-
-    """
-    pass
-
-
-class Driver(User):
-    """
-
-    АТРИБУТЫ:
-    ---------
-
-    МЕТОДЫ:
-    -------
-
-    ПРИМЕЧАНИЕ:
-    -----------
-
-    ОШИБКИ:
-    -------
-
-    """
-    pass
-
-
-class Staff(User):
-    """
-
-    АТРИБУТЫ:
-    ---------
-
-    МЕТОДЫ:
-    -------
-
-    ПРИМЕЧАНИЕ:
-    -----------
-
-    ОШИБКИ:
-    -------
-
-
-    """
-    pass
+        self.user = User(self.db)
 
 
 if __name__ == '__main__':
