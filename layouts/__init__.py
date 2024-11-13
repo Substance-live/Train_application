@@ -1,14 +1,19 @@
+from .EditProfile import *
 from .Login import *
-from .NewLogin import *
+from .MyTickets import *
 from .Profile import *
-from .Start import *
-from .Ticket import *
 from .Railcar import *
+from .Registr import *
+from .Ticket import *
 
-__all__ = [Login,
-           NewLogin,
-           Profile,
-           Start,
-           Ticket,
-           Railcar,
-           ]
+
+__all__ = [
+    EditProfile,
+    Login,
+    MyTickets,
+    NewLogin,
+    Profile,
+    Railcar,
+    Registr,
+    Ticket,
+]
