@@ -109,6 +109,7 @@ class Ui_EditProfile(object):
 
         self.dateEdit = QDateEdit(self.layoutWidget2)
         self.dateEdit.setObjectName(u"dateEdit")
+        self.dateEdit.setCalendarPopup(True)
 
         self.verticalLayout_2.addWidget(self.dateEdit)
 

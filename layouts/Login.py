@@ -49,12 +49,12 @@ class Ui_Login(object):
         font1.setBold(True)
         font1.setItalic(True)
         self.label_image.setFont(font1)
-        self.label_image.setContextMenuPolicy(Qt.NoContextMenu)
+        self.label_image.setContextMenuPolicy(Qt.ContextMenuPolicy.NoContextMenu)
 #if QT_CONFIG(accessibility)
         self.label_image.setAccessibleDescription(u"")
 #endif // QT_CONFIG(accessibility)
-        self.label_image.setLayoutDirection(Qt.LeftToRight)
-        self.label_image.setAlignment(Qt.AlignCenter)
+        self.label_image.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.label_image.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout.addWidget(self.label_image)
 
@@ -80,19 +80,6 @@ class Ui_Login(object):
         self.entry_passwd.setFont(font)
 
         self.verticalLayout.addWidget(self.entry_passwd)
-
-        self.but_recovery = QPushButton(self.layoutWidget)
-        self.but_recovery.setObjectName(u"but_recovery")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.but_recovery.sizePolicy().hasHeightForWidth())
-        self.but_recovery.setSizePolicy(sizePolicy2)
-        self.but_recovery.setMaximumSize(QSize(16777215, 16777215))
-        self.but_recovery.setFont(font)
-        self.but_recovery.setLayoutDirection(Qt.LeftToRight)
-
-        self.verticalLayout.addWidget(self.but_recovery)
 
         self.but_login = QPushButton(self.layoutWidget)
         self.but_login.setObjectName(u"but_login")
@@ -147,7 +134,6 @@ class Ui_Login(object):
         self.label_image.setText(QCoreApplication.translate("Login", u"\u041a\u0430\u0440\u0442\u0438\u043d\u043a\u0430", None))
         self.entry_login.setPlaceholderText(QCoreApplication.translate("Login", u"\u0410\u0434\u0440\u0435\u0441 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u043e\u0439 \u043f\u043e\u0447\u0442\u044b", None))
         self.entry_passwd.setPlaceholderText(QCoreApplication.translate("Login", u"\u041f\u0430\u0440\u043e\u043b\u044c", None))
-        self.but_recovery.setText(QCoreApplication.translate("Login", u"\u041d\u0435 \u043f\u043e\u043c\u043d\u044e \u043f\u0430\u0440\u043e\u043b\u044c", None))
         self.but_login.setText(QCoreApplication.translate("Login", u"\u0412\u043e\u0439\u0442\u0438", None))
         self.but_alter_login.setText(QCoreApplication.translate("Login", u"\u0411\u044b\u0441\u0442\u0440\u044b\u0439 \u0432\u0445\u043e\u0434 \u0431\u0435\u0437 \u043f\u0430\u0440\u043e\u043b\u044f", None))
         self.label.setText(QCoreApplication.translate("Login", u"\u041d\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f?", None))
