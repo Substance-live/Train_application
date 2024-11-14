@@ -1,6 +1,7 @@
 import sys
 from typing import Dict, Any
-from PySide6.QtWidgets import QApplication, QMainWindow
+import PySide6.QtWidgets as QtWidgets
+from PySide6.QtWidgets import QApplication, QMainWindow, QLabel
 from PySide6.QtCore import Qt
 
 
@@ -29,7 +30,7 @@ class WindowsEngine:
     def __init__(self, *windows: Any):
         """Создание экземпляра каждого окна"""
         self.windows = {str(name_class)[str(name_class).find('Ui') + 3: -2]:
-                        self.create_window(name_class)() for name_class in windows}
+                            self.create_window(name_class)() for name_class in windows}
 
     def hide_window(self, *name_windows: str, all_windows=False):
         """Скрывает выбранные окна"""
@@ -40,9 +41,11 @@ class WindowsEngine:
         if all_windows:
             for window in self.windows.values():
                 window.hide()
+                window.clear_windget(all_widgets=True)
         else:
             for name in name_windows:
                 self.windows[name].hide()
+                self.windows[name].clear_windget(all_widgets=True)
 
     def show_window(self, *name_windows: str, all_windows=False):
         """Отображает выбранные окна"""
@@ -119,10 +122,17 @@ class WindowsEngine:
 
                 return {name: self.__dict__[name].text() for name in name_widgets}
 
-            def clear_windget(self, *name_widgets: str):
+            def clear_windget(self, *name_widgets: str, all_widgets=False):
                 """Очищает выбранные виджеты"""
-                for widget in name_widgets:
-                    self.__dict__[widget].clear()
+                if all_widgets:
+                    for widget in self.__dict__.keys():
+
+                        if (isinstance(self.__dict__[widget], QtWidgets.QLineEdit)
+                                and hasattr(self.__dict__[widget], 'clear')):
+                            self.__dict__[widget].clear()
+                else:
+                    for widget in name_widgets:
+                        self.__dict__[widget].clear()
 
         return Window
 
