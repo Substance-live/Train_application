@@ -23,7 +23,7 @@ class Ui_Registr(object):
     def setupUi(self, Registr):
         if not Registr.objectName():
             Registr.setObjectName(u"Registr")
-        Registr.resize(428, 396)
+        Registr.resize(417, 386)
         self.centralwidget = QWidget(Registr)
         self.centralwidget.setObjectName(u"centralwidget")
         self.layoutWidget = QWidget(self.centralwidget)
@@ -74,6 +74,7 @@ class Ui_Registr(object):
         sizePolicy1.setHeightForWidth(self.check_confirm.sizePolicy().hasHeightForWidth())
         self.check_confirm.setSizePolicy(sizePolicy1)
         self.check_confirm.setFont(font1)
+        self.check_confirm.setTristate(False)
 
         self.gridLayout.addWidget(self.check_confirm, 2, 0, 1, 2)
 

@@ -130,10 +130,6 @@ class Ui_Railcar(object):
         self.gridLayout.addLayout(self.verticalLayout, 1, 0, 1, 1)
 
         self.list_filter = QListWidget(self.layoutWidget)
-        QListWidgetItem(self.list_filter)
-        QListWidgetItem(self.list_filter)
-        QListWidgetItem(self.list_filter)
-        QListWidgetItem(self.list_filter)
         self.list_filter.setObjectName(u"list_filter")
         self.list_filter.setSelectionMode(QAbstractItemView.SelectionMode.ExtendedSelection)
         self.list_filter.setSortingEnabled(True)
@@ -252,19 +248,6 @@ class Ui_Railcar(object):
         self.label_children.setText(QCoreApplication.translate("Railcar", u"\u0414\u0435\u0442\u0438 \u0434\u043e 10 \u043b\u0435\u0442 \u0441 \u043c\u0435\u0441\u0442\u043e\u043c, \u0434\u0435\u0448\u0435\u0432\u043b\u0435", None))
         self.label_adult.setText(QCoreApplication.translate("Railcar", u"\u0412\u0437\u0440\u043e\u0441\u043b\u044b\u0435 \u0438 \u0434\u0435\u0442\u0438\n"
 "\u0441\u0442\u0430\u0440\u0448\u0435 10 \u043b\u0435\u0442", None))
-
-        __sortingEnabled = self.list_filter.isSortingEnabled()
-        self.list_filter.setSortingEnabled(False)
-        ___qlistwidgetitem = self.list_filter.item(0)
-        ___qlistwidgetitem.setText(QCoreApplication.translate("Railcar", u"\u041d\u043e\u0432\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442", None));
-        ___qlistwidgetitem1 = self.list_filter.item(1)
-        ___qlistwidgetitem1.setText(QCoreApplication.translate("Railcar", u"\u041d\u043e\u0432\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442", None));
-        ___qlistwidgetitem2 = self.list_filter.item(2)
-        ___qlistwidgetitem2.setText(QCoreApplication.translate("Railcar", u"\u041d\u043e\u0432\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442", None));
-        ___qlistwidgetitem3 = self.list_filter.item(3)
-        ___qlistwidgetitem3.setText(QCoreApplication.translate("Railcar", u"\u041d\u043e\u0432\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442", None));
-        self.list_filter.setSortingEnabled(__sortingEnabled)
-
         self.label_railcar.setText(QCoreApplication.translate("Railcar", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0430\u0433\u043e\u043d \u0438 \u043c\u0435\u0441\u0442\u0430", None))
         ___qtablewidgetitem = self.table_railcar.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("Railcar", u"\u041d\u043e\u043c\u0435\u0440 \u0432\u0430\u0433\u043e\u043d\u0430", None));

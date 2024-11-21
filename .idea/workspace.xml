@@ -4,16 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="New file user">
+    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="Atr hide_window in method show, new method disable_window, another check in method clear widget">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/convet_ui_files.py" beforeDir="false" afterPath="$PROJECT_DIR$/convet_ui_files.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/etc/Login.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Login.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/Railcar.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Railcar.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/etc/Registr.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Registr.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/EditProfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/EditProfile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/Ticket.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Ticket.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/layouts/Login.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/Railcar.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Railcar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/Registr.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Registr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/Ticket.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Ticket.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/layouts/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows.py" beforeDir="false" afterPath="$PROJECT_DIR$/windows.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,55 +63,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Connecter.executor&quot;: &quot;Run&quot;,
-    &quot;Python.blank.executor&quot;: &quot;Run&quot;,
-    &quot;Python.blank2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.blank3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.combo_line (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.combo_line.executor&quot;: &quot;Run&quot;,
-    &quot;Python.convet_ui_files.executor&quot;: &quot;Run&quot;,
-    &quot;Python.data_base.executor&quot;: &quot;Run&quot;,
-    &quot;Python.date_line.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.user.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Connecter.executor": "Run",
+    "Python.blank.executor": "Run",
+    "Python.blank2.executor": "Run",
+    "Python.blank3.executor": "Run",
+    "Python.combo_line (1).executor": "Run",
+    "Python.combo_line.executor": "Run",
+    "Python.convet_ui_files.executor": "Run",
+    "Python.data_base.executor": "Run",
+    "Python.date_line.executor": "Run",
+    "Python.main (1).executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.user.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "settings.editor.selected.configurable": "File.Encoding"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\serg1\PycharmProjects\TrainApplication\train_app" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="combo_line" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="TrainApplication" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/workbench" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/workbench/combo_line.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="convet_ui_files" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TrainApplication" />
       <option name="ENV_FILES" value="" />
@@ -122,6 +104,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/convet_ui_files.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="data_base" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TrainApplication" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_base.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -197,19 +201,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.data_base" />
       <item itemvalue="Python.user" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.date_line" />
-      <item itemvalue="Python.combo_line" />
       <item itemvalue="Python.convet_ui_files" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
         <item itemvalue="Python.convet_ui_files" />
+        <item itemvalue="Python.data_base" />
         <item itemvalue="Python.user" />
         <item itemvalue="Python.date_line" />
-        <item itemvalue="Python.combo_line" />
       </list>
     </recent_temporary>
   </component>
@@ -413,7 +417,39 @@
       <option name="project" value="LOCAL" />
       <updated>1731502169651</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Auto clear all widget before hiding window">
+      <option name="closed" value="true" />
+      <created>1731580168276</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1731580168276</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Added documentation and minor edit">
+      <option name="closed" value="true" />
+      <created>1731580185589</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1731580185589</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Fix minor design UI problems">
+      <option name="closed" value="true" />
+      <created>1731580210477</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1731580210477</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Atr hide_window in method show, new method disable_window, another check in method clear widget">
+      <option name="closed" value="true" />
+      <created>1732189101939</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1732189101939</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -483,6 +519,21 @@
     <MESSAGE value="Finished base version of UI design" />
     <MESSAGE value="Новый файл user" />
     <MESSAGE value="New file user" />
-    <option name="LAST_COMMIT_MESSAGE" value="New file user" />
+    <MESSAGE value="Auto clear all widget before hiding window" />
+    <MESSAGE value="Added documentation and minor edit" />
+    <MESSAGE value="Fix minor design UI problems" />
+    <MESSAGE value="Atr hide_window in method show, new method disable_window, another check in method clear widget" />
+    <option name="LAST_COMMIT_MESSAGE" value="Atr hide_window in method show, new method disable_window, another check in method clear widget" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/windows.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

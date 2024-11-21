@@ -49,7 +49,7 @@ class User:
             "birthday": None,
         }
 
-    def login(self, id_user: int):
+    def load_profile(self, id_user: int):
         """Загружаем персональные данные из БД по id_user"""
 
         data = self.__database.get_data(f"SELECT email, name, surname, patronymic, telephone, birthday "
@@ -68,5 +68,5 @@ class User:
 
 if __name__ == '__main__':
     user = User(DataBase())
-    user.login(1)
+    user.load_profile(1)
     print(user.personal_info)

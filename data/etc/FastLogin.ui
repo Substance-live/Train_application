@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Login</class>
- <widget class="QMainWindow" name="Login">
+ <class>FastLogin</class>
+ <widget class="QMainWindow" name="FastLogin">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>408</width>
-    <height>437</height>
+    <width>463</width>
+    <height>492</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Login</string>
+   <string>FastLogin</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="layoutWidget">
@@ -19,8 +19,8 @@
      <rect>
       <x>20</x>
       <y>10</y>
-      <width>366</width>
-      <height>401</height>
+      <width>421</width>
+      <height>451</height>
      </rect>
     </property>
     <property name="font">
@@ -69,6 +69,37 @@
       </widget>
      </item>
      <item>
+      <widget class="QLabel" name="label_note">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>418</width>
+         <height>62</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Укажите почту, которую указывали при регистрации, чтобы получить код для быстрого входа в аккаунт.</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QLineEdit" name="entry_email">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
@@ -91,7 +122,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="entry_passwd">
+      <widget class="QPushButton" name="but_send_messenge">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
          <horstretch>0</horstretch>
@@ -103,11 +134,8 @@
          <pointsize>10</pointsize>
         </font>
        </property>
-       <property name="echoMode">
-        <enum>QLineEdit::EchoMode::Password</enum>
-       </property>
-       <property name="placeholderText">
-        <string>Пароль</string>
+       <property name="text">
+        <string>Получить код</string>
        </property>
       </widget>
      </item>
@@ -125,25 +153,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Войти</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="but_alter_login">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Быстрый вход без пароля</string>
+        <string>Войти с паролем</string>
        </property>
       </widget>
      </item>

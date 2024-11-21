@@ -58,26 +58,27 @@ class Ui_Login(object):
 
         self.verticalLayout.addWidget(self.label_image)
 
-        self.entry_login = QLineEdit(self.layoutWidget)
-        self.entry_login.setObjectName(u"entry_login")
+        self.entry_email = QLineEdit(self.layoutWidget)
+        self.entry_email.setObjectName(u"entry_email")
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.entry_login.sizePolicy().hasHeightForWidth())
-        self.entry_login.setSizePolicy(sizePolicy1)
+        sizePolicy1.setHeightForWidth(self.entry_email.sizePolicy().hasHeightForWidth())
+        self.entry_email.setSizePolicy(sizePolicy1)
         font2 = QFont()
         font2.setFamilies([u"Segoe UI"])
         font2.setPointSize(10)
-        self.entry_login.setFont(font2)
-        self.entry_login.setClearButtonEnabled(False)
+        self.entry_email.setFont(font2)
+        self.entry_email.setClearButtonEnabled(False)
 
-        self.verticalLayout.addWidget(self.entry_login)
+        self.verticalLayout.addWidget(self.entry_email)
 
         self.entry_passwd = QLineEdit(self.layoutWidget)
         self.entry_passwd.setObjectName(u"entry_passwd")
         sizePolicy1.setHeightForWidth(self.entry_passwd.sizePolicy().hasHeightForWidth())
         self.entry_passwd.setSizePolicy(sizePolicy1)
         self.entry_passwd.setFont(font)
+        self.entry_passwd.setEchoMode(QLineEdit.EchoMode.Password)
 
         self.verticalLayout.addWidget(self.entry_passwd)
 
@@ -132,7 +133,7 @@ class Ui_Login(object):
     def retranslateUi(self, Login):
         Login.setWindowTitle(QCoreApplication.translate("Login", u"Login", None))
         self.label_image.setText(QCoreApplication.translate("Login", u"\u041a\u0430\u0440\u0442\u0438\u043d\u043a\u0430", None))
-        self.entry_login.setPlaceholderText(QCoreApplication.translate("Login", u"\u0410\u0434\u0440\u0435\u0441 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u043e\u0439 \u043f\u043e\u0447\u0442\u044b", None))
+        self.entry_email.setPlaceholderText(QCoreApplication.translate("Login", u"\u0410\u0434\u0440\u0435\u0441 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u043e\u0439 \u043f\u043e\u0447\u0442\u044b", None))
         self.entry_passwd.setPlaceholderText(QCoreApplication.translate("Login", u"\u041f\u0430\u0440\u043e\u043b\u044c", None))
         self.but_login.setText(QCoreApplication.translate("Login", u"\u0412\u043e\u0439\u0442\u0438", None))
         self.but_alter_login.setText(QCoreApplication.translate("Login", u"\u0411\u044b\u0441\u0442\u0440\u044b\u0439 \u0432\u0445\u043e\u0434 \u0431\u0435\u0437 \u043f\u0430\u0440\u043e\u043b\u044f", None))

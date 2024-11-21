@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>428</width>
-    <height>396</height>
+    <width>417</width>
+    <height>386</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -42,7 +42,6 @@
         <font>
          <family>Times New Roman</family>
          <pointsize>20</pointsize>
-         <weight>75</weight>
          <italic>true</italic>
          <bold>true</bold>
         </font>
@@ -51,13 +50,13 @@
         <string notr="true"/>
        </property>
        <property name="layoutDirection">
-        <enum>Qt::LeftToRight</enum>
+        <enum>Qt::LayoutDirection::LeftToRight</enum>
        </property>
        <property name="text">
         <string>Картинка</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignCenter</set>
+        <set>Qt::AlignmentFlag::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -103,6 +102,9 @@
        </property>
        <property name="text">
         <string>Даю согласие на обработку персональных данных</string>
+       </property>
+       <property name="tristate">
+        <bool>false</bool>
        </property>
       </widget>
      </item>

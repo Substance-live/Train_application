@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>653</width>
-    <height>437</height>
+    <width>808</width>
+    <height>465</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -30,8 +30,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>624</width>
-      <height>401</height>
+      <width>781</width>
+      <height>421</height>
      </rect>
     </property>
     <property name="font">
@@ -157,20 +157,20 @@
        <item row="0" column="0" colspan="2">
         <widget class="QTableWidget" name="table_timetable">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>15</horstretch>
            <verstretch>15</verstretch>
           </sizepolicy>
          </property>
          <property name="minimumSize">
           <size>
-           <width>620</width>
+           <width>699</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>620</width>
+           <width>16777215</width>
            <height>16777215</height>
           </size>
          </property>
@@ -195,7 +195,7 @@
           <number>32</number>
          </attribute>
          <attribute name="horizontalHeaderDefaultSectionSize">
-          <number>103</number>
+          <number>129</number>
          </attribute>
          <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
           <bool>true</bool>
