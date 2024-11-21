@@ -1,7 +1,7 @@
 import sys
 from typing import Dict, Any
 import PySide6.QtWidgets as QtWidgets
-from PySide6.QtWidgets import QApplication, QMainWindow, QLabel
+from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtCore import Qt
 
 
@@ -32,6 +32,19 @@ class WindowsEngine:
         self.windows = {str(name_class)[str(name_class).find('Ui') + 3: -2]:
                             self.create_window(name_class)() for name_class in windows}
 
+    def disable_window(self, bool_atr: bool, *name_windows: str, all_windows=False):
+        """Блокировка выбранных окон"""
+
+        #  Проверка name_windows
+        assert set(name_windows).issubset(self.windows.keys()), 'Имя окна не найдено'
+
+        if all_windows:
+            for window in self.windows.values():
+                window.setDisabled(bool_atr)
+        else:
+            for name in name_windows:
+                self.windows[name].setDisabled(bool_atr)
+
     def hide_window(self, *name_windows: str, all_windows=False):
         """Скрывает выбранные окна"""
 
@@ -47,11 +60,15 @@ class WindowsEngine:
                 self.windows[name].hide()
                 self.windows[name].clear_windget(all_widgets=True)
 
-    def show_window(self, *name_windows: str, all_windows=False):
+    def show_window(self, *name_windows: str, all_windows=False, hide_windows=True):
         """Отображает выбранные окна"""
 
         #  Проверка name_windows
         assert set(name_windows).issubset(self.windows.keys()), 'Имя окна не найдено'
+
+        #  Сокрытие всех окон
+        if hide_windows:
+            self.hide_window(all_windows=True)
 
         if all_windows:
             for window in self.windows.values():
@@ -130,6 +147,11 @@ class WindowsEngine:
                         if (isinstance(self.__dict__[widget], QtWidgets.QLineEdit)
                                 and hasattr(self.__dict__[widget], 'clear')):
                             self.__dict__[widget].clear()
+
+                        elif (isinstance(self.__dict__[widget], QtWidgets.QCheckBox)
+                                and hasattr(self.__dict__[widget], 'setChecked')):
+                            self.__dict__[widget].setChecked(False)
+
                 else:
                     for widget in name_widgets:
                         self.__dict__[widget].clear()
