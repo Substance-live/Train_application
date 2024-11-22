@@ -13,12 +13,12 @@ def get_rand_passwd() -> str:
 class Check:
 
     @staticmethod
-    def confirm_registr(but_registr: QPushButton, check_confirm: QCheckBox):
+    def confirm_registr(but: QPushButton, check_confirm: QCheckBox):
 
         if check_confirm.isChecked():
-            but_registr.setEnabled(True)
+            but.setEnabled(True)
         else:
-            but_registr.setEnabled(False)
+            but.setEnabled(False)
 
 
 class Show:
@@ -32,11 +32,11 @@ class Show:
         engine.show_window("Login")
 
     @staticmethod
-    def registr(engine: WindowsEngine, but_registr: QPushButton):
+    def registr(engine: WindowsEngine):
         engine.show_window("Registr")
 
         #  Блокируем кнопку регистрации до подтверждение обработки данных
-        but_registr.setEnabled(False)
+        engine.get_widget("Registr", "but_registr").setEnabled(False)
 
     @staticmethod
     def profile(engine: WindowsEngine):
@@ -46,13 +46,15 @@ class Show:
     def edit_profile(engine: WindowsEngine):
         engine.show_window("EditProfile")
 
+        #  Блокируем кнопку регистрации до подтверждение обработки данных
+        engine.get_widget("EditProfile", "but_save").setEnabled(False)
+
 
 class Account:
 
     @staticmethod
-    def logout(engine: WindowsEngine, user: User):
+    def logout(user: User):
         user.logout()
-        Show.login(engine)
 
     @staticmethod
     def login(engine: WindowsEngine, db: DataBase, user: User, email: str, password: str):
@@ -69,7 +71,6 @@ class Account:
         user.load_profile(id_user[0])
         QMessageBox.information(engine.windows['Login'], "Успешная авторизации",
                                 "Авторизация прошла успешно", QMessageBox.Ok)
-        Show.profile(engine)
 
     @staticmethod
     def registr(engine: WindowsEngine, db: DataBase, email: str):
@@ -91,3 +92,5 @@ class Account:
                        f"`phone` = '{phone}',"
                        f"`birthday` = '{birthday}' "
                        f"WHERE `idUser` = {user.id};")
+
+

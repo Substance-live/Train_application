@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="Added assert in method WindowEngine.get_widget">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dump_bd.sql" beforeDir="false" afterPath="$PROJECT_DIR$/dump_bd.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StaticMethods.py" beforeDir="false" afterPath="$PROJECT_DIR$/StaticMethods.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows.py" beforeDir="false" afterPath="$PROJECT_DIR$/windows.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,26 +48,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Connecter.executor&quot;: &quot;Run&quot;,
-    &quot;Python.blank.executor&quot;: &quot;Run&quot;,
-    &quot;Python.blank2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.blank3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.combo_line (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.combo_line.executor&quot;: &quot;Run&quot;,
-    &quot;Python.convet_ui_files.executor&quot;: &quot;Run&quot;,
-    &quot;Python.data_base.executor&quot;: &quot;Run&quot;,
-    &quot;Python.date_line.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Python.Connecter.executor": "Run",
+    "Python.blank.executor": "Run",
+    "Python.blank2.executor": "Run",
+    "Python.blank3.executor": "Run",
+    "Python.combo_line (1).executor": "Run",
+    "Python.combo_line.executor": "Run",
+    "Python.convet_ui_files.executor": "Run",
+    "Python.data_base.executor": "Run",
+    "Python.date_line.executor": "Run",
+    "Python.main (1).executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\serg1\PycharmProjects\TrainApplication\train_app" />
@@ -331,7 +330,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730981763765</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="relocate static method in separate file">
+      <option name="closed" value="true" />
+      <created>1732281337325</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1732281337325</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added assert in method WindowEngine.get_widget">
+      <option name="closed" value="true" />
+      <created>1732281827406</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1732281827406</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -398,6 +413,8 @@
     <MESSAGE value="Fix bug in data_base.py in method get_data" />
     <MESSAGE value="Added drop focus if LeftMouseButton was clicked on empty space on window" />
     <MESSAGE value="Added function in WindowEngine to connect outer function in widget when focus set" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added function in WindowEngine to connect outer function in widget when focus set" />
+    <MESSAGE value="relocate static method in separate file" />
+    <MESSAGE value="Added assert in method WindowEngine.get_widget" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added assert in method WindowEngine.get_widget" />
   </component>
 </project>

@@ -62,22 +62,26 @@ class Main:
         self.engine.get_widget("Registr", "check_confirm").stateChanged.connect(
             lambda: Check.confirm_registr(
                 self.engine.get_widget("Registr", "but_registr"),
-                self.engine.get_widget("Registr", "check_confirm"),
+                self.engine.get_widget("Registr", "check_confirm")
             )
         )
         self.engine.get_widget("Registr", "but_registr").clicked.connect(
-            lambda: Account.registr(
-                self.engine,
-                self.db,
-                self.engine.get_widget("Registr", "entry_mail").text(),
+            lambda: (
+                Account.registr(
+                    self.engine,
+                    self.db,
+                    self.engine.get_widget("Registr", "entry_mail").text(),
+                ),
+                Show.login(
+                    self.engine,
+                )
             )
         )
 
         # Подключение для окна авторизации
         self.engine.get_widget("Login", "but_registr").clicked.connect(
             lambda: Show.registr(
-                self.engine,
-                self.engine.get_widget("Registr", "but_registr"),
+                self.engine
             )
         )
         self.engine.get_widget("Login", "but_alter_login").clicked.connect(
@@ -86,12 +90,17 @@ class Main:
             )
         )
         self.engine.get_widget("Login", "but_login").clicked.connect(
-            lambda: Account.login(
-                self.engine,
-                self.db,
-                self.user,
-                self.engine.get_widget("Login", "entry_email").text(),
-                self.engine.get_widget("Login", "entry_passwd").text(),
+            lambda: (
+                Account.login(
+                    self.engine,
+                    self.db,
+                    self.user,
+                    self.engine.get_widget("Login", "entry_email").text(),
+                    self.engine.get_widget("Login", "entry_passwd").text(),
+                ),
+                Show.profile(
+                    self.engine,
+                )
             )
         )
 
@@ -103,8 +112,7 @@ class Main:
         )
         self.engine.get_widget("FastLogin", "but_registr").clicked.connect(
             lambda: Show.registr(
-                self.engine,
-                self.engine.get_widget("Registr", "but_registr"),
+                self.engine
             )
         )
         self.engine.get_widget("FastLogin", "but_send_messenge").clicked.connect(
@@ -115,9 +123,13 @@ class Main:
 
         #  Подключения для окна профиля
         self.engine.get_widget("Profile", 'but_logout').clicked.connect(
-            lambda: Account.logout(
-                self.engine,
-                self.user,
+            lambda: (
+                Account.logout(
+                    self.user,
+                ),
+                Show.login(
+                    self.engine,
+                )
             )
         )
         self.engine.get_widget("Profile", "but_edit").clicked.connect(
@@ -125,17 +137,35 @@ class Main:
                 self.engine
             )
         )
+        # self.engine.get_widget("Profile", "but_orders").clicked.connect(
+        #     lambda: Show
+        # )
 
         #  Подключение для окна редактирования профиля
         self.engine.get_widget("EditProfile", "but_save").clicked.connect(
-            lambda: Account.edit_profile(
-                self.db,
-                self.user,
-                self.engine.get_widget("EditProfile", "entry_name").text(),
-                self.engine.get_widget("EditProfile", "entry_surname").text(),
-                self.engine.get_widget("EditProfile", "entry_patronymic").text(),
-                self.engine.get_widget("EditProfile", "entry_phone").text(),
-                self.engine.get_widget("EditProfile", "date_edit").date().toString("yyyy-MM-dd"),
+            lambda: (
+                Account.edit_profile(
+                    self.db,
+                    self.user,
+                    self.engine.get_widget("EditProfile", "entry_name").text(),
+                    self.engine.get_widget("EditProfile", "entry_surname").text(),
+                    self.engine.get_widget("EditProfile", "entry_patronymic").text(),
+                    self.engine.get_widget("EditProfile", "entry_phone").text(),
+                    self.engine.get_widget("EditProfile", "date_edit").date().toString("yyyy-MM-dd"),
+                ),
+                Show.profile(
+                    self.engine
+                ),
+            )
+        )
+        self.engine.get_widget("EditProfile", "check_confirm").stateChanged.connect(
+            lambda: Check.confirm_registr(
+                self.engine.get_widget("EditProfile", "but_save"),
+                self.engine.get_widget("EditProfile", "check_confirm"))
+        )
+        self.engine.get_widget("EditProfile", "but_return").clicked.connect(
+            lambda: Show.profile(
+                self.engine,
             )
         )
 
