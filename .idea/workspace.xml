@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="Added assert in method WindowEngine.get_widget">
+    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="Minor edits;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StaticMethods.py" beforeDir="false" afterPath="$PROJECT_DIR$/StaticMethods.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StaticMethods.py" beforeDir="false" afterPath="$PROJECT_DIR$/static_methods.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/MyTickets.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/MyTickets.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dump_bd.sql" beforeDir="false" afterPath="$PROJECT_DIR$/dump_bd.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/MyTickets.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/MyTickets.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/example.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windows.py" beforeDir="false" afterPath="$PROJECT_DIR$/windows.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +65,7 @@
     "Python.convet_ui_files.executor": "Run",
     "Python.data_base.executor": "Run",
     "Python.date_line.executor": "Run",
+    "Python.example.executor": "Run",
     "Python.main (1).executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -75,28 +81,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="blank" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TrainApplication" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/workbench" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/workbench/blank.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="combo_line" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="TrainApplication" />
       <option name="ENV_FILES" value="" />
@@ -163,6 +147,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="example" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TrainApplication" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/example.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TrainApplication" />
       <option name="ENV_FILES" value="" />
@@ -186,8 +192,8 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.example" />
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.blank" />
       <item itemvalue="Python.date_line" />
       <item itemvalue="Python.combo_line" />
       <item itemvalue="Python.convet_ui_files" />
@@ -196,9 +202,9 @@
       <list>
         <item itemvalue="Python.main" />
         <item itemvalue="Python.convet_ui_files" />
+        <item itemvalue="Python.example" />
         <item itemvalue="Python.date_line" />
         <item itemvalue="Python.combo_line" />
-        <item itemvalue="Python.blank" />
       </list>
     </recent_temporary>
   </component>
@@ -346,7 +352,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732281827406</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Minor edits;">
+      <option name="closed" value="true" />
+      <created>1732282788362</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1732282788362</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -415,6 +429,18 @@
     <MESSAGE value="Added function in WindowEngine to connect outer function in widget when focus set" />
     <MESSAGE value="relocate static method in separate file" />
     <MESSAGE value="Added assert in method WindowEngine.get_widget" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added assert in method WindowEngine.get_widget" />
+    <MESSAGE value="Minor edits;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor edits;" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_base.py</url>
+          <line>59</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -155,6 +155,10 @@ class WindowsEngine:
                               and hasattr(self.__dict__[widget], 'setChecked')):
                             self.__dict__[widget].setChecked(False)
 
+                        elif (isinstance(self.__dict__[widget], QtWidgets.QTableWidget)
+                              and hasattr(self.__dict__[widget], 'setRowCount')):
+                            self.__dict__[widget].setRowCount(0)
+
                 else:
                     for widget in name_widgets:
                         self.__dict__[widget].clear()

@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QGridLayout, QHeaderView, QMainWindow,
-    QPushButton, QSizePolicy, QStatusBar, QTableWidget,
-    QTableWidgetItem, QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QGridLayout, QHeaderView,
+    QMainWindow, QPushButton, QSizePolicy, QStatusBar,
+    QTableWidget, QTableWidgetItem, QWidget)
 
 class Ui_MyTickets(object):
     def setupUi(self, MyTickets):
@@ -46,11 +46,11 @@ class Ui_MyTickets(object):
 
         self.gridLayout.addWidget(self.but_detail, 1, 1, 1, 1)
 
-        self.but_back = QPushButton(self.layoutWidget)
-        self.but_back.setObjectName(u"but_back")
-        self.but_back.setFont(font)
+        self.but_return = QPushButton(self.layoutWidget)
+        self.but_return.setObjectName(u"but_return")
+        self.but_return.setFont(font)
 
-        self.gridLayout.addWidget(self.but_back, 1, 2, 1, 1)
+        self.gridLayout.addWidget(self.but_return, 1, 2, 1, 1)
 
         self.table = QTableWidget(self.layoutWidget)
         if (self.table.columnCount() < 5):
@@ -69,7 +69,10 @@ class Ui_MyTickets(object):
         self.table.setMinimumSize(QSize(502, 0))
         self.table.setMaximumSize(QSize(502, 16777215))
         self.table.setFont(font)
+        self.table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.table.setSortingEnabled(True)
+        self.table.horizontalHeader().setVisible(True)
+        self.table.verticalHeader().setVisible(False)
 
         self.gridLayout.addWidget(self.table, 0, 0, 1, 3)
 
@@ -87,7 +90,7 @@ class Ui_MyTickets(object):
         MyTickets.setWindowTitle(QCoreApplication.translate("MyTickets", u"MyTickets", None))
         self.but_refund.setText(QCoreApplication.translate("MyTickets", u"\u0412\u0435\u0440\u043d\u0443\u0442\u044c \u0431\u0438\u043b\u0435\u0442", None))
         self.but_detail.setText(QCoreApplication.translate("MyTickets", u"\u0414\u0435\u0442\u0430\u043b\u0438 \u0437\u0430\u043a\u0430\u0437\u0430", None))
-        self.but_back.setText(QCoreApplication.translate("MyTickets", u"\u041d\u0430\u0437\u0430\u0434", None))
+        self.but_return.setText(QCoreApplication.translate("MyTickets", u"\u041d\u0430\u0437\u0430\u0434", None))
         ___qtablewidgetitem = self.table.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MyTickets", u"ID", None));
         ___qtablewidgetitem1 = self.table.horizontalHeaderItem(1)

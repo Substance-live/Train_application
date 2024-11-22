@@ -6,7 +6,7 @@ from layouts import (Ui_EditProfile, Ui_FastLogin, Ui_Login, Ui_MyTickets, Ui_Pa
                      Ui_Registr, Ui_Ticket, Ui_mail_message)
 
 #  Импорт вспомогательных классов
-from StaticMethods import *
+from static_methods import *
 
 
 #  Импорт скрипта для обновления ui файлов (УДАЛИТЬ ПОЗЖЕ)
@@ -137,9 +137,13 @@ class Main:
                 self.engine
             )
         )
-        # self.engine.get_widget("Profile", "but_orders").clicked.connect(
-        #     lambda: Show
-        # )
+        self.engine.get_widget("Profile", "but_orders").clicked.connect(
+            lambda: Show.my_tickets(
+                self.engine,
+                self.db,
+                self.user,
+            )
+        )
 
         #  Подключение для окна редактирования профиля
         self.engine.get_widget("EditProfile", "but_save").clicked.connect(
@@ -166,6 +170,23 @@ class Main:
         self.engine.get_widget("EditProfile", "but_return").clicked.connect(
             lambda: Show.profile(
                 self.engine,
+            )
+        )
+
+        #  Подключение для окна просмотра истории билетов
+        self.engine.get_widget("MyTickets", "but_return").clicked.connect(
+            lambda: Show.profile(
+                self.engine,
+            )
+        )
+        self.engine.get_widget("MyTickets", "but_refund").clicked.connect(
+            lambda: (
+                Account.cancel_ticket(self.engine, self.db),
+                Show.my_tickets(
+                    self.engine,
+                    self.db,
+                    self.user,
+                )
             )
         )
 
