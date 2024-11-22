@@ -79,6 +79,9 @@ class WindowsEngine:
 
     def get_widget(self, name_window: str, name_widget: str) -> Any:
         """Возвращает объекта виджета для точечной настройки"""
+
+        assert hasattr(self.windows[name_window], name_widget), "Неверное имя виджета"
+
         return self.windows[name_window].__dict__[name_widget]
 
     @staticmethod
