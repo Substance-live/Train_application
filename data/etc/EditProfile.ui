@@ -71,16 +71,16 @@
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="label_patronymic">
+           <widget class="QLabel" name="label_surname">
             <property name="text">
-             <string>Отчество</string>
+             <string>Фамилия</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="label_surname">
+           <widget class="QLabel" name="label_patronymic">
             <property name="text">
-             <string>Фамилия</string>
+             <string>Отчество</string>
             </property>
            </widget>
           </item>
@@ -106,10 +106,10 @@
            <widget class="QLineEdit" name="entry_name"/>
           </item>
           <item>
-           <widget class="QLineEdit" name="entry_patronymic"/>
+           <widget class="QLineEdit" name="entry_surname"/>
           </item>
           <item>
-           <widget class="QLineEdit" name="entry_surname"/>
+           <widget class="QLineEdit" name="entry_patronymic"/>
           </item>
           <item>
            <widget class="QLineEdit" name="entry_phone"/>

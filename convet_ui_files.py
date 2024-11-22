@@ -27,4 +27,3 @@ def convert(path):
 
 if __name__ == '__main__':
     convert('data/etc/')
-    convert('data/dialogs/')

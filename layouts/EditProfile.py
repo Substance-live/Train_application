@@ -61,15 +61,15 @@ class Ui_EditProfile(object):
 
         self.verticalLayout.addWidget(self.label_name)
 
-        self.label_patronymic = QLabel(self.layoutWidget1)
-        self.label_patronymic.setObjectName(u"label_patronymic")
-
-        self.verticalLayout.addWidget(self.label_patronymic)
-
         self.label_surname = QLabel(self.layoutWidget1)
         self.label_surname.setObjectName(u"label_surname")
 
         self.verticalLayout.addWidget(self.label_surname)
+
+        self.label_patronymic = QLabel(self.layoutWidget1)
+        self.label_patronymic.setObjectName(u"label_patronymic")
+
+        self.verticalLayout.addWidget(self.label_patronymic)
 
         self.label_phone = QLabel(self.layoutWidget1)
         self.label_phone.setObjectName(u"label_phone")
@@ -92,15 +92,15 @@ class Ui_EditProfile(object):
 
         self.verticalLayout_2.addWidget(self.entry_name)
 
-        self.entry_patronymic = QLineEdit(self.layoutWidget2)
-        self.entry_patronymic.setObjectName(u"entry_patronymic")
-
-        self.verticalLayout_2.addWidget(self.entry_patronymic)
-
         self.entry_surname = QLineEdit(self.layoutWidget2)
         self.entry_surname.setObjectName(u"entry_surname")
 
         self.verticalLayout_2.addWidget(self.entry_surname)
+
+        self.entry_patronymic = QLineEdit(self.layoutWidget2)
+        self.entry_patronymic.setObjectName(u"entry_patronymic")
+
+        self.verticalLayout_2.addWidget(self.entry_patronymic)
 
         self.entry_phone = QLineEdit(self.layoutWidget2)
         self.entry_phone.setObjectName(u"entry_phone")
@@ -160,8 +160,8 @@ class Ui_EditProfile(object):
         EditProfile.setWindowTitle(QCoreApplication.translate("EditProfile", u"EditProfile", None))
         self.label_main.setText(QCoreApplication.translate("EditProfile", u"\u041b\u0438\u0447\u043d\u044b\u0435 \u0434\u0430\u043d\u043d\u044b\u0435", None))
         self.label_name.setText(QCoreApplication.translate("EditProfile", u"\u0418\u043c\u044f", None))
-        self.label_patronymic.setText(QCoreApplication.translate("EditProfile", u"\u041e\u0442\u0447\u0435\u0441\u0442\u0432\u043e", None))
         self.label_surname.setText(QCoreApplication.translate("EditProfile", u"\u0424\u0430\u043c\u0438\u043b\u0438\u044f", None))
+        self.label_patronymic.setText(QCoreApplication.translate("EditProfile", u"\u041e\u0442\u0447\u0435\u0441\u0442\u0432\u043e", None))
         self.label_phone.setText(QCoreApplication.translate("EditProfile", u"\u0422\u0435\u043b\u0435\u0444\u043e\u043d", None))
         self.label_birthday.setText(QCoreApplication.translate("EditProfile", u"\u0414\u0430\u0442\u0430 \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f", None))
         self.check_confirm.setText(QCoreApplication.translate("EditProfile", u"\u042f \u0434\u0430\u044e \u0441\u043e\u0433\u043b\u0430\u0441\u0438\u0435 \u043d\u0430 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0443 \u043c\u043e\u0438\u0445 \u043f\u0435\u0440\u0441\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0445 \u0434\u0430\u043d\u043d\u044b\u0445", None))

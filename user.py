@@ -35,11 +35,11 @@ class User:
 
         # Персональные данные
         self.__personal_info = dict()
+        self.__id = None
         self.logout()  # Устанавливаем значения информации на по умолчанию
 
     def logout(self):
         """Устанавливает все персональные данные на None"""
-
         self.__personal_info = {
             "email": None,
             "name": None,
@@ -52,18 +52,23 @@ class User:
     def load_profile(self, id_user: int):
         """Загружаем персональные данные из БД по id_user"""
 
-        data = self.__database.get_data(f"SELECT email, name, surname, patronymic, telephone, birthday "
+        data = self.__database.get_data(f"SELECT email, name, surname, patronymic, phone, birthday "
                                         f"FROM user "
                                         f"WHERE idUser={id_user}", single_line=True)
 
         new_dict = dict()
         for index, attr in enumerate(self.__personal_info.keys()):
             new_dict[attr] = data[index]
+        self.__id = id_user
         self.__personal_info = new_dict
 
     @property
     def personal_info(self) -> Tuple[str, ...]:
         return tuple(self.__personal_info[i] for i in self.__personal_info.keys())
+
+    @property
+    def id(self):
+        return self.__id
 
 
 if __name__ == '__main__':

@@ -126,6 +126,24 @@ class Main:
                 self.user,
             )
         )
+        self.engine.get_widget("Profile", "but_edit").clicked.connect(
+            lambda: Show.edit_profile(
+                self.engine
+            )
+        )
+
+        #  Подключение для окна редактирования профиля
+        self.engine.get_widget("EditProfile", "but_save").clicked.connect(
+            lambda: Account.edit_profile(
+                self.db,
+                self.user,
+                self.engine.get_widget("EditProfile", "entry_name").text(),
+                self.engine.get_widget("EditProfile", "entry_surname").text(),
+                self.engine.get_widget("EditProfile", "entry_patronymic").text(),
+                self.engine.get_widget("EditProfile", "entry_phone").text(),
+                self.engine.get_widget("EditProfile", "date_edit").date().toString("yyyy-MM-dd"),
+            )
+        )
 
 
 class Check:
@@ -159,6 +177,10 @@ class Show:
     @staticmethod
     def profile(engine: WindowsEngine):
         engine.show_window("Profile")
+
+    @staticmethod
+    def edit_profile(engine: WindowsEngine):
+        engine.show_window("EditProfile")
 
 
 class Account:
@@ -195,6 +217,16 @@ class Account:
     @staticmethod
     def send_message(engine: WindowsEngine, email: str):
         pass
+
+    @staticmethod
+    def edit_profile(db: DataBase, user: User, name: str, surname: str, patronymic: str, phone: str, birthday: str):
+        db.update_data(f"UPDATE `train`.`user` "
+                       f"SET `name` = '{name}',"
+                       f"`surname` = '{surname}',"
+                       f"`patronymic` = '{patronymic}',"
+                       f"`phone` = '{phone}',"
+                       f"`birthday` = '{birthday}' "
+                       f"WHERE `idUser` = {user.id};")
 
 
 if __name__ == '__main__':
