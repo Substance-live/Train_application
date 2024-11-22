@@ -30,7 +30,7 @@ class WindowsEngine:
     def __init__(self, *windows: Any):
         """Создание экземпляра каждого окна"""
         self.windows = {str(name_class)[str(name_class).find('Ui') + 3: -2]:
-                            self.create_window(name_class)() for name_class in windows}
+                        self.create_window(name_class)() for name_class in windows}
 
     def disable_window(self, bool_atr: bool, *name_windows: str, all_windows=False):
         """Блокировка выбранных окон"""
@@ -149,7 +149,7 @@ class WindowsEngine:
                             self.__dict__[widget].clear()
 
                         elif (isinstance(self.__dict__[widget], QtWidgets.QCheckBox)
-                                and hasattr(self.__dict__[widget], 'setChecked')):
+                              and hasattr(self.__dict__[widget], 'setChecked')):
                             self.__dict__[widget].setChecked(False)
 
                 else:
