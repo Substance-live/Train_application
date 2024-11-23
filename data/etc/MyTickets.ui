@@ -37,14 +37,14 @@
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QPushButton" name="but_detail">
+      <widget class="QPushButton" name="but_del">
        <property name="font">
         <font>
          <pointsize>9</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Детали заказа</string>
+        <string>Удалить запись</string>
        </property>
       </widget>
      </item>
@@ -60,7 +60,7 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="0" colspan="3" alignment="">
+     <item row="0" column="0" colspan="3">
       <widget class="QTableWidget" name="table">
        <property name="minimumSize">
         <size>

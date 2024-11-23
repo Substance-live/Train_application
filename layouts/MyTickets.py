@@ -40,11 +40,11 @@ class Ui_MyTickets(object):
 
         self.gridLayout.addWidget(self.but_refund, 1, 0, 1, 1)
 
-        self.but_detail = QPushButton(self.layoutWidget)
-        self.but_detail.setObjectName(u"but_detail")
-        self.but_detail.setFont(font)
+        self.but_del = QPushButton(self.layoutWidget)
+        self.but_del.setObjectName(u"but_del")
+        self.but_del.setFont(font)
 
-        self.gridLayout.addWidget(self.but_detail, 1, 1, 1, 1)
+        self.gridLayout.addWidget(self.but_del, 1, 1, 1, 1)
 
         self.but_return = QPushButton(self.layoutWidget)
         self.but_return.setObjectName(u"but_return")
@@ -89,7 +89,7 @@ class Ui_MyTickets(object):
     def retranslateUi(self, MyTickets):
         MyTickets.setWindowTitle(QCoreApplication.translate("MyTickets", u"MyTickets", None))
         self.but_refund.setText(QCoreApplication.translate("MyTickets", u"\u0412\u0435\u0440\u043d\u0443\u0442\u044c \u0431\u0438\u043b\u0435\u0442", None))
-        self.but_detail.setText(QCoreApplication.translate("MyTickets", u"\u0414\u0435\u0442\u0430\u043b\u0438 \u0437\u0430\u043a\u0430\u0437\u0430", None))
+        self.but_del.setText(QCoreApplication.translate("MyTickets", u"\u0423\u0434\u0430\u043b\u0438\u0442\u044c \u0437\u0430\u043f\u0438\u0441\u044c", None))
         self.but_return.setText(QCoreApplication.translate("MyTickets", u"\u041d\u0430\u0437\u0430\u0434", None))
         ___qtablewidgetitem = self.table.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MyTickets", u"ID", None));

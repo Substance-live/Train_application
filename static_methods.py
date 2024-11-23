@@ -72,13 +72,16 @@ class Show:
 
             # Заполняем ячейки новыми данными
             for index in range(5):
-                print("установил: ", data_row[index])
                 item = QTableWidgetItem(data_row[index])
                 item.setTextAlignment(Qt.AlignCenter)
                 table.setItem(row_position, index, item)
 
         #  Включаем сортировку
         table.setSortingEnabled(True)
+
+    @staticmethod
+    def ticket(engine: WindowsEngine):
+        engine.show_window("Ticket")
 
 
 class Account:
@@ -102,6 +105,7 @@ class Account:
         user.load_profile(id_user[0])
         QMessageBox.information(engine.windows['Login'], "Успешная авторизации",
                                 "Авторизация прошла успешно", QMessageBox.Ok)
+        Show.profile(engine)
 
     @staticmethod
     def registr(engine: WindowsEngine, db: DataBase, email: str):
@@ -126,7 +130,6 @@ class Account:
 
     @staticmethod
     def load_history(db: DataBase, user: User) -> list[list[str]]:
-
         data = db.get_data(
             f"SELECT t.`idTicket`, f.`title`, f.`date`, t.`price`, s.`title` "
             "FROM `ticket` as t "
@@ -145,7 +148,6 @@ class Account:
 
     @staticmethod
     def cancel_ticket(engine: WindowsEngine, db: DataBase):
-        window = engine.windows["MyTickets"]
         table: QTableWidget = engine.get_widget("MyTickets", "table")
         row = table.currentRow()
 
@@ -162,3 +164,22 @@ class Account:
                                     "Данный билет нельзя вернуть", QMessageBox.Ok)
 
         table.setRowCount(0)
+
+    @staticmethod
+    def del_ticket(engine: WindowsEngine, db: DataBase):
+        table: QTableWidget = engine.get_widget("MyTickets", "table")
+        row = table.currentRow()
+
+        if table.item(row, 4).text() in ("Отменён", "Завершен"):
+            db.update_data(
+                "DELETE FROM `train`.`ticket` "
+                f"WHERE `idTicket` = '{table.item(row, 0).text()}';"
+            )
+            QMessageBox.information(engine.windows['MyTickets'], "Билет удалён",
+                                    "Билет успешно удален", QMessageBox.Ok)
+        else:
+            QMessageBox.information(engine.windows['MyTickets'], "Ошибка удаления",
+                                    "Данный билет нельзя удалить, попробуйте сначала его отменить", QMessageBox.Ok)
+
+        table.setRowCount(0)
+

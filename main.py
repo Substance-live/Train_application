@@ -98,9 +98,6 @@ class Main:
                     self.engine.get_widget("Login", "entry_email").text(),
                     self.engine.get_widget("Login", "entry_passwd").text(),
                 ),
-                Show.profile(
-                    self.engine,
-                )
             )
         )
 
@@ -182,6 +179,19 @@ class Main:
         self.engine.get_widget("MyTickets", "but_refund").clicked.connect(
             lambda: (
                 Account.cancel_ticket(self.engine, self.db),
+                Show.my_tickets(
+                    self.engine,
+                    self.db,
+                    self.user,
+                )
+            )
+        )
+        self.engine.get_widget("MyTickets", "but_del").clicked.connect(
+            lambda: (
+                Account.del_ticket(
+                    self.engine,
+                    self.db,
+                ),
                 Show.my_tickets(
                     self.engine,
                     self.db,
