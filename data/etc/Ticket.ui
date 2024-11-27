@@ -91,7 +91,7 @@
          <property name="currentText">
           <string/>
          </property>
-         <property name="placeholderText" stdset="0">
+         <property name="placeholderText">
           <string>Откуда</string>
          </property>
         </widget>
@@ -121,7 +121,7 @@
          <property name="currentText">
           <string/>
          </property>
-         <property name="placeholderText" stdset="0">
+         <property name="placeholderText">
           <string>Куда</string>
          </property>
         </widget>
@@ -180,10 +180,13 @@
           </font>
          </property>
          <property name="selectionBehavior">
-          <enum>QAbstractItemView::SelectItems</enum>
+          <enum>QAbstractItemView::SelectionBehavior::SelectItems</enum>
          </property>
          <property name="sortingEnabled">
           <bool>true</bool>
+         </property>
+         <property name="rowCount">
+          <number>0</number>
          </property>
          <attribute name="horizontalHeaderVisible">
           <bool>true</bool>
@@ -209,12 +212,6 @@
          <attribute name="verticalHeaderCascadingSectionResizes">
           <bool>false</bool>
          </attribute>
-         <row>
-          <property name="text">
-           <string>2</string>
-          </property>
-         </row>
-         <row/>
          <column>
           <property name="text">
            <string>Откуда</string>
@@ -227,12 +224,12 @@
          </column>
          <column>
           <property name="text">
-           <string>Время прибытия</string>
+           <string>Время отправки</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Время отправки</string>
+           <string>Время прибытия</string>
           </property>
          </column>
          <column>

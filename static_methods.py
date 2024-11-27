@@ -56,7 +56,7 @@ class Show:
     def my_tickets(engine: WindowsEngine, db: DataBase, user: User):
 
         #  Загружаем данные из бд и подготавливаем переменную с таблицей
-        data = Account.load_history(db, user)
+        data = Data.load_history(db, user)
         table: QTableWidget = engine.get_widget("MyTickets", "table")
 
         engine.show_window("MyTickets")
@@ -84,7 +84,7 @@ class Show:
         engine.show_window("Ticket")
 
 
-class Account:
+class Data:
 
     @staticmethod
     def logout(user: User):
@@ -131,10 +131,10 @@ class Account:
     @staticmethod
     def load_history(db: DataBase, user: User) -> list[list[str]]:
         data = db.get_data(
-            f"SELECT t.`idTicket`, f.`title`, f.`date`, t.`price`, s.`title` "
+            f"SELECT t.`idTicket`, f.`title`, f.`date`, r.`price`, s.`title` "
             "FROM `ticket` as t "
             "JOIN `railcar` as r ON r.`idRailcar`=t.`idRailcar` "
-            "JOIN `flight` as f ON f.`idFlight`=r.`idFlight` "
+            "JOIN `flight` as f ON f.`idFlight`=t.`idFlight` "
             "JOIN `list_status` as s ON s.`idStatus`=t.`idStatus` "
             f"WHERE t.`idUser`='{user.id}' "
             "ORDER BY t.`idTicket`"
@@ -183,3 +183,20 @@ class Account:
 
         table.setRowCount(0)
 
+    @staticmethod
+    def load_tickets(db: DataBase, ) -> list[list[str]]:
+        data = db.get_data(
+            f"SELECT t.`idTicket`, f.`title`, f.`date`, t.`price`, s.`title` "
+            "FROM `ticket` as t "
+            "JOIN `railcar` as r ON r.`idRailcar`=t.`idRailcar` "
+            "JOIN `flight` as f ON f.`idFlight`=r.`idFlight` "
+            "JOIN `list_status` as s ON s.`idStatus`=t.`idStatus` "
+            f"WHERE t.`idUser`='{user.id}' "
+            "ORDER BY t.`idTicket`"
+        )
+
+        ret = []
+        for i in data:
+            ret.append([str(i[0]), i[1], i[2].strftime("%Y-%m-%d"), str(i[3]), i[4]])
+
+        return ret

@@ -67,7 +67,7 @@ class Main:
         )
         self.engine.get_widget("Registr", "but_registr").clicked.connect(
             lambda: (
-                Account.registr(
+                Data.registr(
                     self.engine,
                     self.db,
                     self.engine.get_widget("Registr", "entry_mail").text(),
@@ -91,7 +91,7 @@ class Main:
         )
         self.engine.get_widget("Login", "but_login").clicked.connect(
             lambda: (
-                Account.login(
+                Data.login(
                     self.engine,
                     self.db,
                     self.user,
@@ -113,15 +113,15 @@ class Main:
             )
         )
         self.engine.get_widget("FastLogin", "but_send_messenge").clicked.connect(
-            lambda: Account.send_message(
+            lambda: Data.send_message(
                 self.engine,
-            )
+            )  # NOT WORKING
         )
 
         #  Подключения для окна профиля
         self.engine.get_widget("Profile", 'but_logout').clicked.connect(
             lambda: (
-                Account.logout(
+                Data.logout(
                     self.user,
                 ),
                 Show.login(
@@ -141,11 +141,16 @@ class Main:
                 self.user,
             )
         )
+        self.engine.get_widget("Profile", "but_timetable").clicked.connect(
+            lambda: Show.ticket(
+                self.engine,
+            )
+        )
 
         #  Подключение для окна редактирования профиля
         self.engine.get_widget("EditProfile", "but_save").clicked.connect(
             lambda: (
-                Account.edit_profile(
+                Data.edit_profile(
                     self.db,
                     self.user,
                     self.engine.get_widget("EditProfile", "entry_name").text(),
@@ -178,7 +183,7 @@ class Main:
         )
         self.engine.get_widget("MyTickets", "but_refund").clicked.connect(
             lambda: (
-                Account.cancel_ticket(self.engine, self.db),
+                Data.cancel_ticket(self.engine, self.db),
                 Show.my_tickets(
                     self.engine,
                     self.db,
@@ -188,7 +193,7 @@ class Main:
         )
         self.engine.get_widget("MyTickets", "but_del").clicked.connect(
             lambda: (
-                Account.del_ticket(
+                Data.del_ticket(
                     self.engine,
                     self.db,
                 ),
