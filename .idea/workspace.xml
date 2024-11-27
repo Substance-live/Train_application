@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="Minor edits;">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_11_2024_12_50__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_11_2024_12_50__Changes_.xml" afterDir="false" />
+    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="Added search tickets">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/etc/Ticket.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Ticket.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dump_bd.sql" beforeDir="false" afterPath="$PROJECT_DIR$/dump_bd.sql" afterDir="false" />
@@ -361,7 +358,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732282788362</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added search tickets">
+      <option name="closed" value="true" />
+      <created>1732729237368</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1732729237368</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -431,7 +436,8 @@
     <MESSAGE value="relocate static method in separate file" />
     <MESSAGE value="Added assert in method WindowEngine.get_widget" />
     <MESSAGE value="Minor edits;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor edits;" />
+    <MESSAGE value="Added search tickets" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added search tickets" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -440,11 +446,6 @@
           <url>file://$PROJECT_DIR$/data_base.py</url>
           <line>59</line>
           <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/data_base.py</url>
-          <line>70</line>
-          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

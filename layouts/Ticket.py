@@ -87,6 +87,7 @@ class Ui_Ticket(object):
         self.date_edit = QDateEdit(self.layoutWidget)
         self.date_edit.setObjectName(u"date_edit")
         self.date_edit.setFont(font1)
+        self.date_edit.setDateTime(QDateTime(QDate(2020, 10, 1), QTime(0, 0, 0)))
         self.date_edit.setCalendarPopup(True)
 
         self.gridLayout.addWidget(self.date_edit, 1, 3, 1, 1)
@@ -126,7 +127,7 @@ class Ui_Ticket(object):
         self.table_timetable.setMinimumSize(QSize(699, 0))
         self.table_timetable.setMaximumSize(QSize(16777215, 16777215))
         self.table_timetable.setFont(font1)
-        self.table_timetable.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectItems)
+        self.table_timetable.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.table_timetable.setSortingEnabled(True)
         self.table_timetable.setRowCount(0)
         self.table_timetable.horizontalHeader().setVisible(True)

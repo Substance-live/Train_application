@@ -233,6 +233,22 @@ class Main:
                 self.engine,
             )
         )
+        self.engine.get_widget("Ticket", 'but_switch').clicked.connect(
+            lambda: Data.switch_stations(
+                self.engine,
+            )
+        )
+        self.engine.get_widget("Ticket", "but_back").clicked.connect(
+            lambda: Show.profile(
+                self.engine,
+            )
+        )
+        self.engine.get_widget("Ticket", "but_confirm").clicked.connect(
+            lambda: Show.railcar(
+                self.engine,
+                self.db,
+            )
+        )
 
 
 if __name__ == '__main__':

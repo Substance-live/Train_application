@@ -52,7 +52,6 @@ DROP TABLE IF EXISTS `flight`;
 CREATE TABLE `flight` (
   `idFlight` int NOT NULL,
   `title` varchar(45) NOT NULL,
-  `date` date NOT NULL,
   PRIMARY KEY (`idFlight`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='																													';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -63,7 +62,7 @@ CREATE TABLE `flight` (
 
 LOCK TABLES `flight` WRITE;
 /*!40000 ALTER TABLE `flight` DISABLE KEYS */;
-INSERT INTO `flight` VALUES (1,'Flight 101','2023-11-01'),(2,'Flight 202','2023-11-02'),(3,'Flight 303','2023-11-03');
+INSERT INTO `flight` VALUES (1,'Flight 101'),(2,'Flight 202'),(3,'Flight 303');
 /*!40000 ALTER TABLE `flight` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -202,7 +201,7 @@ CREATE TABLE `ticket` (
   CONSTRAINT `fk_ticket_passenger1` FOREIGN KEY (`idPassenger`) REFERENCES `passenger` (`idPassenger`),
   CONSTRAINT `fk_ticket_railcar1` FOREIGN KEY (`idRailcar`) REFERENCES `railcar` (`idRailcar`),
   CONSTRAINT `fk_ticket_user` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -211,7 +210,7 @@ CREATE TABLE `ticket` (
 
 LOCK TABLES `ticket` WRITE;
 /*!40000 ALTER TABLE `ticket` DISABLE KEYS */;
-INSERT INTO `ticket` VALUES (1,4,1,1,3,0);
+INSERT INTO `ticket` VALUES (1,4,4,1,3,1),(2,4,1,2,3,1),(3,4,4,3,2,1);
 /*!40000 ALTER TABLE `ticket` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -225,8 +224,8 @@ DROP TABLE IF EXISTS `timetable`;
 CREATE TABLE `timetable` (
   `idStation` int NOT NULL,
   `idFlight` int NOT NULL,
-  `arrival` time NOT NULL,
-  `departure` time NOT NULL,
+  `arrival` datetime NOT NULL,
+  `departure` datetime NOT NULL,
   PRIMARY KEY (`idFlight`,`idStation`),
   KEY `fk_Timetable_flight1_idx` (`idFlight`),
   KEY `fk_timetable_station1_idx` (`idStation`),
@@ -241,7 +240,7 @@ CREATE TABLE `timetable` (
 
 LOCK TABLES `timetable` WRITE;
 /*!40000 ALTER TABLE `timetable` DISABLE KEYS */;
-INSERT INTO `timetable` VALUES (1,1,'08:00:00','08:30:00'),(4,1,'11:00:00','11:30:00'),(5,1,'12:45:00','13:20:00'),(1,2,'11:00:00','11:30:00'),(2,2,'08:00:00','08:30:00'),(3,2,'12:45:00','13:20:00'),(1,3,'12:45:00','13:20:00'),(2,3,'11:00:00','11:30:00'),(4,3,'08:00:00','08:30:00'),(5,3,'14:55:00','20:20:00');
+INSERT INTO `timetable` VALUES (1,1,'2020-10-01 08:00:00','2020-10-01 08:30:00'),(4,1,'2020-10-01 11:00:00','2020-10-01 11:30:00'),(5,1,'2020-10-01 12:45:00','2020-10-01 13:20:00'),(1,2,'2020-10-01 11:00:00','2020-10-01 11:30:00'),(2,2,'2020-10-01 08:00:00','2020-10-01 08:30:00'),(3,2,'2020-10-01 12:45:00','2020-10-01 13:20:00'),(1,3,'2020-10-01 12:45:00','2020-10-01 13:20:00'),(2,3,'2020-10-01 11:00:00','2020-10-01 11:30:00'),(4,3,'2020-10-01 08:00:00','2020-10-01 08:30:00'),(5,3,'2020-10-01 14:55:00','2020-10-01 20:20:00');
 /*!40000 ALTER TABLE `timetable` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -308,4 +307,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-27 16:37:28
+-- Dump completed on 2024-11-27 23:26:44

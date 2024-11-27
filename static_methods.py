@@ -130,6 +130,10 @@ class Show:
         #  Включаем сортировку
         table.setSortingEnabled(True)
 
+    @staticmethod
+    def railcar(engine: WindowsEngine, db: DataBase):
+        engine.show_window("Railcar")
+
 
 class Data:
 
@@ -316,3 +320,16 @@ class Data:
 
         #  Включаем сортировку
         table.setSortingEnabled(True)
+
+    @staticmethod
+    def switch_stations(engine: WindowsEngine):
+        combo_dep: QComboBox = engine.get_widget("Ticket", "combo_departure")
+        combo_arr: QComboBox = engine.get_widget("Ticket", "combo_destination")
+
+        text_dep = combo_dep.lineEdit().text()
+        text_arr = combo_arr.lineEdit().text()
+
+        text_arr, text_dep = text_dep, text_arr
+
+        combo_arr.lineEdit().setText(text_arr)
+        combo_dep.lineEdit().setText(text_dep)
