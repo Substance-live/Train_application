@@ -144,6 +144,7 @@ class Main:
         self.engine.get_widget("Profile", "but_timetable").clicked.connect(
             lambda: Show.ticket(
                 self.engine,
+                self.db,
             )
         )
 
@@ -202,6 +203,34 @@ class Main:
                     self.db,
                     self.user,
                 )
+            )
+        )
+
+        #  Подключение для окна выбора билета
+        self.engine.get_widget("Ticket", "combo_departure").lineEdit().textChanged.connect(
+            lambda: Check.change(
+                self.engine.get_widget("Ticket", "combo_departure"),
+                self.engine.windows["Ticket"],
+                "flag_dep",
+                Data.get_stations(
+                    self.db
+                )
+            )
+        )
+        self.engine.get_widget("Ticket", "combo_destination").lineEdit().textChanged.connect(
+            lambda: Check.change(
+                self.engine.get_widget("Ticket", "combo_destination"),
+                self.engine.windows["Ticket"],
+                "flag_arr",
+                Data.get_stations(
+                    self.db
+                )
+            )
+        )
+        self.engine.get_widget("Ticket", "but_search").clicked.connect(
+            lambda: Data.reload_timtable(
+                self.db,
+                self.engine,
             )
         )
 

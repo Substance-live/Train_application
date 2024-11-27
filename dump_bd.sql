@@ -1,14 +1,13 @@
--- MySQL dump 10.13  Distrib 8.0.16, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: train
 -- ------------------------------------------------------
--- Server version	8.3.0
-use train;
+-- Server version	8.4.0
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
- SET NAMES utf8 ;
+/*!50503 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -22,7 +21,7 @@ use train;
 
 DROP TABLE IF EXISTS `document`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `document` (
   `idDocument` int NOT NULL,
   `idTypeDocument` int NOT NULL,
@@ -49,7 +48,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `flight`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `flight` (
   `idFlight` int NOT NULL,
   `title` varchar(45) NOT NULL,
@@ -74,7 +73,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `list_status`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `list_status` (
   `idStatus` int NOT NULL,
   `title` varchar(45) NOT NULL,
@@ -98,7 +97,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `passenger`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `passenger` (
   `idPassenger` int NOT NULL,
   `idDocument` int NOT NULL,
@@ -129,7 +128,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `railcar`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `railcar` (
   `idRailcar` int NOT NULL AUTO_INCREMENT,
   `idFlight` int NOT NULL,
@@ -159,7 +158,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `station`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `station` (
   `idStation` int NOT NULL,
   `title` varchar(45) NOT NULL,
@@ -184,20 +183,21 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ticket`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ticket` (
   `idTicket` int NOT NULL AUTO_INCREMENT,
-  `idFlight` int NOT NULL,
   `idUser` int NOT NULL,
   `idRailcar` int NOT NULL,
   `idPassenger` int NOT NULL,
   `idStatus` int NOT NULL,
+  `idFlight` int NOT NULL,
   PRIMARY KEY (`idTicket`),
   KEY `fk_ticket_user_idx` (`idUser`),
   KEY `fk_ticket_railcar1_idx` (`idRailcar`),
   KEY `fk_ticket_passenger1_idx` (`idPassenger`),
   KEY `fk_ticket_list_status1_idx` (`idStatus`),
   KEY `fk_ticket_flight1_idx` (`idFlight`),
+  CONSTRAINT `fk_ticket_flight1` FOREIGN KEY (`idFlight`) REFERENCES `flight` (`idFlight`),
   CONSTRAINT `fk_ticket_list_status1` FOREIGN KEY (`idStatus`) REFERENCES `list_status` (`idStatus`),
   CONSTRAINT `fk_ticket_passenger1` FOREIGN KEY (`idPassenger`) REFERENCES `passenger` (`idPassenger`),
   CONSTRAINT `fk_ticket_railcar1` FOREIGN KEY (`idRailcar`) REFERENCES `railcar` (`idRailcar`),
@@ -211,7 +211,7 @@ CREATE TABLE `ticket` (
 
 LOCK TABLES `ticket` WRITE;
 /*!40000 ALTER TABLE `ticket` DISABLE KEYS */;
-INSERT INTO `ticket` VALUES (1,1,4,1,1,3);
+INSERT INTO `ticket` VALUES (1,4,1,1,3,0);
 /*!40000 ALTER TABLE `ticket` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -221,7 +221,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `timetable`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `timetable` (
   `idStation` int NOT NULL,
   `idFlight` int NOT NULL,
@@ -251,7 +251,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `type_document`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `type_document` (
   `idTypeDocument` int NOT NULL,
   `title` varchar(45) NOT NULL,
@@ -275,7 +275,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
   `idUser` int NOT NULL AUTO_INCREMENT,
   `email` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
@@ -308,4 +308,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-27 16:29:42
+-- Dump completed on 2024-11-27 16:37:28

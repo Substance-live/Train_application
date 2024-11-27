@@ -4,16 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="build 1.3.1" />
+    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="Minor edits;">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_11_2024_12_50__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_11_2024_12_50__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/Ticket.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Ticket.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dump_bd.sql" beforeDir="false" afterPath="$PROJECT_DIR$/dump_bd.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/Ticket.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Ticket.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/static_methods.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ChangesViewManager">
-    <option name="groupingKeys">
-      <option value="directory" />
-    </option>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -24,7 +29,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -52,33 +56,33 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "Python.Connecter.executor": "Run",
     "Python.blank.executor": "Run",
     "Python.blank2.executor": "Run",
     "Python.blank3.executor": "Run",
     "Python.combo_line (1).executor": "Run",
-    "Python.combo_line.executor": "Run",
+    "Python.combo_line.executor": "Debug",
     "Python.convet_ui_files.executor": "Run",
     "Python.data_base.executor": "Run",
     "Python.date_line.executor": "Run",
+    "Python.example.executor": "Run",
     "Python.main (1).executor": "Run",
     "Python.main.executor": "Run",
-    "Python.user.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "settings.editor.selected.configurable": "promo.django"
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Substance\PycharmProjects\kursk\Train_application\data\etc" />
       <recent name="C:\Users\serg1\PycharmProjects\TrainApplication\train_app" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="combo_line" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="combo_line" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="TrainApplication" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -122,7 +126,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="data_base" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="date_line" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TrainApplication" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -131,11 +135,33 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/workbench" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_base.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/workbench/date_line.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="example" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TrainApplication" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/example.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -166,49 +192,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="user" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TrainApplication" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/user.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Python.combo_line" />
-      <item itemvalue="Python.data_base" />
-      <item itemvalue="Python.user" />
+      <item itemvalue="Python.example" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.date_line" />
+      <item itemvalue="Python.combo_line" />
       <item itemvalue="Python.convet_ui_files" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.combo_line" />
         <item itemvalue="Python.convet_ui_files" />
-        <item itemvalue="Python.data_base" />
-        <item itemvalue="Python.user" />
+        <item itemvalue="Python.combo_line" />
+        <item itemvalue="Python.example" />
+        <item itemvalue="Python.date_line" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-d68999036c7f-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.14475.56" />
+        <option value="bundled-python-sdk-5b207ade9991-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.17890.14" />
       </set>
     </attachedChunks>
   </component>
@@ -333,144 +337,35 @@
       <option name="project" value="LOCAL" />
       <updated>1730981763765</updated>
     </task>
-    <task id="LOCAL-00015" summary="Edit UI files">
+    <task id="LOCAL-00015" summary="relocate static method in separate file">
       <option name="closed" value="true" />
-      <created>1731313460762</created>
+      <created>1732281337325</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1731313460762</updated>
+      <updated>1732281337325</updated>
     </task>
-    <task id="LOCAL-00016" summary="Edit UI files">
+    <task id="LOCAL-00016" summary="Added assert in method WindowEngine.get_widget">
       <option name="closed" value="true" />
-      <created>1731313472208</created>
+      <created>1732281827406</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1731313472208</updated>
+      <updated>1732281827406</updated>
     </task>
-    <task id="LOCAL-00017" summary="New file Passenger">
+    <task id="LOCAL-00017" summary="Minor edits;">
       <option name="closed" value="true" />
-      <created>1731328848321</created>
+      <created>1732282788362</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1731328848321</updated>
+      <updated>1732282788362</updated>
     </task>
-    <task id="LOCAL-00018" summary="Two window added">
-      <option name="closed" value="true" />
-      <created>1731402302526</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1731402302526</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Finished base version of UI design">
-      <option name="closed" value="true" />
-      <created>1731493603200</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1731493603200</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Finished base version of UI design">
-      <option name="closed" value="true" />
-      <created>1731493620745</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1731493620745</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Finished base version of UI design">
-      <option name="closed" value="true" />
-      <created>1731493733181</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1731493733181</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Новый файл user">
-      <option name="closed" value="true" />
-      <created>1731502088782</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1731502088782</updated>
-    </task>
-    <task id="LOCAL-00023" summary="New file user">
-      <option name="closed" value="true" />
-      <created>1731502169651</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1731502169651</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Auto clear all widget before hiding window">
-      <option name="closed" value="true" />
-      <created>1731580168276</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1731580168276</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Added documentation and minor edit">
-      <option name="closed" value="true" />
-      <created>1731580185589</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1731580185589</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Fix minor design UI problems">
-      <option name="closed" value="true" />
-      <created>1731580210477</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1731580210477</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Atr hide_window in method show, new method disable_window, another check in method clear widget">
-      <option name="closed" value="true" />
-      <created>1732189101939</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1732189101939</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Build 1 with login and registration in application">
-      <option name="closed" value="true" />
-      <created>1732190326640</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1732190326640</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Update name of widgets in edit profile window">
-      <option name="closed" value="true" />
-      <created>1732190805334</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1732190805334</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Added delete ticket in history">
-      <option name="closed" value="true" />
-      <created>1732357104076</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1732357104076</updated>
-    </task>
-    <task id="LOCAL-00031" summary="build 1.3.1">
-      <option name="closed" value="true" />
-      <created>1732714231143</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1732714231143</updated>
-    </task>
-    <option name="localTasksCounter" value="32" />
+    <option name="localTasksCounter" value="18" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="RECENT_FILTERS">
@@ -520,6 +415,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit" />
+    <MESSAGE value="Error correction" />
     <MESSAGE value="Added requirements file with versions of library" />
     <MESSAGE value="Windows Engine has been moved to a separate folder" />
     <MESSAGE value="Added assertion in WindowEngine" />
@@ -531,34 +428,23 @@
     <MESSAGE value="Fix bug in data_base.py in method get_data" />
     <MESSAGE value="Added drop focus if LeftMouseButton was clicked on empty space on window" />
     <MESSAGE value="Added function in WindowEngine to connect outer function in widget when focus set" />
-    <MESSAGE value="Edit UI files" />
-    <MESSAGE value="New file Passenger" />
-    <MESSAGE value="Two window added" />
-    <MESSAGE value="Finished base version of UI design" />
-    <MESSAGE value="Новый файл user" />
-    <MESSAGE value="New file user" />
-    <MESSAGE value="Auto clear all widget before hiding window" />
-    <MESSAGE value="Added documentation and minor edit" />
-    <MESSAGE value="Fix minor design UI problems" />
-    <MESSAGE value="Atr hide_window in method show, new method disable_window, another check in method clear widget" />
-    <MESSAGE value="Build 1 with login and registration in application" />
-    <MESSAGE value="Update name of widgets in edit profile window" />
-    <MESSAGE value="Added delete ticket in history" />
-    <MESSAGE value="build 1.3.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="build 1.3.1" />
+    <MESSAGE value="relocate static method in separate file" />
+    <MESSAGE value="Added assert in method WindowEngine.get_widget" />
+    <MESSAGE value="Minor edits;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor edits;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/windows.py</url>
-          <line>38</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/data_base.py</url>
+          <line>59</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/data_base.py</url>
-          <line>59</line>
-          <option name="timeStamp" value="4" />
+          <line>70</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

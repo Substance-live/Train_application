@@ -1,6 +1,6 @@
 import datetime
 
-from PySide6.QtWidgets import QPushButton, QCheckBox, QMessageBox, QTableWidget, QTableWidgetItem
+from PySide6.QtWidgets import QPushButton, QCheckBox, QMessageBox, QTableWidget, QTableWidgetItem, QComboBox, QDateEdit
 from PySide6.QtCore import Qt
 
 #  Импорт вспомогательных классов
@@ -22,6 +22,22 @@ class Check:
             but.setEnabled(True)
         else:
             but.setEnabled(False)
+
+    @staticmethod
+    def change(combo_box: QComboBox, window, name_flag: str, items: list[str]):
+        if window.__dict__[name_flag]:
+            return
+
+        window.__dict__[name_flag] = True
+
+        text = combo_box.currentText().lower()
+
+        filtered_items = [item for item in items if text in item.lower()]
+        combo_box.clear()
+        combo_box.addItems(filtered_items)
+
+        combo_box.lineEdit().setText(text.capitalize())
+        window.__dict__[name_flag] = False
 
 
 class Show:
@@ -80,8 +96,39 @@ class Show:
         table.setSortingEnabled(True)
 
     @staticmethod
-    def ticket(engine: WindowsEngine):
+    def ticket(engine: WindowsEngine, db: DataBase):
+        data = Data.load_tickets(db)
+        stations = Data.get_stations(db)
+
+        table: QTableWidget = engine.get_widget("Ticket", "table_timetable")
+        combo_dep: QComboBox = engine.get_widget("Ticket", "combo_departure")
+        combo_arr: QComboBox = engine.get_widget("Ticket", "combo_destination")
+
+        engine.windows["Ticket"].flag_dep = False
+        engine.windows["Ticket"].flag_arr = False
+
+        combo_dep.addItems(stations)
+        combo_arr.addItems(stations)
+
         engine.show_window("Ticket")
+
+        #  Отключаем сортировку
+        table.setSortingEnabled(False)
+
+        for data_row in data:
+            row_position = table.rowCount()
+
+            # Вставляем новую строку в нижнюю часть таблицы
+            table.insertRow(row_position)
+
+            # Заполняем ячейки новыми данными
+            for index in range(6):
+                item = QTableWidgetItem(data_row[index])
+                item.setTextAlignment(Qt.AlignCenter)
+                table.setItem(row_position, index, item)
+
+        #  Включаем сортировку
+        table.setSortingEnabled(True)
 
 
 class Data:
@@ -131,13 +178,18 @@ class Data:
     @staticmethod
     def load_history(db: DataBase, user: User) -> list[list[str]]:
         data = db.get_data(
-            f"SELECT t.`idTicket`, f.`title`, f.`date`, r.`price`, s.`title` "
+            "SELECT t.`idTicket`, f.`title`, tt.`departure`, r.`price`, s.`title` "
             "FROM `ticket` as t "
             "JOIN `railcar` as r ON r.`idRailcar`=t.`idRailcar` "
-            "JOIN `flight` as f ON f.`idFlight`=t.`idFlight` "
+            "JOIN `flight` as f ON f.`idFlight`=r.`idFlight` "
             "JOIN `list_status` as s ON s.`idStatus`=t.`idStatus` "
-            f"WHERE t.`idUser`='{user.id}' "
-            "ORDER BY t.`idTicket`"
+            "JOIN ( "
+            "SELECT f.idFlight, MIN(tt.departure) as 'departure' "
+            "FROM flight AS f "
+            "JOIN timetable AS tt ON f.idFlight = tt.idFlight "
+            "GROUP BY f.idFlight) as tt ON tt.idFlight = f.idFlight "
+            f"WHERE t.`idUser`={user.id} "
+            "ORDER BY t.`idTicket` "
         )
 
         ret = []
@@ -184,19 +236,83 @@ class Data:
         table.setRowCount(0)
 
     @staticmethod
-    def load_tickets(db: DataBase, ) -> list[list[str]]:
-        data = db.get_data(
-            f"SELECT t.`idTicket`, f.`title`, f.`date`, t.`price`, s.`title` "
-            "FROM `ticket` as t "
-            "JOIN `railcar` as r ON r.`idRailcar`=t.`idRailcar` "
-            "JOIN `flight` as f ON f.`idFlight`=r.`idFlight` "
-            "JOIN `list_status` as s ON s.`idStatus`=t.`idStatus` "
-            f"WHERE t.`idUser`='{user.id}' "
-            "ORDER BY t.`idTicket`"
-        )
+    def load_tickets(db: DataBase, *args, defualt=True) -> list[list[str]]:
+        if defualt:
+            data = db.get_data(
+                "call tickets_common()"
+            )
+        else:
+            data = db.get_data(
+                f"call tickets_extended('{args[0].split()[0]}', '{args[1].split()[0]}', '{args[2].split('.')[2]}-{args[2].split('.')[1]}-{args[2].split('.')[0]}')"
+            )
 
         ret = []
         for i in data:
-            ret.append([str(i[0]), i[1], i[2].strftime("%Y-%m-%d"), str(i[3]), i[4]])
+            ret.append([i[1], i[2], i[3].strftime("%H:%M"), i[4].strftime("%H:%M"), str(int(i[5])), str(i[6])])
 
         return ret
+
+    @staticmethod
+    def get_stations(db: DataBase) -> list[str]:
+        data = db.get_data("SELECT * FROM station")
+
+        ret = []
+        for i in data:
+            ret.append(f"{i[1]} {i[2]}")
+
+        return ret
+
+    @staticmethod
+    def reload_timtable(db: DataBase, engine: WindowsEngine):
+
+        table: QTableWidget = engine.get_widget("Ticket", "table_timetable")
+        combo_dep: QComboBox = engine.get_widget("Ticket", "combo_departure")
+        combo_arr: QComboBox = engine.get_widget("Ticket", "combo_destination")
+        date_edit: QDateEdit = engine.get_widget("Ticket", "date_edit")
+
+        table.setRowCount(0)
+
+        if combo_dep.lineEdit().text() == '' or combo_arr.lineEdit().text() == '':
+            data = Data.load_tickets(db)
+            #  Отключаем сортировку
+            table.setSortingEnabled(False)
+
+            for data_row in data:
+                row_position = table.rowCount()
+
+                # Вставляем новую строку в нижнюю часть таблицы
+                table.insertRow(row_position)
+
+                # Заполняем ячейки новыми данными
+                for index in range(6):
+                    item = QTableWidgetItem(data_row[index])
+                    item.setTextAlignment(Qt.AlignCenter)
+                    table.setItem(row_position, index, item)
+
+            #  Включаем сортировку
+            table.setSortingEnabled(True)
+            return
+
+        data = Data.load_tickets(db,
+                                 combo_dep.lineEdit().text(),
+                                 combo_arr.lineEdit().text(),
+                                 date_edit.lineEdit().text(),
+                                 defualt=False)
+
+        #  Отключаем сортировку
+        table.setSortingEnabled(False)
+
+        for data_row in data:
+            row_position = table.rowCount()
+
+            # Вставляем новую строку в нижнюю часть таблицы
+            table.insertRow(row_position)
+
+            # Заполняем ячейки новыми данными
+            for index in range(6):
+                item = QTableWidgetItem(data_row[index])
+                item.setTextAlignment(Qt.AlignCenter)
+                table.setItem(row_position, index, item)
+
+        #  Включаем сортировку
+        table.setSortingEnabled(True)
