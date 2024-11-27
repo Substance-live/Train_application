@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="Added delete ticket in history">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/Ticket.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Ticket.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/static_methods.py" afterDir="false" />
-    </list>
+    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="build 1.3.1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -466,7 +461,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732357104076</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="build 1.3.1">
+      <option name="closed" value="true" />
+      <created>1732714231143</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1732714231143</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -517,7 +520,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Error correction" />
     <MESSAGE value="Added requirements file with versions of library" />
     <MESSAGE value="Windows Engine has been moved to a separate folder" />
     <MESSAGE value="Added assertion in WindowEngine" />
@@ -542,7 +544,8 @@
     <MESSAGE value="Build 1 with login and registration in application" />
     <MESSAGE value="Update name of widgets in edit profile window" />
     <MESSAGE value="Added delete ticket in history" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added delete ticket in history" />
+    <MESSAGE value="build 1.3.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="build 1.3.1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
