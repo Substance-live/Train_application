@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>808</width>
-    <height>465</height>
+    <width>934</width>
+    <height>462</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -30,8 +30,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>781</width>
-      <height>421</height>
+      <width>911</width>
+      <height>431</height>
      </rect>
     </property>
     <property name="font">
@@ -139,8 +139,8 @@
            <minute>0</minute>
            <second>0</second>
            <year>2020</year>
-           <month>10</month>
-           <day>1</day>
+           <month>9</month>
+           <day>28</day>
           </datetime>
          </property>
          <property name="displayFormat">
@@ -225,6 +225,11 @@
          <attribute name="verticalHeaderCascadingSectionResizes">
           <bool>false</bool>
          </attribute>
+         <column>
+          <property name="text">
+           <string>ID</string>
+          </property>
+         </column>
          <column>
           <property name="text">
            <string>Откуда</string>

@@ -159,6 +159,17 @@ class WindowsEngine:
                               and hasattr(self.__dict__[widget], 'setRowCount')):
                             self.__dict__[widget].setRowCount(0)
 
+                        elif (isinstance(self.__dict__[widget], QtWidgets.QListWidget)
+                              and hasattr(self.__dict__[widget], 'clear')):
+                            self.__dict__[widget].clear()
+
+                        elif (isinstance(self.__dict__[widget], QtWidgets.QSpinBox)
+                              and hasattr(self.__dict__[widget], 'setValue')):
+                            self.__dict__[widget].setValue(0)
+                        elif (isinstance(self.__dict__[widget], QtWidgets.QComboBox)
+                              and hasattr(self.__dict__[widget], 'clear')):
+                            self.__dict__[widget].clear()
+
                 else:
                     for widget in name_widgets:
                         self.__dict__[widget].clear()

@@ -18,7 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDateEdit,
     QGridLayout, QLabel, QLineEdit, QMainWindow,
     QPushButton, QRadioButton, QSizePolicy, QStatusBar,
-    QToolButton, QVBoxLayout, QWidget)
+    QVBoxLayout, QWidget)
 
 class Ui_Passenger(object):
     def setupUi(self, Passenger):
@@ -153,15 +153,6 @@ class Ui_Passenger(object):
 
         self.gridLayout.addWidget(self.but_buy, 7, 0, 1, 2)
 
-        self.but_question = QToolButton(self.layoutWidget)
-        self.but_question.setObjectName(u"but_question")
-        font2 = QFont()
-        font2.setPointSize(12)
-        self.but_question.setFont(font2)
-        self.but_question.setStyleSheet(u"")
-
-        self.gridLayout.addWidget(self.but_question, 7, 3, 1, 1)
-
         self.line_patronymic = QLineEdit(self.layoutWidget)
         self.line_patronymic.setObjectName(u"line_patronymic")
         self.line_patronymic.setFont(font)
@@ -192,24 +183,24 @@ class Ui_Passenger(object):
 
         self.gridLayout.addWidget(self.radio_female, 3, 5, 1, 1)
 
+        self.checkBox = QCheckBox(self.layoutWidget)
+        self.checkBox.setObjectName(u"checkBox")
+        self.checkBox.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+
+        self.gridLayout.addWidget(self.checkBox, 4, 0, 1, 2)
+
         self.label_price = QLabel(self.layoutWidget)
         self.label_price.setObjectName(u"label_price")
         sizePolicy1.setHeightForWidth(self.label_price.sizePolicy().hasHeightForWidth())
         self.label_price.setSizePolicy(sizePolicy1)
         self.label_price.setMinimumSize(QSize(100, 0))
         self.label_price.setSizeIncrement(QSize(0, 0))
-        font3 = QFont()
-        font3.setPointSize(14)
-        self.label_price.setFont(font3)
-        self.label_price.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+        font2 = QFont()
+        font2.setPointSize(14)
+        self.label_price.setFont(font2)
+        self.label_price.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.gridLayout.addWidget(self.label_price, 7, 2, 1, 1)
-
-        self.checkBox = QCheckBox(self.layoutWidget)
-        self.checkBox.setObjectName(u"checkBox")
-        self.checkBox.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
-
-        self.gridLayout.addWidget(self.checkBox, 4, 0, 1, 2)
+        self.gridLayout.addWidget(self.label_price, 7, 2, 1, 2)
 
         Passenger.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(Passenger)
@@ -234,13 +225,12 @@ class Ui_Passenger(object):
         self.label_num_documnt.setText(QCoreApplication.translate("Passenger", u"\u041d\u043e\u043c\u0435\u0440 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430", None))
         self.line_name.setPlaceholderText("")
         self.but_buy.setText(QCoreApplication.translate("Passenger", u"\u041a\u0443\u043f\u0438\u0442\u044c", None))
-        self.but_question.setText(QCoreApplication.translate("Passenger", u"i", None))
         self.line_patronymic.setPlaceholderText("")
         self.label_surname.setText(QCoreApplication.translate("Passenger", u"\u0424\u0430\u043c\u0438\u043b\u0438\u044f", None))
         self.label_gender.setText(QCoreApplication.translate("Passenger", u"\u041f\u043e\u043b", None))
         self.label_document.setText(QCoreApplication.translate("Passenger", u"\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442", None))
         self.radio_female.setText(QCoreApplication.translate("Passenger", u"\u0416", None))
-        self.label_price.setText(QCoreApplication.translate("Passenger", u"100$", None))
         self.checkBox.setText(QCoreApplication.translate("Passenger", u"\u042d\u0442\u043e\u0442 \u043f\u0430\u0441\u0441\u0430\u0436\u0438\u0440 - \u043f\u043e\u043a\u0443\u043f\u0430\u0442\u0435\u043b\u044c", None))
+        self.label_price.setText(QCoreApplication.translate("Passenger", u"100$", None))
     # retranslateUi
 

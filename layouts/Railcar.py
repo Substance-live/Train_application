@@ -16,22 +16,26 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractItemView, QApplication, QGridLayout, QHBoxLayout,
-    QHeaderView, QLabel, QLayout, QListWidget,
-    QListWidgetItem, QMainWindow, QPushButton, QSizePolicy,
-    QSpinBox, QSplitter, QStatusBar, QTableWidget,
-    QTableWidgetItem, QToolButton, QVBoxLayout, QWidget)
+    QHeaderView, QLabel, QLayout, QMainWindow,
+    QPushButton, QSizePolicy, QSpinBox, QSplitter,
+    QStatusBar, QTableWidget, QTableWidgetItem, QVBoxLayout,
+    QWidget)
 
 class Ui_Railcar(object):
     def setupUi(self, Railcar):
         if not Railcar.objectName():
             Railcar.setObjectName(u"Railcar")
-        Railcar.resize(619, 562)
+        Railcar.resize(905, 398)
         self.centralwidget = QWidget(Railcar)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.splitter = QSplitter(self.centralwidget)
+        self.splitter_2 = QSplitter(self.centralwidget)
+        self.splitter_2.setObjectName(u"splitter_2")
+        self.splitter_2.setGeometry(QRect(20, 20, 871, 351))
+        self.splitter_2.setOrientation(Qt.Orientation.Vertical)
+        self.splitter = QSplitter(self.splitter_2)
         self.splitter.setObjectName(u"splitter")
-        self.splitter.setGeometry(QRect(20, 21, 581, 516))
-        self.splitter.setOrientation(Qt.Orientation.Vertical)
+        self.splitter.setOrientation(Qt.Orientation.Horizontal)
+        self.splitter.setHandleWidth(14)
         self.layoutWidget = QWidget(self.splitter)
         self.layoutWidget.setObjectName(u"layoutWidget")
         self.gridLayout = QGridLayout(self.layoutWidget)
@@ -42,21 +46,13 @@ class Ui_Railcar(object):
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.label_passenger = QLabel(self.layoutWidget)
         self.label_passenger.setObjectName(u"label_passenger")
+        self.label_passenger.setMinimumSize(QSize(237, 0))
         font = QFont()
         font.setPointSize(16)
         font.setBold(True)
         self.label_passenger.setFont(font)
 
         self.gridLayout.addWidget(self.label_passenger, 0, 0, 1, 1)
-
-        self.label_filter = QLabel(self.layoutWidget)
-        self.label_filter.setObjectName(u"label_filter")
-        self.label_filter.setMinimumSize(QSize(148, 0))
-        self.label_filter.setMaximumSize(QSize(16777215, 300))
-        self.label_filter.setFont(font)
-        self.label_filter.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
-        self.gridLayout.addWidget(self.label_filter, 0, 1, 1, 1)
 
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -129,18 +125,12 @@ class Ui_Railcar(object):
 
         self.gridLayout.addLayout(self.verticalLayout, 1, 0, 1, 1)
 
-        self.list_filter = QListWidget(self.layoutWidget)
-        self.list_filter.setObjectName(u"list_filter")
-        self.list_filter.setSelectionMode(QAbstractItemView.SelectionMode.ExtendedSelection)
-        self.list_filter.setSortingEnabled(True)
-
-        self.gridLayout.addWidget(self.list_filter, 1, 1, 1, 1)
-
         self.splitter.addWidget(self.layoutWidget)
         self.layoutWidget1 = QWidget(self.splitter)
         self.layoutWidget1.setObjectName(u"layoutWidget1")
         self.verticalLayout_3 = QVBoxLayout(self.layoutWidget1)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.label_railcar = QLabel(self.layoutWidget1)
         self.label_railcar.setObjectName(u"label_railcar")
@@ -169,22 +159,24 @@ class Ui_Railcar(object):
         sizePolicy.setVerticalStretch(15)
         sizePolicy.setHeightForWidth(self.table_railcar.sizePolicy().hasHeightForWidth())
         self.table_railcar.setSizePolicy(sizePolicy)
-        self.table_railcar.setMinimumSize(QSize(0, 240))
+        self.table_railcar.setMinimumSize(QSize(583, 250))
         font2 = QFont()
         font2.setPointSize(8)
         self.table_railcar.setFont(font2)
+        self.table_railcar.setAlternatingRowColors(False)
         self.table_railcar.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.table_railcar.setSortingEnabled(True)
         self.table_railcar.horizontalHeader().setVisible(True)
         self.table_railcar.horizontalHeader().setMinimumSectionSize(32)
-        self.table_railcar.horizontalHeader().setDefaultSectionSize(115)
+        self.table_railcar.horizontalHeader().setDefaultSectionSize(122)
         self.table_railcar.horizontalHeader().setProperty(u"showSortIndicator", True)
         self.table_railcar.verticalHeader().setVisible(False)
 
         self.verticalLayout_3.addWidget(self.table_railcar)
 
         self.splitter.addWidget(self.layoutWidget1)
-        self.layoutWidget2 = QWidget(self.splitter)
+        self.splitter_2.addWidget(self.splitter)
+        self.layoutWidget2 = QWidget(self.splitter_2)
         self.layoutWidget2.setObjectName(u"layoutWidget2")
         self.horizontalLayout_6 = QHBoxLayout(self.layoutWidget2)
         self.horizontalLayout_6.setSpacing(7)
@@ -206,17 +198,9 @@ class Ui_Railcar(object):
         font3 = QFont()
         font3.setPointSize(15)
         self.label_price.setFont(font3)
+        self.label_price.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_4.addWidget(self.label_price)
-
-        self.but_information = QToolButton(self.layoutWidget2)
-        self.but_information.setObjectName(u"but_information")
-        font4 = QFont()
-        font4.setPointSize(12)
-        self.but_information.setFont(font4)
-        self.but_information.setStyleSheet(u"")
-
-        self.horizontalLayout_4.addWidget(self.but_information)
 
 
         self.horizontalLayout_5.addLayout(self.horizontalLayout_4)
@@ -229,7 +213,7 @@ class Ui_Railcar(object):
 
         self.horizontalLayout_6.addWidget(self.but_back)
 
-        self.splitter.addWidget(self.layoutWidget2)
+        self.splitter_2.addWidget(self.layoutWidget2)
         Railcar.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(Railcar)
         self.statusbar.setObjectName(u"statusbar")
@@ -243,7 +227,6 @@ class Ui_Railcar(object):
     def retranslateUi(self, Railcar):
         Railcar.setWindowTitle(QCoreApplication.translate("Railcar", u"Railcar", None))
         self.label_passenger.setText(QCoreApplication.translate("Railcar", u"\u0423\u043a\u0430\u0436\u0438\u0442\u0435 \u043f\u0430\u0441\u0441\u0430\u0436\u0438\u0440\u043e\u0432", None))
-        self.label_filter.setText(QCoreApplication.translate("Railcar", u"\u0424\u0438\u043b\u044c\u0442\u0440", None))
         self.label_baby.setText(QCoreApplication.translate("Railcar", u"\u041c\u0430\u043b\u044b\u0448\u0438 \u0434\u043e 5 \u043b\u0435\u0442 \u0431\u0435\u0437 \u043c\u0435\u0441\u0442\u0430, \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e", None))
         self.label_children.setText(QCoreApplication.translate("Railcar", u"\u0414\u0435\u0442\u0438 \u0434\u043e 10 \u043b\u0435\u0442 \u0441 \u043c\u0435\u0441\u0442\u043e\u043c, \u0434\u0435\u0448\u0435\u0432\u043b\u0435", None))
         self.label_adult.setText(QCoreApplication.translate("Railcar", u"\u0412\u0437\u0440\u043e\u0441\u043b\u044b\u0435 \u0438 \u0434\u0435\u0442\u0438\n"
@@ -261,7 +244,6 @@ class Ui_Railcar(object):
         ___qtablewidgetitem4.setText(QCoreApplication.translate("Railcar", u"\u0426\u0435\u043d\u0430", None));
         self.but_to_passenger.setText(QCoreApplication.translate("Railcar", u"\u041a \u043f\u0430\u0441\u0441\u0430\u0436\u0438\u0440\u0430\u043c", None))
         self.label_price.setText(QCoreApplication.translate("Railcar", u"100$", None))
-        self.but_information.setText(QCoreApplication.translate("Railcar", u"i", None))
         self.but_back.setText(QCoreApplication.translate("Railcar", u"\u041d\u0430\u0437\u0430\u0434", None))
     # retranslateUi
 

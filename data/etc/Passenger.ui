@@ -254,21 +254,6 @@
        </property>
       </widget>
      </item>
-     <item row="7" column="3">
-      <widget class="QToolButton" name="but_question">
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="text">
-        <string>i</string>
-       </property>
-      </widget>
-     </item>
      <item row="3" column="3">
       <widget class="QLineEdit" name="line_patronymic">
        <property name="font">
@@ -329,7 +314,17 @@
        </property>
       </widget>
      </item>
-     <item row="7" column="2">
+     <item row="4" column="0" colspan="2">
+      <widget class="QCheckBox" name="checkBox">
+       <property name="layoutDirection">
+        <enum>Qt::LayoutDirection::LeftToRight</enum>
+       </property>
+       <property name="text">
+        <string>Этот пассажир - покупатель</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="2" colspan="2">
       <widget class="QLabel" name="label_price">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -358,17 +353,7 @@
         <string>100$</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0" colspan="2">
-      <widget class="QCheckBox" name="checkBox">
-       <property name="layoutDirection">
-        <enum>Qt::LayoutDirection::LeftToRight</enum>
-       </property>
-       <property name="text">
-        <string>Этот пассажир - покупатель</string>
+        <set>Qt::AlignmentFlag::AlignCenter</set>
        </property>
       </widget>
      </item>

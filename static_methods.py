@@ -1,12 +1,14 @@
 import datetime
 
-from PySide6.QtWidgets import QPushButton, QCheckBox, QMessageBox, QTableWidget, QTableWidgetItem, QComboBox, QDateEdit
+from PySide6.QtWidgets import (QPushButton, QCheckBox, QMessageBox, QTableWidget, QTableWidgetItem, QComboBox,
+                               QDateEdit, QLabel, QSpinBox)
 from PySide6.QtCore import Qt
 
 #  Импорт вспомогательных классов
 from windows import WindowsEngine
 from data_base import DataBase
 from user import User
+from ticket import Ticket
 
 
 def get_rand_passwd() -> str:
@@ -58,7 +60,8 @@ class Show:
         engine.get_widget("Registr", "but_registr").setEnabled(False)
 
     @staticmethod
-    def profile(engine: WindowsEngine):
+    def profile(engine: WindowsEngine, ticket: Ticket):
+        ticket.reset_values()
         engine.show_window("Profile")
 
     @staticmethod
@@ -122,7 +125,7 @@ class Show:
             table.insertRow(row_position)
 
             # Заполняем ячейки новыми данными
-            for index in range(6):
+            for index in range(7):
                 item = QTableWidgetItem(data_row[index])
                 item.setTextAlignment(Qt.AlignCenter)
                 table.setItem(row_position, index, item)
@@ -131,8 +134,65 @@ class Show:
         table.setSortingEnabled(True)
 
     @staticmethod
-    def railcar(engine: WindowsEngine, db: DataBase):
+    def railcar(engine: WindowsEngine, db: DataBase, ticket: Ticket):
+        table_last: QTableWidget = engine.get_widget("Ticket", "table_timetable")
+        table: QTableWidget = engine.get_widget("Railcar", "table_railcar")
+
+        row = table_last.item(table_last.currentRow(), 0)
+        if row is None:
+            item = ticket.id
+        else:
+            item = row.text()
+            ticket.id = int(item)
+
+        ticket.railcar = -1
+
+        data = Data.loar_railcars(db, item)
+
+        engine.get_widget("Railcar", "label_price").setText("0$")
+
         engine.show_window("Railcar")
+
+        #  Отключаем сортировку
+        table.setSortingEnabled(False)
+
+        for data_row in data:
+            row_position = table.rowCount()
+
+            # Вставляем новую строку в нижнюю часть таблицы
+            table.insertRow(row_position)
+
+            # Заполняем ячейки новыми данными
+            for index in range(5):
+                item = QTableWidgetItem(data_row[index])
+                item.setTextAlignment(Qt.AlignCenter)
+                table.setItem(row_position, index, item)
+
+        #  Включаем сортировку
+        table.setSortingEnabled(True)
+
+    @staticmethod
+    def passenger(engine: WindowsEngine, db: DataBase, ticket: Ticket):
+        last_price: QLabel = engine.get_widget("Railcar", "label_price")
+        last_table: QTableWidget = engine.get_widget("Railcar", "table_railcar")
+        last_spin_child: QSpinBox = engine.get_widget("Railcar", "spin_box_children")
+        last_spin_adult: QSpinBox = engine.get_widget("Railcar", "spin_box_adult")
+
+        id_railcar = int(last_table.item(last_table.currentRow(), 0).text())
+        price = int(last_price.text()[:-1])
+        count_passenger = int(last_spin_adult.value()) + int(last_spin_child.value())
+
+        ticket.railcar = id_railcar
+        ticket.price = price
+        ticket.count_passenger = count_passenger
+
+        label: QLabel = engine.get_widget("Passenger", "label_price")
+        combo_passenger: QComboBox = engine.get_widget("Passenger", "combo_passenger")
+
+        engine.show_window("Passenger")
+
+        label.setText(f"{price}$")
+        combo_passenger.addItems([f"Пассажир {i}" for i in range(1, count_passenger + 1)])
 
 
 class Data:
@@ -142,7 +202,7 @@ class Data:
         user.logout()
 
     @staticmethod
-    def login(engine: WindowsEngine, db: DataBase, user: User, email: str, password: str):
+    def login(engine: WindowsEngine, db: DataBase, user: User, email: str, password: str, ticket: Ticket):
 
         id_user = db.get_data("SELECT `idUser` "
                               "FROM `user` "
@@ -156,7 +216,7 @@ class Data:
         user.load_profile(id_user[0])
         QMessageBox.information(engine.windows['Login'], "Успешная авторизации",
                                 "Авторизация прошла успешно", QMessageBox.Ok)
-        Show.profile(engine)
+        Show.profile(engine, ticket)
 
     @staticmethod
     def registr(engine: WindowsEngine, db: DataBase, email: str):
@@ -252,7 +312,8 @@ class Data:
 
         ret = []
         for i in data:
-            ret.append([i[1], i[2], i[3].strftime("%H:%M"), i[4].strftime("%H:%M"), str(int(i[5])), str(i[6])])
+            ret.append([str(i[0]), i[1], i[2], i[3].strftime("%H:%M"),
+                        i[4].strftime("%H:%M"), str(int(i[5])), str(i[6])])
 
         return ret
 
@@ -288,7 +349,7 @@ class Data:
                 table.insertRow(row_position)
 
                 # Заполняем ячейки новыми данными
-                for index in range(6):
+                for index in range(7):
                     item = QTableWidgetItem(data_row[index])
                     item.setTextAlignment(Qt.AlignCenter)
                     table.setItem(row_position, index, item)
@@ -313,7 +374,7 @@ class Data:
             table.insertRow(row_position)
 
             # Заполняем ячейки новыми данными
-            for index in range(6):
+            for index in range(7):
                 item = QTableWidgetItem(data_row[index])
                 item.setTextAlignment(Qt.AlignCenter)
                 table.setItem(row_position, index, item)
@@ -333,3 +394,28 @@ class Data:
 
         combo_arr.lineEdit().setText(text_arr)
         combo_dep.lineEdit().setText(text_dep)
+
+    @staticmethod
+    def loar_railcars(db: DataBase, id_flight: str) -> list[list[str]]:
+        data = db.get_data(f"call railcar_table({id_flight})")
+
+        ret = []
+        for i in data:
+            ret.append([str(i[0]), str(i[1]), i[2], i[3], str(i[4])])
+
+        return ret
+
+    @staticmethod
+    def reload_price(db: DataBase, engine: WindowsEngine):
+        label: QLabel = engine.get_widget("Railcar", "label_price")
+        spin_child: QSpinBox = engine.get_widget("Railcar", "spin_box_children")
+        spin_adult: QSpinBox = engine.get_widget("Railcar", "spin_box_adult")
+        table: QTableWidget = engine.get_widget("Railcar", "table_railcar")
+
+        selected_row = table.item(table.currentRow(), 4)
+        if selected_row is None:
+            return
+        price = int(selected_row.text())
+
+        ret = (spin_adult.value() + spin_child.value()) * price
+        label.setText(f"{ret}$")

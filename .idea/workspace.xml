@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="Added search tickets">
+    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="build 1.4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/Passenger.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Passenger.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/Railcar.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Railcar.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/etc/Ticket.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Ticket.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dump_bd.sql" beforeDir="false" afterPath="$PROJECT_DIR$/dump_bd.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/Passenger.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Passenger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/Railcar.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Railcar.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/layouts/Ticket.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Ticket.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/static_methods.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windows.py" beforeDir="false" afterPath="$PROJECT_DIR$/windows.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +70,7 @@
     "Python.example.executor": "Run",
     "Python.main (1).executor": "Run",
     "Python.main.executor": "Run",
+    "Python.ticket.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -123,28 +128,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="date_line" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TrainApplication" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/workbench" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/workbench/date_line.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="example" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TrainApplication" />
       <option name="ENV_FILES" value="" />
@@ -189,10 +172,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="ticket" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TrainApplication" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ticket.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Python.ticket" />
       <item itemvalue="Python.example" />
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.date_line" />
       <item itemvalue="Python.combo_line" />
       <item itemvalue="Python.convet_ui_files" />
     </list>
@@ -200,9 +205,9 @@
       <list>
         <item itemvalue="Python.main" />
         <item itemvalue="Python.convet_ui_files" />
+        <item itemvalue="Python.ticket" />
         <item itemvalue="Python.combo_line" />
         <item itemvalue="Python.example" />
-        <item itemvalue="Python.date_line" />
       </list>
     </recent_temporary>
   </component>
@@ -366,7 +371,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732729237368</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="build 1.4">
+      <option name="closed" value="true" />
+      <created>1732739405530</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1732739405530</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -437,17 +450,7 @@
     <MESSAGE value="Added assert in method WindowEngine.get_widget" />
     <MESSAGE value="Minor edits;" />
     <MESSAGE value="Added search tickets" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added search tickets" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/data_base.py</url>
-          <line>59</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="build 1.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="build 1.4" />
   </component>
 </project>

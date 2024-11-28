@@ -24,7 +24,7 @@ class Ui_Ticket(object):
     def setupUi(self, Ticket):
         if not Ticket.objectName():
             Ticket.setObjectName(u"Ticket")
-        Ticket.resize(808, 465)
+        Ticket.resize(934, 462)
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(10)
         sizePolicy.setVerticalStretch(20)
@@ -37,7 +37,7 @@ class Ui_Ticket(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.layoutWidget = QWidget(self.centralwidget)
         self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(10, 10, 781, 421))
+        self.layoutWidget.setGeometry(QRect(10, 10, 911, 431))
         font1 = QFont()
         font1.setPointSize(9)
         self.layoutWidget.setFont(font1)
@@ -87,7 +87,7 @@ class Ui_Ticket(object):
         self.date_edit = QDateEdit(self.layoutWidget)
         self.date_edit.setObjectName(u"date_edit")
         self.date_edit.setFont(font1)
-        self.date_edit.setDateTime(QDateTime(QDate(2020, 10, 1), QTime(0, 0, 0)))
+        self.date_edit.setDateTime(QDateTime(QDate(2020, 9, 28), QTime(0, 0, 0)))
         self.date_edit.setCalendarPopup(True)
 
         self.gridLayout.addWidget(self.date_edit, 1, 3, 1, 1)
@@ -104,8 +104,8 @@ class Ui_Ticket(object):
         self.gridLayout_2 = QGridLayout()
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.table_timetable = QTableWidget(self.layoutWidget)
-        if (self.table_timetable.columnCount() < 6):
-            self.table_timetable.setColumnCount(6)
+        if (self.table_timetable.columnCount() < 7):
+            self.table_timetable.setColumnCount(7)
         __qtablewidgetitem = QTableWidgetItem()
         self.table_timetable.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
@@ -118,6 +118,8 @@ class Ui_Ticket(object):
         self.table_timetable.setHorizontalHeaderItem(4, __qtablewidgetitem4)
         __qtablewidgetitem5 = QTableWidgetItem()
         self.table_timetable.setHorizontalHeaderItem(5, __qtablewidgetitem5)
+        __qtablewidgetitem6 = QTableWidgetItem()
+        self.table_timetable.setHorizontalHeaderItem(6, __qtablewidgetitem6)
         self.table_timetable.setObjectName(u"table_timetable")
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy1.setHorizontalStretch(15)
@@ -179,17 +181,19 @@ class Ui_Ticket(object):
         self.date_edit.setDisplayFormat(QCoreApplication.translate("Ticket", u"dd.MM.yyyy", None))
         self.but_search.setText(QCoreApplication.translate("Ticket", u"\u041d\u0430\u0439\u0442\u0438 \u0431\u0438\u043b\u0435\u0442", None))
         ___qtablewidgetitem = self.table_timetable.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("Ticket", u"\u041e\u0442\u043a\u0443\u0434\u0430", None));
+        ___qtablewidgetitem.setText(QCoreApplication.translate("Ticket", u"ID", None));
         ___qtablewidgetitem1 = self.table_timetable.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("Ticket", u"\u041a\u0443\u0434\u0430", None));
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("Ticket", u"\u041e\u0442\u043a\u0443\u0434\u0430", None));
         ___qtablewidgetitem2 = self.table_timetable.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("Ticket", u"\u0412\u0440\u0435\u043c\u044f \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0438", None));
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("Ticket", u"\u041a\u0443\u0434\u0430", None));
         ___qtablewidgetitem3 = self.table_timetable.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("Ticket", u"\u0412\u0440\u0435\u043c\u044f \u043f\u0440\u0438\u0431\u044b\u0442\u0438\u044f", None));
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("Ticket", u"\u0412\u0440\u0435\u043c\u044f \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0438", None));
         ___qtablewidgetitem4 = self.table_timetable.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("Ticket", u"\u041a\u043e\u043b-\u0432\u043e \u043c\u0435\u0441\u0442", None));
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("Ticket", u"\u0412\u0440\u0435\u043c\u044f \u043f\u0440\u0438\u0431\u044b\u0442\u0438\u044f", None));
         ___qtablewidgetitem5 = self.table_timetable.horizontalHeaderItem(5)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("Ticket", u"\u0426\u0435\u043d\u0430", None));
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("Ticket", u"\u041a\u043e\u043b-\u0432\u043e \u043c\u0435\u0441\u0442", None));
+        ___qtablewidgetitem6 = self.table_timetable.horizontalHeaderItem(6)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("Ticket", u"\u0426\u0435\u043d\u0430", None));
         self.but_back.setText(QCoreApplication.translate("Ticket", u"\u041d\u0430\u0437\u0430\u0434", None))
         self.but_confirm.setText(QCoreApplication.translate("Ticket", u"\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u043c\u0435\u0441\u0442\u0430", None))
     # retranslateUi

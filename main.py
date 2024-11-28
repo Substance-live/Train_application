@@ -47,7 +47,7 @@ class Main:
         )
         self.db = DataBase()
         self.user = User(self.db)
-
+        self.current_ticket = Ticket()
         self.connect_widgets()
 
     def connect_widgets(self):
@@ -97,6 +97,7 @@ class Main:
                     self.user,
                     self.engine.get_widget("Login", "entry_email").text(),
                     self.engine.get_widget("Login", "entry_passwd").text(),
+                    self.current_ticket
                 ),
             )
         )
@@ -161,7 +162,8 @@ class Main:
                     self.engine.get_widget("EditProfile", "date_edit").date().toString("yyyy-MM-dd"),
                 ),
                 Show.profile(
-                    self.engine
+                    self.engine,
+                    self.current_ticket
                 ),
             )
         )
@@ -173,6 +175,7 @@ class Main:
         self.engine.get_widget("EditProfile", "but_return").clicked.connect(
             lambda: Show.profile(
                 self.engine,
+                self.current_ticket,
             )
         )
 
@@ -180,6 +183,7 @@ class Main:
         self.engine.get_widget("MyTickets", "but_return").clicked.connect(
             lambda: Show.profile(
                 self.engine,
+                self.current_ticket
             )
         )
         self.engine.get_widget("MyTickets", "but_refund").clicked.connect(
@@ -241,12 +245,55 @@ class Main:
         self.engine.get_widget("Ticket", "but_back").clicked.connect(
             lambda: Show.profile(
                 self.engine,
+                self.current_ticket
             )
         )
         self.engine.get_widget("Ticket", "but_confirm").clicked.connect(
             lambda: Show.railcar(
                 self.engine,
                 self.db,
+                self.current_ticket,
+            )
+        )
+
+        #  Подключение для окна вагонов
+        self.engine.get_widget("Railcar", "but_back").clicked.connect(
+            lambda: Show.ticket(
+                self.engine,
+                self.db,
+            )
+        )
+        self.engine.get_widget("Railcar", "table_railcar").currentCellChanged.connect(
+            lambda: Data.reload_price(
+                self.db,
+                self.engine
+            )
+        )
+        self.engine.get_widget("Railcar", "spin_box_children").valueChanged.connect(
+            lambda: Data.reload_price(
+                self.db,
+                self.engine
+            )
+        )
+        self.engine.get_widget("Railcar", "spin_box_adult").valueChanged.connect(
+            lambda: Data.reload_price(
+                self.db,
+                self.engine
+            )
+        )
+        self.engine.get_widget("Railcar", "but_to_passenger").clicked.connect(
+            lambda: Show.passenger(
+                self.engine,
+                self.db,
+                self.current_ticket,
+            )
+        )
+        #  Подключение для окна пассажиров
+        self.engine.get_widget("Passenger", "but_back").clicked.connect(
+            lambda: Show.railcar(
+                self.engine,
+                self.db,
+                self.current_ticket
             )
         )
 
