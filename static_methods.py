@@ -2,7 +2,7 @@ import datetime
 
 from PySide6.QtWidgets import (QPushButton, QCheckBox, QMessageBox, QTableWidget, QTableWidgetItem, QComboBox,
                                QDateEdit, QLabel, QSpinBox)
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, QDate
 
 #  Импорт вспомогательных классов
 from windows import WindowsEngine
@@ -40,6 +40,23 @@ class Check:
 
         combo_box.lineEdit().setText(text.capitalize())
         window.__dict__[name_flag] = False
+
+    @staticmethod
+    def save_data_passenger(combo_box: QComboBox, window, ticket: Ticket):
+        surname: str = window.line_surname.text()
+        name: str = window.line_name.text()
+        patronymic: str = window.line_patronymic.text()
+        gender_m: str = window.radio_male.isChecked()
+        gender_f: str = window.radio_female.isChecked()
+        birthday: str = window.date_birthday.date()
+        id_doc: int = window.combo_document.currentIndex()
+        number_doc: str = window.line_num_document.text()
+
+        print(combo_box.currentIndex(), ticket.people)
+        ticket.people[combo_box.currentIndex()] = [surname, name, patronymic, gender_m, gender_f, birthday, id_doc,
+                                                   number_doc]
+
+        print(ticket.people)
 
 
 class Show:
@@ -185,6 +202,7 @@ class Show:
         ticket.railcar = id_railcar
         ticket.price = price
         ticket.count_passenger = count_passenger
+        ticket.people = [['', '', '', False, False, QDate(2000, 1, 1), -1, ''] for i in range(ticket.count_passenger)]
 
         label: QLabel = engine.get_widget("Passenger", "label_price")
         combo_passenger: QComboBox = engine.get_widget("Passenger", "combo_passenger")
@@ -193,6 +211,7 @@ class Show:
 
         label.setText(f"{price}$")
         combo_passenger.addItems([f"Пассажир {i}" for i in range(1, count_passenger + 1)])
+
 
 
 class Data:
@@ -419,3 +438,28 @@ class Data:
 
         ret = (spin_adult.value() + spin_child.value()) * price
         label.setText(f"{ret}$")
+
+    @staticmethod
+    def load_passenger(engine: WindowsEngine, ticket: Ticket):
+        window = engine.windows["Passenger"]
+        index: int = engine.get_widget("Passenger", "combo_passenger").currentIndex()
+
+        print("index", index)
+
+        if index == -1:
+            return
+
+        lst = ticket.people[index]
+
+        engine.get_widget("Passenger", "combo_document").clear()
+        engine.get_widget("Passenger", "combo_document").addItems(["Паспорт",
+                                                                   "Военный билет", "Лицензированный документ"])
+
+        window.line_surname.setText(lst[0])
+        window.line_name.setText(lst[1])
+        window.line_patronymic.setText(lst[2])
+        window.radio_male.setChecked(lst[3])
+        window.radio_female.setChecked(lst[4])
+        window.date_birthday.setDate(lst[5])
+        window.combo_document.setCurrentIndex(lst[6])
+        window.line_num_document.setText(lst[7])

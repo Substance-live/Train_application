@@ -121,6 +121,7 @@ class Ui_Passenger(object):
 
         self.combo_document = QComboBox(self.layoutWidget)
         self.combo_document.setObjectName(u"combo_document")
+        self.combo_document.setMinimumSize(QSize(99, 0))
         self.combo_document.setFont(font)
 
         self.gridLayout.addWidget(self.combo_document, 6, 0, 1, 1)

@@ -187,6 +187,12 @@
      </item>
      <item row="6" column="0">
       <widget class="QComboBox" name="combo_document">
+       <property name="minimumSize">
+        <size>
+         <width>99</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="font">
         <font>
          <pointsize>9</pointsize>

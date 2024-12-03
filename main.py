@@ -296,6 +296,37 @@ class Main:
                 self.current_ticket
             )
         )
+        self.engine.get_widget("Passenger", "but_buy").clicked.connect(
+            lambda: (
+                QMessageBox.information(self.engine.windows['Login'], "Покупка",
+                                        "Билет успешно приобретён", QMessageBox.Ok),
+                self.db.update_data(f"INSERT INTO `train`.`ticket` ("
+                                    f"`idUser`, "
+                                    f"`idRailcar`, "
+                                    f"`idPassenger`, "
+                                    f"`idStatus`, "
+                                    f"`idFlight`) VALUES ({self.user.id}, "
+                                    f"{self.current_ticket.railcar}, "
+                                    f"1, "
+                                    f"3, "
+                                    f"{self.current_ticket.id});"),
+                Show.profile(
+                    self.engine,
+                    self.current_ticket,
+                ),
+
+            )
+        )
+        self.engine.get_widget("Passenger", "combo_passenger").highlighted.connect(
+            lambda: Check.save_data_passenger(self.engine.get_widget("Passenger", "combo_passenger"),
+                                      self.engine.windows["Passenger"], self.current_ticket)
+        )
+        self.engine.get_widget("Passenger", "combo_passenger").currentIndexChanged.connect(
+            lambda: Data.load_passenger(
+                self.engine,
+                self.current_ticket
+            )
+        )
 
 
 if __name__ == '__main__':

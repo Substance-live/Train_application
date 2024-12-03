@@ -8,12 +8,16 @@ class Ticket:
         self.__price: int = -1
         self.__count_passenger: int = -1
 
+        self.people: list = []
+
     def __str__(self):
-        return f"(idFlight={self.__id}, idRailcar={self.__railcar}, price={self.__price})"
+        return f"(idFlight={self.__id}, idRailcar={self.__railcar}, price={self.__price}, count={self.__count_passenger})"
 
     def reset_values(self):
         for attr in self.__dict__.keys():
             self.__dict__[attr] = -1
+
+        self.people = []
 
     @property
     def id(self):
