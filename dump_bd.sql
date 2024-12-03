@@ -297,6 +297,189 @@ LOCK TABLES `user` WRITE;
 INSERT INTO `user` VALUES (1,'admin@mail.ru','admin','Steve','Jobs','Yakov','+79197629181','2002-12-10'),(2,'test@mail.ru','testpassword','testname','testsurname','testpatronymic','+79999999999','2000-01-01'),(3,'user_1@gmail.com','random_password',NULL,NULL,NULL,NULL,NULL),(4,'1','1','3','3','3','3','2000-01-01');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'train'
+--
+/*!50003 DROP PROCEDURE IF EXISTS `railcar_filter` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `railcar_filter`(IN id_flight INT)
+BEGIN
+	SELECT  distinct `type`
+	FROM railcar AS r
+	LEFT JOIN (
+		select idRailcar, count(idTicket) as "seat"
+		from ticket
+		where idStatus = 3
+		group by idRailcar) as t ON t.idRailcar = r.idRailcar
+	WHERE r.idFlight = id_flight;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `railcar_table` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `railcar_table`(IN id_flight INT)
+BEGIN
+	SELECT  r.idRailcar, r.count_of_seat - COALESCE(t.seat, 0), r.class_of_service, r.type, r.price
+	FROM railcar AS r
+	LEFT JOIN (
+		select idRailcar, count(idTicket) as "seat"
+		from ticket
+		where idStatus = 3
+		group by idRailcar) as t ON t.idRailcar = r.idRailcar
+	WHERE r.idFlight = id_flight;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `tickets_common` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `tickets_common`()
+BEGIN
+SELECT 
+    f.idFlight,
+    (SELECT CONCAT(s1.title, " ",s1.city)
+     FROM timetable AS tt1 
+     JOIN station AS s1 ON tt1.idStation = s1.idStation 
+     WHERE tt1.idFlight = f.idFlight 
+       AND tt1.departure = MIN(tt.departure)) AS "Откуда",
+    (SELECT CONCAT(s2.title, " ", s2.city)
+     FROM timetable AS tt2 
+     JOIN station AS s2 ON tt2.idStation = s2.idStation 
+     WHERE tt2.idFlight = f.idFlight 
+       AND tt2.arrival = MAX(tt.arrival)) AS "Куда",
+	MIN(tt.departure) AS "Время отправки",
+    MAX(tt.arrival) AS "Время прибытия",
+        s.seat as "Кол-во мест",
+    p.price as "Минимальная цена"
+FROM flight AS f
+JOIN timetable AS tt ON f.idFlight = tt.idFlight
+JOIN (
+	SELECT DISTINCT r.idFlight, min(price) as "price"
+	FROM railcar as r
+	JOIN flight as f ON f.idFlight = r.idFlight
+	GROUP BY r.idFlight
+) as p ON p.idFlight = f.idFlight
+JOIN (
+	SELECT f.idFlight, (sum(r.count_of_seat) - count(t.idTicket)) as "seat"
+	FROM railcar as r
+	JOIN flight as f ON f.idFlight = r.idFlight
+	LEFT JOIN (select * from ticket where idStatus = 3) as t ON t.idRailcar = r.idRailcar
+    group by f.idFlight
+) as s ON s.idFlight = f.idFlight
+GROUP BY f.idFlight;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `tickets_extended` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `tickets_extended`(IN first_station VARCHAR(45), IN last_station VARCHAR(45), IN `date` DATE)
+BEGIN
+
+SELECT idStation INTO first_station
+FROM station
+WHERE title = first_station;
+    
+SELECT idStation INTO last_station
+FROM station
+WHERE title = last_station;
+
+
+SELECT t1.idFlight,
+       CONCAT(t1.title, ' ',t1.city) as "Откуда",
+       CONCAT(t2.title, ' ',t2.city) as "Куда",
+       t1.departure AS "Время отправки",
+       MAX(t2.arrival) AS "Время прибытия",  -- Здесь используем MAX
+       s.seat AS "Кол-во мест",
+       p.price AS "Минимальная цена"
+FROM (
+    SELECT t.idFlight, s.title, s.city, t.departure
+    FROM timetable AS t
+    JOIN station AS s ON s.idStation = t.idStation
+    WHERE t.idStation = first_station 
+      AND t.idFlight IN (
+          SELECT t1.idFlight
+          FROM timetable AS t1
+          JOIN timetable AS t2 ON t1.idFlight = t2.idFlight
+          WHERE t1.idStation = first_station
+            AND t2.idStation = last_station
+            AND t1.departure < t2.departure)
+) AS t1
+JOIN (
+    SELECT t.idFlight, s.title, s.city, t.arrival
+    FROM timetable AS t
+    JOIN station AS s ON s.idStation = t.idStation
+    WHERE t.idStation = last_station 
+      AND t.idFlight IN (
+          SELECT t1.idFlight
+          FROM timetable AS t1
+          JOIN timetable AS t2 ON t1.idFlight = t2.idFlight
+          WHERE t1.idStation = first_station
+            AND t2.idStation = last_station
+            AND t1.departure < t2.departure)
+) AS t2 ON t2.idFlight = t1.idFlight
+JOIN (
+    SELECT DISTINCT r.idFlight, MIN(price) AS "price"
+    FROM railcar AS r
+    JOIN flight AS f ON f.idFlight = r.idFlight
+    GROUP BY r.idFlight
+) AS p ON t1.idFlight = p.idFlight
+JOIN (
+    SELECT f.idFlight, (sum(r.count_of_seat) - count(t.idTicket)) as "seat"
+	FROM railcar as r
+	JOIN flight as f ON f.idFlight = r.idFlight
+	LEFT JOIN (select * from ticket where idStatus = 3) as t ON t.idRailcar = r.idRailcar
+    group by f.idFlight
+) AS s ON t1.idFlight = s.idFlight
+GROUP BY t1.idFlight, t1.title, t1.departure, t2.title, t1.city, t2.city, s.seat, p.price  -- Группируем по этим полям
+HAVING DATE(MAX(t2.arrival)) = `date`
+LIMIT 0, 1000;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -307,4 +490,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-29  0:00:45
+-- Dump completed on 2024-12-03 10:07:00
