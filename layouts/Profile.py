@@ -17,6 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QLabel, QMainWindow, QPushButton,
     QSizePolicy, QSplitter, QVBoxLayout, QWidget)
+import res
 
 class Ui_Profile(object):
     def setupUi(self, Profile):
@@ -48,14 +49,15 @@ class Ui_Profile(object):
         self.label_image_2.setAccessibleDescription(u"")
 #endif // QT_CONFIG(accessibility)
         self.label_image_2.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.label_image_2.setStyleSheet(u"image: url(:/icon/data/image/default_user.png);")
         self.label_image_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.splitter.addWidget(self.label_image_2)
-        self.widget = QWidget(self.splitter)
-        self.widget.setObjectName(u"widget")
-        self.verticalLayout = QVBoxLayout(self.widget)
+        self.layoutWidget = QWidget(self.splitter)
+        self.layoutWidget.setObjectName(u"layoutWidget")
+        self.verticalLayout = QVBoxLayout(self.layoutWidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.but_edit = QPushButton(self.widget)
+        self.but_edit = QPushButton(self.layoutWidget)
         self.but_edit.setObjectName(u"but_edit")
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
         sizePolicy1.setHorizontalStretch(0)
@@ -68,7 +70,7 @@ class Ui_Profile(object):
 
         self.verticalLayout.addWidget(self.but_edit)
 
-        self.but_orders = QPushButton(self.widget)
+        self.but_orders = QPushButton(self.layoutWidget)
         self.but_orders.setObjectName(u"but_orders")
         sizePolicy1.setHeightForWidth(self.but_orders.sizePolicy().hasHeightForWidth())
         self.but_orders.setSizePolicy(sizePolicy1)
@@ -76,7 +78,7 @@ class Ui_Profile(object):
 
         self.verticalLayout.addWidget(self.but_orders)
 
-        self.but_timetable = QPushButton(self.widget)
+        self.but_timetable = QPushButton(self.layoutWidget)
         self.but_timetable.setObjectName(u"but_timetable")
         sizePolicy1.setHeightForWidth(self.but_timetable.sizePolicy().hasHeightForWidth())
         self.but_timetable.setSizePolicy(sizePolicy1)
@@ -84,7 +86,7 @@ class Ui_Profile(object):
 
         self.verticalLayout.addWidget(self.but_timetable)
 
-        self.but_logout = QPushButton(self.widget)
+        self.but_logout = QPushButton(self.layoutWidget)
         self.but_logout.setObjectName(u"but_logout")
         sizePolicy1.setHeightForWidth(self.but_logout.sizePolicy().hasHeightForWidth())
         self.but_logout.setSizePolicy(sizePolicy1)
@@ -92,7 +94,7 @@ class Ui_Profile(object):
 
         self.verticalLayout.addWidget(self.but_logout)
 
-        self.splitter.addWidget(self.widget)
+        self.splitter.addWidget(self.layoutWidget)
         Profile.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(Profile)
@@ -102,7 +104,7 @@ class Ui_Profile(object):
 
     def retranslateUi(self, Profile):
         Profile.setWindowTitle(QCoreApplication.translate("Profile", u"Profile", None))
-        self.label_image_2.setText(QCoreApplication.translate("Profile", u"\u041a\u0430\u0440\u0442\u0438\u043d\u043a\u0430", None))
+        self.label_image_2.setText("")
         self.but_edit.setText(QCoreApplication.translate("Profile", u"\u0420\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043f\u0440\u043e\u0444\u0438\u043b\u044c", None))
         self.but_orders.setText(QCoreApplication.translate("Profile", u"\u041c\u043e\u0438 \u0431\u0438\u043b\u0435\u0442\u044b", None))
         self.but_timetable.setText(QCoreApplication.translate("Profile", u"\u0420\u0430\u0441\u043f\u0438\u0441\u0430\u043d\u0438\u0435 \u0438 \u0446\u0435\u043d\u044b", None))

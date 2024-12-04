@@ -108,15 +108,14 @@ class Main:
                 self.engine,
             )
         )
+        self.engine.get_widget("FastLogin", "but_send_messenge").clicked.connect(
+            lambda: QMessageBox.information(self.engine.windows['FastLogin'], "Авторизация",
+                                    "На почту отправлен пароль для авторизации", QMessageBox.Ok)
+        )
         self.engine.get_widget("FastLogin", "but_registr").clicked.connect(
             lambda: Show.registr(
                 self.engine
             )
-        )
-        self.engine.get_widget("FastLogin", "but_send_messenge").clicked.connect(
-            lambda: Data.send_message(
-                self.engine,
-            )  # NOT WORKING
         )
 
         #  Подключения для окна профиля

@@ -18,6 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QCheckBox, QGridLayout, QLabel,
     QLineEdit, QMainWindow, QPushButton, QSizePolicy,
     QStatusBar, QWidget)
+import res
 
 class Ui_Registr(object):
     def setupUi(self, Registr):
@@ -50,6 +51,7 @@ class Ui_Registr(object):
         self.label_image.setAccessibleDescription(u"")
 #endif // QT_CONFIG(accessibility)
         self.label_image.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.label_image.setStyleSheet(u"image: url(:/icon/data/image/start_image.png);")
         self.label_image.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.gridLayout.addWidget(self.label_image, 0, 0, 1, 2)
@@ -122,7 +124,7 @@ class Ui_Registr(object):
 
     def retranslateUi(self, Registr):
         Registr.setWindowTitle(QCoreApplication.translate("Registr", u"Registr", None))
-        self.label_image.setText(QCoreApplication.translate("Registr", u"\u041a\u0430\u0440\u0442\u0438\u043d\u043a\u0430", None))
+        self.label_image.setText("")
         self.entry_mail.setPlaceholderText(QCoreApplication.translate("Registr", u"\u0410\u0434\u0440\u0435\u0441 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u043e\u0439 \u043f\u043e\u0447\u0442\u044b", None))
         self.check_confirm.setText(QCoreApplication.translate("Registr", u"\u0414\u0430\u044e \u0441\u043e\u0433\u043b\u0430\u0441\u0438\u0435 \u043d\u0430 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0443 \u043f\u0435\u0440\u0441\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0445 \u0434\u0430\u043d\u043d\u044b\u0445", None))
         self.but_registr.setText(QCoreApplication.translate("Registr", u"\u0417\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u0442\u044c\u0441\u044f", None))

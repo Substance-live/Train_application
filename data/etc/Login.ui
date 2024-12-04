@@ -60,8 +60,11 @@
        <property name="layoutDirection">
         <enum>Qt::LayoutDirection::LeftToRight</enum>
        </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/icon/data/image/start_image.png);</string>
+       </property>
        <property name="text">
-        <string>Картинка</string>
+        <string/>
        </property>
        <property name="alignment">
         <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -198,6 +201,8 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../res.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -18,6 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLineEdit,
     QMainWindow, QPushButton, QSizePolicy, QStatusBar,
     QVBoxLayout, QWidget)
+import res
 
 class Ui_Login(object):
     def setupUi(self, Login):
@@ -54,6 +55,7 @@ class Ui_Login(object):
         self.label_image.setAccessibleDescription(u"")
 #endif // QT_CONFIG(accessibility)
         self.label_image.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.label_image.setStyleSheet(u"image: url(:/icon/data/image/start_image.png);")
         self.label_image.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout.addWidget(self.label_image)
@@ -132,7 +134,7 @@ class Ui_Login(object):
 
     def retranslateUi(self, Login):
         Login.setWindowTitle(QCoreApplication.translate("Login", u"Login", None))
-        self.label_image.setText(QCoreApplication.translate("Login", u"\u041a\u0430\u0440\u0442\u0438\u043d\u043a\u0430", None))
+        self.label_image.setText("")
         self.entry_email.setPlaceholderText(QCoreApplication.translate("Login", u"\u0410\u0434\u0440\u0435\u0441 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u043e\u0439 \u043f\u043e\u0447\u0442\u044b", None))
         self.entry_passwd.setPlaceholderText(QCoreApplication.translate("Login", u"\u041f\u0430\u0440\u043e\u043b\u044c", None))
         self.but_login.setText(QCoreApplication.translate("Login", u"\u0412\u043e\u0439\u0442\u0438", None))

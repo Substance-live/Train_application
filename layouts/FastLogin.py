@@ -18,6 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLineEdit,
     QMainWindow, QPushButton, QSizePolicy, QStatusBar,
     QVBoxLayout, QWidget)
+import res
 
 class Ui_FastLogin(object):
     def setupUi(self, FastLogin):
@@ -54,6 +55,7 @@ class Ui_FastLogin(object):
         self.label_image.setAccessibleDescription(u"")
 #endif // QT_CONFIG(accessibility)
         self.label_image.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.label_image.setStyleSheet(u"image:url(:/icon/data/image/start_image.png)")
         self.label_image.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout.addWidget(self.label_image)
@@ -137,7 +139,7 @@ class Ui_FastLogin(object):
 
     def retranslateUi(self, FastLogin):
         FastLogin.setWindowTitle(QCoreApplication.translate("FastLogin", u"FastLogin", None))
-        self.label_image.setText(QCoreApplication.translate("FastLogin", u"\u041a\u0430\u0440\u0442\u0438\u043d\u043a\u0430", None))
+        self.label_image.setText("")
         self.label_note.setText(QCoreApplication.translate("FastLogin", u"\u0423\u043a\u0430\u0436\u0438\u0442\u0435 \u043f\u043e\u0447\u0442\u0443, \u043a\u043e\u0442\u043e\u0440\u0443\u044e \u0443\u043a\u0430\u0437\u044b\u0432\u0430\u043b\u0438 \u043f\u0440\u0438 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438, \u0447\u0442\u043e\u0431\u044b \u043f\u043e\u043b\u0443\u0447\u0438\u0442\u044c \u043a\u043e\u0434 \u0434\u043b\u044f \u0431\u044b\u0441\u0442\u0440\u043e\u0433\u043e \u0432\u0445\u043e\u0434\u0430 \u0432 \u0430\u043a\u043a\u0430\u0443\u043d\u0442.", None))
         self.entry_email.setPlaceholderText(QCoreApplication.translate("FastLogin", u"\u0410\u0434\u0440\u0435\u0441 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u043e\u0439 \u043f\u043e\u0447\u0442\u044b", None))
         self.but_send_messenge.setText(QCoreApplication.translate("FastLogin", u"\u041f\u043e\u043b\u0443\u0447\u0438\u0442\u044c \u043a\u043e\u0434", None))
