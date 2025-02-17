@@ -247,10 +247,10 @@ class Show:
 class Data:
     @staticmethod
     def add_row(engine: WindowsEngine, db: DataBase):
-        table = engine.get_widget("AdminUsers", "table")
         db.update_data(
-            "DELETE FROM `train`.`user` "
-            f"WHERE `idUser` = '{id_deleted_row}';"
+            "INSERT INTO `train`.`user`"
+            "(`email`,`password`,`name`,`surname`,`patronymic`,`phone`,`birthday`)"
+            'VALUES ("", "", "", "", "", "", "2020-01-01");'
         )
         QMessageBox.information(engine.windows['AdminUsers'], "Пустой пользователь добавлен",
                                 "Пользователь успешно добавлен", QMessageBox.Ok)

@@ -76,6 +76,18 @@ class Main:
                 self.engine
             )
         )
+        self.engine.get_widget("AdminUsers", "but_add").clicked.connect(
+            lambda: (
+                Data.add_row(
+                    self.engine,
+                    self.db
+                ),
+                Show.admin_users(
+                    self.engine,
+                    self.db
+                )
+            )
+        )
         self.engine.get_widget("AdminUsers", "but_del").clicked.connect(
             lambda: (
                 Data.delete_row(
