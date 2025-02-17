@@ -62,6 +62,37 @@ class Check:
 class Show:
 
     @staticmethod
+    def admin_users(engine: WindowsEngine, db: DataBase):
+
+        #  Загружаем данные из бд и подготавливаем переменную с таблицей
+        data = Data.load_admin_users(db)
+        table: QTableWidget = engine.get_widget("AdminUsers", "table")
+
+        engine.show_window("AdminUsers")
+
+        #  Отключаем сортировку
+        table.setSortingEnabled(False)
+
+        for data_row in data:
+            row_position = table.rowCount()
+
+            # Вставляем новую строку в нижнюю часть таблицы
+            table.insertRow(row_position)
+
+            # Заполняем ячейки новыми данными
+            for index in range(8):
+                item = QTableWidgetItem(data_row[index])
+                item.setTextAlignment(Qt.AlignCenter)
+                table.setItem(row_position, index, item)
+
+        #  Включаем сортировку
+        table.setSortingEnabled(True)
+
+    @staticmethod
+    def admin_profile(engine: WindowsEngine):
+        engine.show_window("AdminProfile")
+
+    @staticmethod
     def alter_login(engine: WindowsEngine):
         engine.show_window("FastLogin")
 
@@ -213,8 +244,30 @@ class Show:
         combo_passenger.addItems([f"Пассажир {i}" for i in range(1, count_passenger + 1)])
 
 
-
 class Data:
+    @staticmethod
+    def add_row(engine: WindowsEngine, db: DataBase):
+        table = engine.get_widget("AdminUsers", "table")
+        db.update_data(
+            "DELETE FROM `train`.`user` "
+            f"WHERE `idUser` = '{id_deleted_row}';"
+        )
+        QMessageBox.information(engine.windows['AdminUsers'], "Пустой пользователь добавлен",
+                                "Пользователь успешно добавлен", QMessageBox.Ok)
+
+    @staticmethod
+    def delete_row(engine: WindowsEngine, db: DataBase):
+        table = engine.get_widget("AdminUsers", "table")
+        id_deleted_row = table.item(table.currentRow(), 0).text()
+        db.update_data(
+            "DELETE FROM `train`.`ticket`"
+            f"WHERE `idUser` = '{id_deleted_row}';")
+        db.update_data(
+            "DELETE FROM `train`.`user` "
+            f"WHERE `idUser` = '{id_deleted_row}';"
+        )
+        QMessageBox.information(engine.windows['AdminUsers'], "Пользователь удалён",
+                                "Пользователь успешно удален", QMessageBox.Ok)
 
     @staticmethod
     def logout(user: User):
@@ -222,6 +275,17 @@ class Data:
 
     @staticmethod
     def login(engine: WindowsEngine, db: DataBase, user: User, email: str, password: str, ticket: Ticket):
+
+        id_admin = db.get_data(
+            "SELECT `idAdmin` "
+            "FROM `admin` "
+            f"WHERE `email`='{email}' AND `password`='{password}'", single_line=True)
+
+        if not (id_admin is None):
+            QMessageBox.information(engine.windows['Login'], "Успешная авторизации администратора",
+                                    "Администратор успешно авторизирован", QMessageBox.Ok)
+            Show.admin_profile(engine)
+            return
 
         id_user = db.get_data("SELECT `idUser` "
                               "FROM `user` "
@@ -257,6 +321,20 @@ class Data:
                        f"`phone` = '{args[3]}',"
                        f"`birthday` = '{args[4]}' "
                        f"WHERE `idUser` = {user.id};")
+
+    @staticmethod
+    def load_admin_users(db: DataBase) -> list[list[str]]:
+        data = db.get_data(
+            "SELECT * FROM `user`"
+        )
+        print(data)
+        ret = []
+        for i in data:
+            ret.append(list(i))
+            ret[-1][0] = str(ret[-1][0])
+            ret[-1][7] = ret[-1][7].strftime("%Y-%m-%d")
+
+        return ret
 
     @staticmethod
     def load_history(db: DataBase, user: User) -> list[list[str]]:
@@ -325,6 +403,7 @@ class Data:
                 "call tickets_common()"
             )
         else:
+            print(args, "example")
             data = db.get_data(
                 f"call tickets_extended('{args[0].split()[0]}', '{args[1].split()[0]}', '{args[2].split('.')[2]}-{args[2].split('.')[1]}-{args[2].split('.')[0]}')"
             )

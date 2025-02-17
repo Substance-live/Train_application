@@ -3,7 +3,7 @@ from PySide6.QtWidgets import QApplication
 
 #  Импорт форм окон
 from layouts import (Ui_EditProfile, Ui_FastLogin, Ui_Login, Ui_MyTickets, Ui_Passenger, Ui_Profile, Ui_Railcar,
-                     Ui_Registr, Ui_Ticket, Ui_mail_message)
+                     Ui_Registr, Ui_Ticket, Ui_mail_message, Ui_AdminTickets, Ui_AdminUsers, Ui_AdminProfile)
 
 #  Импорт вспомогательных классов
 from static_methods import *
@@ -44,6 +44,10 @@ class Main:
             Ui_Registr,
             Ui_Ticket,
             Ui_mail_message,
+            Ui_AdminTickets,
+            Ui_AdminUsers,
+            Ui_AdminProfile,
+
         )
         self.db = DataBase()
         self.user = User(self.db)
@@ -52,6 +56,38 @@ class Main:
 
     def connect_widgets(self):
         """Назначает всем виджетам сигналы"""
+
+        # Подключение для окна профиля админа
+        self.engine.get_widget("AdminProfile", "but_logout").clicked.connect(
+            lambda: Show.login(
+                self.engine
+            )
+        )
+        self.engine.get_widget("AdminProfile", "but_users").clicked.connect(
+            lambda: Show.admin_users(
+                self.engine,
+                self.db
+            )
+        )
+
+        # Подключение для окна пользователи администратора
+        self.engine.get_widget("AdminUsers", "but_return").clicked.connect(
+            lambda: Show.admin_profile(
+                self.engine
+            )
+        )
+        self.engine.get_widget("AdminUsers", "but_del").clicked.connect(
+            lambda: (
+                Data.delete_row(
+                    self.engine,
+                    self.db
+                ),
+                Show.admin_users(
+                    self.engine,
+                    self.db
+                )
+            )
+        )
 
         # Подключение для окна регистрации
         self.engine.get_widget("Registr", "but_login").clicked.connect(
@@ -110,7 +146,7 @@ class Main:
         )
         self.engine.get_widget("FastLogin", "but_send_messenge").clicked.connect(
             lambda: QMessageBox.information(self.engine.windows['FastLogin'], "Авторизация",
-                                    "На почту отправлен пароль для авторизации", QMessageBox.Ok)
+                                            "На почту отправлен пароль для авторизации", QMessageBox.Ok)
         )
         self.engine.get_widget("FastLogin", "but_registr").clicked.connect(
             lambda: Show.registr(
@@ -318,7 +354,7 @@ class Main:
         )
         self.engine.get_widget("Passenger", "combo_passenger").highlighted.connect(
             lambda: Check.save_data_passenger(self.engine.get_widget("Passenger", "combo_passenger"),
-                                      self.engine.windows["Passenger"], self.current_ticket)
+                                              self.engine.windows["Passenger"], self.current_ticket)
         )
         self.engine.get_widget("Passenger", "combo_passenger").currentIndexChanged.connect(
             lambda: Data.load_passenger(
@@ -331,5 +367,5 @@ class Main:
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     main = Main()
-    main.engine.show_window("Login")
+    Show.admin_users(main.engine, main.db)
     sys.exit(app.exec())

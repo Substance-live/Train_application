@@ -8,6 +8,9 @@ from .Railcar import *
 from .Registr import *
 from .Ticket import *
 from .mail_message import *
+from .AdminUsers import *
+from .AdminTickets import *
+from .AdminProfile import *
 
 __all__ = [
     EditProfile,
@@ -20,4 +23,7 @@ __all__ = [
     Registr,
     Ticket,
     mail_message,
+    AdminTickets,
+    AdminUsers,
+    AdminProfile
 ]
