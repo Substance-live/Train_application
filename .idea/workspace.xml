@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="Added role admin and adminUsers window">
+    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="added adminUsers">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_12_2024_10_01__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_12_2024_10_07__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_12_2024_9_16__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/AdminTickets.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/AdminTickets.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/AdminTickets.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/AdminTickets.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/static_methods.py" afterDir="false" />
     </list>
@@ -411,7 +417,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739789516252</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="added adminUsers">
+      <option name="closed" value="true" />
+      <created>1739789816131</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1739789816131</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -487,14 +501,15 @@
     <MESSAGE value="complete build with images" />
     <MESSAGE value="Added dump" />
     <MESSAGE value="Added role admin and adminUsers window" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added role admin and adminUsers window" />
+    <MESSAGE value="added adminUsers" />
+    <option name="LAST_COMMIT_MESSAGE" value="added adminUsers" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>381</line>
+          <line>411</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>

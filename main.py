@@ -69,6 +69,12 @@ class Main:
                 self.db
             )
         )
+        self.engine.get_widget("AdminProfile", "but_flight").clicked.connect(
+            lambda: Show.admin_flight(
+                self.engine,
+                self.db
+            )
+        )
 
         # Подключение для окна пользователи администратора
         self.engine.get_widget("AdminUsers", "but_return").clicked.connect(
@@ -98,6 +104,30 @@ class Main:
                     self.engine,
                     self.db
                 )
+            )
+        )
+        self.engine.get_widget("AdminUsers", "table").cellChanged.connect(
+            lambda row, column: Data.edit_cell(
+                row,
+                self.engine,
+                self.db
+            )
+        )
+
+        # Подключение для окна рейсов администратора
+        self.engine.get_widget("AdminTickets", "but_back").clicked.connect(
+            lambda: Show.admin_profile(
+                self.engine
+            )
+        )
+        self.engine.get_widget("AdminTickets", "but_del").clicked.connect(
+            lambda: Data.delete_row_flight(
+                self.engine
+            )
+        )
+        self.engine.get_widget("AdminTickets", "but_add").clicked.connect(
+            lambda: Data.add_row_flight(
+                self.engine
             )
         )
 
@@ -379,5 +409,5 @@ class Main:
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     main = Main()
-    Show.admin_users(main.engine, main.db)
+    Show.admin_profile(main.engine)
     sys.exit(app.exec())

@@ -62,6 +62,34 @@ class Check:
 class Show:
 
     @staticmethod
+    def admin_flight(engine: WindowsEngine, db: DataBase):
+        #  Загружаем данные из бд и подготавливаем переменную с таблицей
+        data = Data.load_admin_flight(db)
+        table: QTableWidget = engine.get_widget("AdminTickets", "table_timetable")
+
+        engine.show_window("AdminTickets")
+
+        #  Отключаем сортировку
+        table.setSortingEnabled(False)
+        table.blockSignals(True)
+
+        for data_row in data:
+            row_position = table.rowCount()
+
+            # Вставляем новую строку в нижнюю часть таблицы
+            table.insertRow(row_position)
+
+            # Заполняем ячейки новыми данными
+            for index in range(7):
+                item = QTableWidgetItem(data_row[index])
+                item.setTextAlignment(Qt.AlignCenter)
+                table.setItem(row_position, index, item)
+
+        #  Включаем сортировку
+        table.setSortingEnabled(True)
+        table.blockSignals(False)
+
+    @staticmethod
     def admin_users(engine: WindowsEngine, db: DataBase):
 
         #  Загружаем данные из бд и подготавливаем переменную с таблицей
@@ -72,6 +100,7 @@ class Show:
 
         #  Отключаем сортировку
         table.setSortingEnabled(False)
+        table.blockSignals(True)
 
         for data_row in data:
             row_position = table.rowCount()
@@ -87,6 +116,7 @@ class Show:
 
         #  Включаем сортировку
         table.setSortingEnabled(True)
+        table.blockSignals(False)
 
     @staticmethod
     def admin_profile(engine: WindowsEngine):
@@ -246,6 +276,24 @@ class Show:
 
 class Data:
     @staticmethod
+    def edit_cell(row, engine: WindowsEngine, db: DataBase):
+        table = engine.get_widget("AdminUsers", "table")
+        id_user = table.item(row, 0).text()
+        ret = []
+        for i in range(1, table.columnCount()):
+            ret.append(table.item(row, i).text())
+        db.update_data(
+            "UPDATE `train`.`user` SET "
+            f"`email` = '{ret[0]}',"
+            f"`password` = '{ret[1]}',"
+            f"`name` = '{ret[2]}',"
+            f"`surname` = '{ret[3]}',"
+            f"`patronymic` = '{ret[4]}',"
+            f"`phone` = '{ret[5]}',"
+            f"`birthday` = '{ret[6]}'"
+            f"WHERE `idUser` = '{id_user}';")
+
+    @staticmethod
     def add_row(engine: WindowsEngine, db: DataBase):
         db.update_data(
             "INSERT INTO `train`.`user`"
@@ -254,6 +302,19 @@ class Data:
         )
         QMessageBox.information(engine.windows['AdminUsers'], "Пустой пользователь добавлен",
                                 "Пользователь успешно добавлен", QMessageBox.Ok)
+
+    @staticmethod
+    def delete_row_flight(engine: WindowsEngine):
+        table = engine.get_widget("AdminTickets", "table_timetable")
+        table.removeRow(table.currentRow())
+
+    @staticmethod
+    def add_row_flight(engine: WindowsEngine):
+        table = engine.get_widget("AdminTickets", "table_timetable")
+        row_position = table.rowCount()
+
+        # Вставляем новую строку в нижнюю часть таблицы
+        table.insertRow(row_position)
 
     @staticmethod
     def delete_row(engine: WindowsEngine, db: DataBase):
@@ -321,6 +382,20 @@ class Data:
                        f"`phone` = '{args[3]}',"
                        f"`birthday` = '{args[4]}' "
                        f"WHERE `idUser` = {user.id};")
+
+    @staticmethod
+    def load_admin_flight(db: DataBase) -> list[list[str]]:
+        data = db.get_data(
+            "call tickets_common()"
+        )
+        print(data)
+        ret = []
+        for i in data:
+            ret.append([str(i[0]), i[1], i[2], i[3].strftime("%Y-%m-%d"), i[4].strftime("%Y-%m-%d"), str(i[5]), str(i[6])])
+
+        print(ret)
+
+        return ret
 
     @staticmethod
     def load_admin_users(db: DataBase) -> list[list[str]]:

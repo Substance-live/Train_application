@@ -15,17 +15,16 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractItemView, QApplication, QComboBox, QDateEdit,
-    QGridLayout, QHBoxLayout, QHeaderView, QLabel,
-    QMainWindow, QPushButton, QSizePolicy, QStatusBar,
-    QTableWidget, QTableWidgetItem, QToolButton, QVBoxLayout,
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QGridLayout, QHBoxLayout,
+    QHeaderView, QMainWindow, QPushButton, QSizePolicy,
+    QStatusBar, QTableWidget, QTableWidgetItem, QVBoxLayout,
     QWidget)
 
 class Ui_AdminTickets(object):
     def setupUi(self, AdminTickets):
         if not AdminTickets.objectName():
             AdminTickets.setObjectName(u"AdminTickets")
-        AdminTickets.resize(947, 439)
+        AdminTickets.resize(935, 446)
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(10)
         sizePolicy.setVerticalStretch(20)
@@ -38,70 +37,13 @@ class Ui_AdminTickets(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.layoutWidget = QWidget(self.centralwidget)
         self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(10, 10, 921, 401))
+        self.layoutWidget.setGeometry(QRect(10, 10, 911, 401))
         font1 = QFont()
         font1.setPointSize(9)
         self.layoutWidget.setFont(font1)
         self.verticalLayout = QVBoxLayout(self.layoutWidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.gridLayout = QGridLayout()
-        self.gridLayout.setObjectName(u"gridLayout")
-        self.label = QLabel(self.layoutWidget)
-        self.label.setObjectName(u"label")
-        self.label.setFont(font1)
-
-        self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
-
-        self.label_2 = QLabel(self.layoutWidget)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setFont(font1)
-
-        self.gridLayout.addWidget(self.label_2, 0, 2, 1, 1)
-
-        self.label_3 = QLabel(self.layoutWidget)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setFont(font1)
-
-        self.gridLayout.addWidget(self.label_3, 0, 3, 1, 1)
-
-        self.combo_departure = QComboBox(self.layoutWidget)
-        self.combo_departure.setObjectName(u"combo_departure")
-        self.combo_departure.setFont(font1)
-        self.combo_departure.setEditable(True)
-
-        self.gridLayout.addWidget(self.combo_departure, 1, 0, 1, 1)
-
-        self.but_switch = QToolButton(self.layoutWidget)
-        self.but_switch.setObjectName(u"but_switch")
-        self.but_switch.setFont(font1)
-
-        self.gridLayout.addWidget(self.but_switch, 1, 1, 1, 1)
-
-        self.combo_destination = QComboBox(self.layoutWidget)
-        self.combo_destination.setObjectName(u"combo_destination")
-        self.combo_destination.setFont(font1)
-        self.combo_destination.setEditable(True)
-
-        self.gridLayout.addWidget(self.combo_destination, 1, 2, 1, 1)
-
-        self.date_edit = QDateEdit(self.layoutWidget)
-        self.date_edit.setObjectName(u"date_edit")
-        self.date_edit.setFont(font1)
-        self.date_edit.setDateTime(QDateTime(QDate(2020, 9, 24), QTime(0, 0, 0)))
-        self.date_edit.setCalendarPopup(True)
-
-        self.gridLayout.addWidget(self.date_edit, 1, 3, 1, 1)
-
-        self.but_search = QPushButton(self.layoutWidget)
-        self.but_search.setObjectName(u"but_search")
-        self.but_search.setFont(font1)
-
-        self.gridLayout.addWidget(self.but_search, 1, 4, 1, 1)
-
-
-        self.verticalLayout.addLayout(self.gridLayout)
-
         self.gridLayout_2 = QGridLayout()
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.table_timetable = QTableWidget(self.layoutWidget)
@@ -186,16 +128,6 @@ class Ui_AdminTickets(object):
 
     def retranslateUi(self, AdminTickets):
         AdminTickets.setWindowTitle(QCoreApplication.translate("AdminTickets", u"AdminTickets", None))
-        self.label.setText(QCoreApplication.translate("AdminTickets", u"\u041e\u0442\u043a\u0443\u0434\u0430", None))
-        self.label_2.setText(QCoreApplication.translate("AdminTickets", u"\u041a\u0443\u0434\u0430", None))
-        self.label_3.setText(QCoreApplication.translate("AdminTickets", u"\u0414\u0430\u0442\u0430", None))
-        self.combo_departure.setCurrentText("")
-        self.combo_departure.setPlaceholderText(QCoreApplication.translate("AdminTickets", u"\u041e\u0442\u043a\u0443\u0434\u0430", None))
-        self.but_switch.setText(QCoreApplication.translate("AdminTickets", u"><", None))
-        self.combo_destination.setCurrentText("")
-        self.combo_destination.setPlaceholderText(QCoreApplication.translate("AdminTickets", u"\u041a\u0443\u0434\u0430", None))
-        self.date_edit.setDisplayFormat(QCoreApplication.translate("AdminTickets", u"dd.MM.yyyy", None))
-        self.but_search.setText(QCoreApplication.translate("AdminTickets", u"\u041d\u0430\u0439\u0442\u0438 \u0431\u0438\u043b\u0435\u0442", None))
         ___qtablewidgetitem = self.table_timetable.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("AdminTickets", u"ID", None));
         ___qtablewidgetitem1 = self.table_timetable.horizontalHeaderItem(1)
