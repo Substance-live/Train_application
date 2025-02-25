@@ -16,6 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `admin`
+--
+
+DROP TABLE IF EXISTS `admin`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `admin` (
+  `idAdmin` int NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  PRIMARY KEY (`idAdmin`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `admin`
+--
+
+LOCK TABLES `admin` WRITE;
+/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+INSERT INTO `admin` VALUES (1,'admin@test.ru','admin');
+/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `document`
 --
 
@@ -23,13 +48,13 @@ DROP TABLE IF EXISTS `document`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `document` (
-  `idDocument` int NOT NULL,
+  `idDocument` int NOT NULL AUTO_INCREMENT,
   `idTypeDocument` int NOT NULL,
   `number` int NOT NULL,
   PRIMARY KEY (`idDocument`),
   KEY `fk_document_type_document1_idx` (`idTypeDocument`),
   CONSTRAINT `fk_document_type_document1` FOREIGN KEY (`idTypeDocument`) REFERENCES `type_document` (`idTypeDocument`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +63,7 @@ CREATE TABLE `document` (
 
 LOCK TABLES `document` WRITE;
 /*!40000 ALTER TABLE `document` DISABLE KEYS */;
-INSERT INTO `document` VALUES (1,1,12345678),(2,2,87654321),(3,3,13579246),(4,1,24681357);
+INSERT INTO `document` VALUES (1,1,12345678),(2,2,87654321),(3,3,13579246),(4,1,24681357),(9,1,1337800),(10,1,1224),(11,1,12223),(12,3,13367),(13,3,13367),(14,3,13376),(15,3,13376);
 /*!40000 ALTER TABLE `document` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -98,7 +123,7 @@ DROP TABLE IF EXISTS `passenger`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `passenger` (
-  `idPassenger` int NOT NULL,
+  `idPassenger` int NOT NULL AUTO_INCREMENT,
   `idDocument` int NOT NULL,
   `name` varchar(45) NOT NULL,
   `surname` varchar(45) NOT NULL,
@@ -108,7 +133,7 @@ CREATE TABLE `passenger` (
   PRIMARY KEY (`idPassenger`),
   KEY `fk_Passenger_Document1_idx` (`idDocument`),
   CONSTRAINT `fk_Passenger_Document1` FOREIGN KEY (`idDocument`) REFERENCES `document` (`idDocument`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -117,7 +142,7 @@ CREATE TABLE `passenger` (
 
 LOCK TABLES `passenger` WRITE;
 /*!40000 ALTER TABLE `passenger` DISABLE KEYS */;
-INSERT INTO `passenger` VALUES (1,1,'John','Doe',NULL,'M','1990-01-01'),(2,2,'Jane','Smith','Ann','F','1985-05-12'),(3,3,'Alice','Johnson',NULL,'F','1992-07-23'),(4,4,'Bob','Brown',NULL,'M','1980-12-15');
+INSERT INTO `passenger` VALUES (1,1,'John','Doe',NULL,'M','1990-01-01'),(2,2,'Jane','Smith','Ann','F','1985-05-12'),(3,3,'Alice','Johnson',NULL,'F','1992-07-23'),(4,4,'Bob','Brown',NULL,'M','1980-12-15'),(10,9,'Сергей','Пронин','Дмитриевич','*','*'),(11,10,'Сергей','Пронин','Дмитриевич','*','*'),(12,11,'Сергей','Пронин','Дмитриевич','*','*'),(13,12,'Сергей','Пронин','Дмитриевич','*','*'),(14,13,'Сергей','Пронин','Дмитриевич','*','*'),(15,14,'Сергей','Пронин','Дмитриевич','*','*'),(16,15,'Сергей','Пронин','Дмитриевич','*','*');
 /*!40000 ALTER TABLE `passenger` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -190,6 +215,7 @@ CREATE TABLE `ticket` (
   `idPassenger` int NOT NULL,
   `idStatus` int NOT NULL,
   `idFlight` int NOT NULL,
+  `count` int DEFAULT NULL,
   PRIMARY KEY (`idTicket`),
   KEY `fk_ticket_user_idx` (`idUser`),
   KEY `fk_ticket_railcar1_idx` (`idRailcar`),
@@ -201,7 +227,7 @@ CREATE TABLE `ticket` (
   CONSTRAINT `fk_ticket_passenger1` FOREIGN KEY (`idPassenger`) REFERENCES `passenger` (`idPassenger`),
   CONSTRAINT `fk_ticket_railcar1` FOREIGN KEY (`idRailcar`) REFERENCES `railcar` (`idRailcar`),
   CONSTRAINT `fk_ticket_user` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -210,7 +236,7 @@ CREATE TABLE `ticket` (
 
 LOCK TABLES `ticket` WRITE;
 /*!40000 ALTER TABLE `ticket` DISABLE KEYS */;
-INSERT INTO `ticket` VALUES (1,4,2,2,3,2),(2,4,1,2,2,1),(4,4,1,1,3,1);
+INSERT INTO `ticket` VALUES (8,1,2,10,3,2,1),(9,1,1,11,3,1,2),(10,1,2,12,3,2,2),(13,1,9,16,3,6,3);
 /*!40000 ALTER TABLE `ticket` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -285,7 +311,7 @@ CREATE TABLE `user` (
   `phone` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `birthday` date DEFAULT NULL,
   PRIMARY KEY (`idUser`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -294,7 +320,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'admin@mail.ru','admin','Steve','Jobs','Yakov','+79197629181','2002-12-10'),(2,'test@mail.ru','testpassword','testname','testsurname','testpatronymic','+79999999999','2000-01-01'),(3,'user_1@gmail.com','random_password',NULL,NULL,NULL,NULL,NULL),(4,'1','1','Сергей','Пронин','Дмитриевич','+71234567890','2002-01-15'),(6,'test@mail.ru','random_password',NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `user` VALUES (1,'user@mail.ru','admin','Steve','Jobs','Yakov','+79197629181','2002-12-10'),(2,'test@mail.ru','testpassword','testname','testsurname','testpatronymic','+79999999999','2000-01-01'),(10,'32','32','32','','','','2020-01-01');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -365,17 +391,17 @@ DELIMITER ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `tickets_common`()
 BEGIN
-SELECT 
+SELECT
     f.idFlight,
     (SELECT CONCAT(s1.title, " ",s1.city)
-     FROM timetable AS tt1 
-     JOIN station AS s1 ON tt1.idStation = s1.idStation 
-     WHERE tt1.idFlight = f.idFlight 
+     FROM timetable AS tt1
+     JOIN station AS s1 ON tt1.idStation = s1.idStation
+     WHERE tt1.idFlight = f.idFlight
        AND tt1.departure = MIN(tt.departure)) AS "Откуда",
     (SELECT CONCAT(s2.title, " ", s2.city)
-     FROM timetable AS tt2 
-     JOIN station AS s2 ON tt2.idStation = s2.idStation 
-     WHERE tt2.idFlight = f.idFlight 
+     FROM timetable AS tt2
+     JOIN station AS s2 ON tt2.idStation = s2.idStation
+     WHERE tt2.idFlight = f.idFlight
        AND tt2.arrival = MAX(tt.arrival)) AS "Куда",
 	MIN(tt.departure) AS "Время отправки",
     MAX(tt.arrival) AS "Время прибытия",
@@ -419,7 +445,7 @@ BEGIN
 SELECT idStation INTO first_station
 FROM station
 WHERE title = first_station;
-    
+
 SELECT idStation INTO last_station
 FROM station
 WHERE title = last_station;
@@ -436,7 +462,7 @@ FROM (
     SELECT t.idFlight, s.title, s.city, t.departure
     FROM timetable AS t
     JOIN station AS s ON s.idStation = t.idStation
-    WHERE t.idStation = first_station 
+    WHERE t.idStation = first_station
       AND t.idFlight IN (
           SELECT t1.idFlight
           FROM timetable AS t1
@@ -449,7 +475,7 @@ JOIN (
     SELECT t.idFlight, s.title, s.city, t.arrival
     FROM timetable AS t
     JOIN station AS s ON s.idStation = t.idStation
-    WHERE t.idStation = last_station 
+    WHERE t.idStation = last_station
       AND t.idFlight IN (
           SELECT t1.idFlight
           FROM timetable AS t1
@@ -490,4 +516,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-04 18:53:36
+-- Dump completed on 2025-02-25 18:28:55
