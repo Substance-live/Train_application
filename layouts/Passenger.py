@@ -207,6 +207,18 @@ class Ui_Passenger(object):
         self.statusbar = QStatusBar(Passenger)
         self.statusbar.setObjectName(u"statusbar")
         Passenger.setStatusBar(self.statusbar)
+        QWidget.setTabOrder(self.line_surname, self.line_name)
+        QWidget.setTabOrder(self.line_name, self.line_patronymic)
+        QWidget.setTabOrder(self.line_patronymic, self.combo_document)
+        QWidget.setTabOrder(self.combo_document, self.line_num_document)
+        QWidget.setTabOrder(self.line_num_document, self.but_buy)
+        QWidget.setTabOrder(self.but_buy, self.radio_male)
+        QWidget.setTabOrder(self.radio_male, self.date_birthday)
+        QWidget.setTabOrder(self.date_birthday, self.combo_passenger)
+        QWidget.setTabOrder(self.combo_passenger, self.check_patronymic)
+        QWidget.setTabOrder(self.check_patronymic, self.radio_female)
+        QWidget.setTabOrder(self.radio_female, self.checkBox)
+        QWidget.setTabOrder(self.checkBox, self.but_back)
 
         self.retranslateUi(Passenger)
 

@@ -23,35 +23,15 @@ class Ui_MyTickets(object):
     def setupUi(self, MyTickets):
         if not MyTickets.objectName():
             MyTickets.setObjectName(u"MyTickets")
-        MyTickets.resize(526, 293)
+        MyTickets.resize(530, 280)
         self.centralwidget = QWidget(MyTickets)
         self.centralwidget.setObjectName(u"centralwidget")
         self.layoutWidget = QWidget(self.centralwidget)
         self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(10, 10, 504, 251))
+        self.layoutWidget.setGeometry(QRect(10, 10, 504, 241))
         self.gridLayout = QGridLayout(self.layoutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.but_refund = QPushButton(self.layoutWidget)
-        self.but_refund.setObjectName(u"but_refund")
-        font = QFont()
-        font.setPointSize(9)
-        self.but_refund.setFont(font)
-
-        self.gridLayout.addWidget(self.but_refund, 1, 0, 1, 1)
-
-        self.but_del = QPushButton(self.layoutWidget)
-        self.but_del.setObjectName(u"but_del")
-        self.but_del.setFont(font)
-
-        self.gridLayout.addWidget(self.but_del, 1, 1, 1, 1)
-
-        self.but_return = QPushButton(self.layoutWidget)
-        self.but_return.setObjectName(u"but_return")
-        self.but_return.setFont(font)
-
-        self.gridLayout.addWidget(self.but_return, 1, 2, 1, 1)
-
         self.table = QTableWidget(self.layoutWidget)
         if (self.table.columnCount() < 5):
             self.table.setColumnCount(5)
@@ -68,13 +48,38 @@ class Ui_MyTickets(object):
         self.table.setObjectName(u"table")
         self.table.setMinimumSize(QSize(502, 0))
         self.table.setMaximumSize(QSize(502, 16777215))
+        font = QFont()
+        font.setPointSize(9)
         self.table.setFont(font)
         self.table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.table.setSortingEnabled(True)
         self.table.horizontalHeader().setVisible(True)
         self.table.verticalHeader().setVisible(False)
 
-        self.gridLayout.addWidget(self.table, 0, 0, 1, 3)
+        self.gridLayout.addWidget(self.table, 0, 1, 1, 5)
+
+        self.but_print = QPushButton(self.layoutWidget)
+        self.but_print.setObjectName(u"but_print")
+
+        self.gridLayout.addWidget(self.but_print, 1, 1, 1, 1)
+
+        self.but_refund = QPushButton(self.layoutWidget)
+        self.but_refund.setObjectName(u"but_refund")
+        self.but_refund.setFont(font)
+
+        self.gridLayout.addWidget(self.but_refund, 1, 2, 1, 1)
+
+        self.but_del = QPushButton(self.layoutWidget)
+        self.but_del.setObjectName(u"but_del")
+        self.but_del.setFont(font)
+
+        self.gridLayout.addWidget(self.but_del, 1, 3, 1, 1)
+
+        self.but_return = QPushButton(self.layoutWidget)
+        self.but_return.setObjectName(u"but_return")
+        self.but_return.setFont(font)
+
+        self.gridLayout.addWidget(self.but_return, 1, 4, 1, 2)
 
         MyTickets.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MyTickets)
@@ -88,9 +93,6 @@ class Ui_MyTickets(object):
 
     def retranslateUi(self, MyTickets):
         MyTickets.setWindowTitle(QCoreApplication.translate("MyTickets", u"MyTickets", None))
-        self.but_refund.setText(QCoreApplication.translate("MyTickets", u"\u0412\u0435\u0440\u043d\u0443\u0442\u044c \u0431\u0438\u043b\u0435\u0442", None))
-        self.but_del.setText(QCoreApplication.translate("MyTickets", u"\u0423\u0434\u0430\u043b\u0438\u0442\u044c \u0437\u0430\u043f\u0438\u0441\u044c", None))
-        self.but_return.setText(QCoreApplication.translate("MyTickets", u"\u041d\u0430\u0437\u0430\u0434", None))
         ___qtablewidgetitem = self.table.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MyTickets", u"ID", None));
         ___qtablewidgetitem1 = self.table.horizontalHeaderItem(1)
@@ -101,5 +103,9 @@ class Ui_MyTickets(object):
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MyTickets", u"\u0426\u0435\u043d\u0430", None));
         ___qtablewidgetitem4 = self.table.horizontalHeaderItem(4)
         ___qtablewidgetitem4.setText(QCoreApplication.translate("MyTickets", u"\u0421\u0442\u0430\u0442\u0443\u0441 \u0437\u0430\u043a\u0430\u0437\u0430", None));
+        self.but_print.setText(QCoreApplication.translate("MyTickets", u"\u0420\u0430\u0441\u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c", None))
+        self.but_refund.setText(QCoreApplication.translate("MyTickets", u"\u0412\u0435\u0440\u043d\u0443\u0442\u044c \u0431\u0438\u043b\u0435\u0442", None))
+        self.but_del.setText(QCoreApplication.translate("MyTickets", u"\u0423\u0434\u0430\u043b\u0438\u0442\u044c \u0437\u0430\u043f\u0438\u0441\u044c", None))
+        self.but_return.setText(QCoreApplication.translate("MyTickets", u"\u041d\u0430\u0437\u0430\u0434", None))
     # retranslateUi
 

@@ -368,6 +368,21 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <tabstops>
+  <tabstop>line_surname</tabstop>
+  <tabstop>line_name</tabstop>
+  <tabstop>line_patronymic</tabstop>
+  <tabstop>combo_document</tabstop>
+  <tabstop>line_num_document</tabstop>
+  <tabstop>but_buy</tabstop>
+  <tabstop>radio_male</tabstop>
+  <tabstop>date_birthday</tabstop>
+  <tabstop>combo_passenger</tabstop>
+  <tabstop>check_patronymic</tabstop>
+  <tabstop>radio_female</tabstop>
+  <tabstop>checkBox</tabstop>
+  <tabstop>but_back</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

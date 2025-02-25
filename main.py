@@ -3,7 +3,7 @@ from PySide6.QtWidgets import QApplication
 
 #  Импорт форм окон
 from layouts import (Ui_EditProfile, Ui_FastLogin, Ui_Login, Ui_MyTickets, Ui_Passenger, Ui_Profile, Ui_Railcar,
-                     Ui_Registr, Ui_Ticket, Ui_mail_message, Ui_AdminTickets, Ui_AdminUsers, Ui_AdminProfile)
+                     Ui_Registr , Ui_Ticket, Ui_mail_message, Ui_AdminTickets, Ui_AdminUsers, Ui_AdminProfile)
 
 #  Импорт вспомогательных классов
 from static_methods import *
@@ -286,6 +286,12 @@ class Main:
                 )
             )
         )
+        self.engine.get_widget("MyTickets", "but_print").clicked.connect(
+            lambda: Data.save_file(
+                self.engine,
+                self.db
+            )
+        )
 
         #  Подключение для окна выбора билета
         self.engine.get_widget("Ticket", "combo_departure").lineEdit().textChanged.connect(
@@ -377,16 +383,12 @@ class Main:
             lambda: (
                 QMessageBox.information(self.engine.windows['Login'], "Покупка",
                                         "Билет успешно приобретён", QMessageBox.Ok),
-                self.db.update_data(f"INSERT INTO `train`.`ticket` ("
-                                    f"`idUser`, "
-                                    f"`idRailcar`, "
-                                    f"`idPassenger`, "
-                                    f"`idStatus`, "
-                                    f"`idFlight`) VALUES ({self.user.id}, "
-                                    f"{self.current_ticket.railcar}, "
-                                    f"1, "
-                                    f"3, "
-                                    f"{self.current_ticket.id});"),
+                Data.but_ticket(
+                    self.engine,
+                    self.db,
+                    self.user,
+                    self.current_ticket
+                ),
                 Show.profile(
                     self.engine,
                     self.current_ticket,
@@ -409,5 +411,6 @@ class Main:
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     main = Main()
-    Show.admin_profile(main.engine)
+    Show.login(main.engine)
+    #Show.profile(main.engine, main.current_ticket)
     sys.exit(app.exec())

@@ -1,7 +1,8 @@
 import datetime
+import os
 
 from PySide6.QtWidgets import (QPushButton, QCheckBox, QMessageBox, QTableWidget, QTableWidgetItem, QComboBox,
-                               QDateEdit, QLabel, QSpinBox)
+                               QDateEdit, QLabel, QSpinBox, QFileDialog)
 from PySide6.QtCore import Qt, QDate
 
 #  Импорт вспомогательных классов
@@ -217,11 +218,10 @@ class Show:
         table: QTableWidget = engine.get_widget("Railcar", "table_railcar")
 
         row = table_last.item(table_last.currentRow(), 0)
-        if row is None:
-            item = ticket.id
-        else:
-            item = row.text()
-            ticket.id = int(item)
+        if not (row is None):
+            ticket.id = int(row.text()) - 735130
+
+        item = ticket.id
 
         ticket.railcar = -1
 
@@ -259,7 +259,11 @@ class Show:
         id_railcar = int(last_table.item(last_table.currentRow(), 0).text())
         price = int(last_price.text()[:-1])
         count_passenger = int(last_spin_adult.value()) + int(last_spin_child.value())
+        type = last_table.item(last_table.currentRow(), 3).text()
+        bizness_class = last_table.item(last_table.currentRow(), 2).text()
 
+        ticket.type = type
+        ticket.bizness_class = bizness_class
         ticket.railcar = id_railcar
         ticket.price = price
         ticket.count_passenger = count_passenger
@@ -275,6 +279,102 @@ class Show:
 
 
 class Data:
+
+    @staticmethod
+    def save_file(engine: WindowsEngine, db: DataBase):
+        from docxtpl import DocxTemplate
+        from docx2pdf import convert
+
+        options = QFileDialog.Options()
+        file_name = QFileDialog.getSaveFileName(
+            engine.windows["MyTickets"],
+            "Сохранить файл как",
+            "",
+            "PDF Files (*.pdf);;All Files (*)",
+            options=options
+        )
+
+        table = engine.get_widget("MyTickets", "table")
+        id_ticket = int(table.item(table.currentRow(), 0).text()) - 735130
+        doc = DocxTemplate("data/blueprint/blueprint_train.docx")
+        data_1 = db.get_data(
+            "SELECT t.idTicket, concat(p.surname, ' ', left(p.name, 1), '. ', left(p.patronymic, 1), '.'), td.title, "
+            "d.number, r.type, r.class_of_service, r.idRailcar, t.count "
+            "FROM ticket as t "
+            "JOIN passenger as p ON p.idPassenger=t.idPassenger "
+            "JOIN document as d ON d.idDocument=p.idDocument "
+            "JOIN type_document as td ON td.idTypeDocument=d.idTypeDocument "
+            "JOIN railcar as r ON r.idRailcar=t.idRailcar "
+            f"WHERE t.idTicket = {id_ticket}", single_line=True)
+
+        print(id_ticket, db.get_data(f"select idFlight from ticket where idTicket={id_ticket}", single_line=True))
+        data_2 = [i for i in db.get_data("call tickets_common()")
+                  if i[0] == db.get_data(f"select idFlight from ticket where idTicket={id_ticket}", single_line=True)[0]
+                  ][0]
+        print(data_1, data_2)
+        context = {
+            "train": 'Сапсан',  # const
+            "nds": '20',  # const
+            "current_date": datetime.datetime.today().strftime("%Y-%m-%d"),  # Текущая дата
+
+            "id_ticket": f'{data_1[0] + 735130}',  # 735130 + id, где * - Id маршрута вкладки ticket
+            "fio": f'{data_1[1]}',  # Фио вкладки passenger
+            "document_title": f'{data_1[2]}',  # Тип документа во вкладке passenger
+            "document_id": f'{data_1[3]}',  # Номер документа во вкладке passenger
+            "type": f'{data_1[4]}',  # Тип вагона railcar
+            "class": f'{data_1[5]}',  # Класс обсуживания railcar
+
+            "date": f'{data_2[3].strftime("%d.%m.%Y")}',  # Дата выбранного маршрута вкладки ticket
+            "departure": f'{data_2[1]}',  # Поле отправки вкладки ticket
+            "arrival": f'{data_2[2]}',  # Поле прибытия вкладки ticket
+            "departure_time": f'{data_2[3].strftime("%H:%M")}',  # Время отправки ticket
+            "arrival_time": f'{data_2[3].strftime("%H:%M")}',  # Время прибытия ticket
+            "railcar": f'{data_1[-2]}',
+
+            "price_ticket": f'{data_1[-1] * data_2[-2]}',  # Цена из вкладки railcar
+            "nds_price_ticket": f'{(float(data_1[-1] * data_2[-2]) * 1.2):.1f}',  # price_ticket * nds%
+
+
+        }
+        path = f"data/blueprint/{file_name[0].split('/')[-1][:-4]}.docx"
+        doc.render(context)
+        doc.save(path)
+        convert(path, file_name[0])
+        os.remove(path)
+
+    @staticmethod
+    def but_ticket(engine: WindowsEngine, db: DataBase, user: User, current_ticket: Ticket):
+        window = engine.windows["Passenger"]
+        db.update_data(
+            f"INSERT INTO document ("
+            f"idTypeDocument, number) VALUES"
+            f"({window.combo_document.currentIndex() + 1}, {window.line_num_document.text()});"
+        )
+        db.update_data(
+            f"INSERT INTO passenger ("
+            f"idDocument, name, surname, patronymic, gender, birthday) VALUES ("
+            f"{db.get_data("SELECT * FROM document")[-1][0]},"
+            f"'{window.line_name.text()}',"
+            f"'{window.line_surname.text()}',"
+            f"'{window.line_patronymic.text()}',"
+            f"'*',"
+            f"'*');"
+        )
+        db.update_data(
+            f"INSERT INTO `train`.`ticket` ("
+            f"`idUser`, "
+            f"`idRailcar`, "
+            f"`idPassenger`, "
+            f"`idStatus`, "
+            f"`idFlight`, "
+            f"`count`) VALUES ("
+            f"{user.id}, "
+            f"{current_ticket.railcar}, "
+            f"{db.get_data("SELECT * FROM passenger")[-1][0]}, "
+            f"3, "
+            f"{current_ticket.id},"
+            f"{current_ticket.count_passenger});"),
+
     @staticmethod
     def edit_cell(row, engine: WindowsEngine, db: DataBase):
         table = engine.get_widget("AdminUsers", "table")
@@ -391,7 +491,8 @@ class Data:
         print(data)
         ret = []
         for i in data:
-            ret.append([str(i[0]), i[1], i[2], i[3].strftime("%Y-%m-%d"), i[4].strftime("%Y-%m-%d"), str(i[5]), str(i[6])])
+            ret.append(
+                [str(i[0]), i[1], i[2], i[3].strftime("%Y-%m-%d"), i[4].strftime("%Y-%m-%d"), str(i[5]), str(i[6])])
 
         print(ret)
 
@@ -414,7 +515,7 @@ class Data:
     @staticmethod
     def load_history(db: DataBase, user: User) -> list[list[str]]:
         data = db.get_data(
-            "SELECT t.`idTicket`, f.`title`, tt.`departure`, r.`price`, s.`title` "
+            "SELECT t.`idTicket`, f.`title`, tt.`departure`, r.`price`, s.`title`, t.`count`"
             "FROM `ticket` as t "
             "JOIN `railcar` as r ON r.`idRailcar`=t.`idRailcar` "
             "JOIN `flight` as f ON f.`idFlight`=r.`idFlight` "
@@ -430,7 +531,7 @@ class Data:
 
         ret = []
         for i in data:
-            ret.append([str(i[0]), i[1], i[2].strftime("%Y-%m-%d"), str(i[3]), i[4]])
+            ret.append([str(735130 + i[0]), i[1], i[2].strftime("%Y-%m-%d"), str(i[3] * i[5]), i[4]])
 
         return ret
 
@@ -485,7 +586,7 @@ class Data:
 
         ret = []
         for i in data:
-            ret.append([str(i[0]), i[1], i[2], i[3].strftime("%H:%M"),
+            ret.append([str(735130 + i[0]), i[1], i[2], i[3].strftime("%H:%M"),
                         i[4].strftime("%H:%M"), str(int(i[5])), str(i[6])])
 
         return ret
@@ -569,7 +670,7 @@ class Data:
         combo_dep.lineEdit().setText(text_dep)
 
     @staticmethod
-    def loar_railcars(db: DataBase, id_flight: str) -> list[list[str]]:
+    def loar_railcars(db: DataBase, id_flight: int) -> list[list[str]]:
         data = db.get_data(f"call railcar_table({id_flight})")
 
         ret = []

@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="added adminUsers">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_12_2024_10_01__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_12_2024_10_07__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_12_2024_9_16__Changes_.xml" beforeDir="false" />
+    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="finish role admin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/AdminTickets.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/AdminTickets.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/AdminTickets.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/AdminTickets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/MyTickets.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/MyTickets.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/Passenger.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Passenger.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/MyTickets.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/MyTickets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/Passenger.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Passenger.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/static_methods.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,20 +69,29 @@
     "Python.main (1).executor": "Run",
     "Python.main.executor": "Run",
     "Python.ticket.executor": "Run",
+    "Python.word_maker.executor": "Run",
+    "Python.еуые.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "last_opened_file_path": "C:/Users/Substance/PycharmProjects/kursk/Train_application/data/blueprint",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Substance\PycharmProjects\kursk\Train_application\data\blueprint" />
+      <recent name="C:\Users\Substance\PycharmProjects\kursk\Train_application" />
+      <recent name="C:\Users\Substance\PycharmProjects\kursk\Train_application\workbench" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Substance\PycharmProjects\kursk\Train_application\workbench\dir1" />
       <recent name="C:\Users\serg1\PycharmProjects\TrainApplication\train_app" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="combo_line" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="еуые" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TrainApplication" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -95,7 +104,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/workbench/combo_line.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/workbench/еуые.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -118,28 +127,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/convet_ui_files.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="example" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TrainApplication" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/example.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -192,20 +179,42 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="word_maker" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TrainApplication" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/workbench/dir1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/workbench/dir1/word_maker.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Python.combo_line" />
+      <item itemvalue="Python.еуые" />
+      <item itemvalue="Python.word_maker" />
       <item itemvalue="Python.convet_ui_files" />
-      <item itemvalue="Python.example" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.ticket" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.еуые" />
+        <item itemvalue="Python.word_maker" />
         <item itemvalue="Python.convet_ui_files" />
         <item itemvalue="Python.ticket" />
-        <item itemvalue="Python.combo_line" />
-        <item itemvalue="Python.example" />
       </list>
     </recent_temporary>
   </component>
@@ -425,7 +434,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739789816131</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="finish role admin">
+      <option name="closed" value="true" />
+      <created>1739862787467</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1739862787467</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -502,17 +519,7 @@
     <MESSAGE value="Added dump" />
     <MESSAGE value="Added role admin and adminUsers window" />
     <MESSAGE value="added adminUsers" />
-    <option name="LAST_COMMIT_MESSAGE" value="added adminUsers" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>411</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="finish role admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish role admin" />
   </component>
 </project>
