@@ -12,8 +12,24 @@ from user import User
 from ticket import Ticket
 
 
-def get_rand_passwd() -> str:
-    return "random_password"
+def validate_passwd(passwd: str) -> bool:
+    # Проверяем длину пароля
+    if not (4 <= len(passwd) <= 16):
+        return False
+
+    # Проверяем наличие запрещенных символов
+    forbidden_characters = {'*', '&', '{', '}', '|', '+'}
+    if any(char in forbidden_characters for char in passwd):
+        return False
+
+    # Проверяем наличие заглавных букв и цифр
+    has_upper = any(char.isupper() for char in passwd)
+    has_digit = any(char.isdigit() for char in passwd)
+
+    if not (has_upper and has_digit):
+        return False
+
+    return True
 
 
 class Check:
@@ -225,7 +241,7 @@ class Show:
 
         ticket.railcar = -1
 
-        data = Data.loar_railcars(db, item)
+        data = Data.load_railcars(db, item)
 
         engine.get_widget("Railcar", "label_price").setText("0$")
 
@@ -333,7 +349,6 @@ class Data:
 
             "price_ticket": f'{data_1[-1] * data_2[-2]}',  # Цена из вкладки railcar
             "nds_price_ticket": f'{(float(data_1[-1] * data_2[-2]) * 1.2):.1f}',  # price_ticket * nds%
-
 
         }
         path = f"data/blueprint/{file_name[0].split('/')[-1][:-4]}.docx"
@@ -463,11 +478,19 @@ class Data:
         Show.profile(engine, ticket)
 
     @staticmethod
-    def registr(engine: WindowsEngine, db: DataBase, email: str):
-        db.update_data(f"INSERT INTO `train`.`user` (`email`, `password`) VALUES ('{email}', '{get_rand_passwd()}');")
+    def registr(engine: WindowsEngine, db: DataBase, email: str, passwd: str):
+        if not (validate_passwd(passwd)):
+            QMessageBox.information(engine.windows['Registr'], "Парольневерный",
+                                    "Пароль должен содержать от 4 до 16 символов, "
+                                    "не должно быть символов из набора: * & { } | +"
+                                    "и должны встречаться заглавные буквы и цифры ", QMessageBox.Ok)
+            return
+
+        db.update_data(f"INSERT INTO `train`.`user` (`email`, `password`) VALUES ('{email}', '{passwd}');")
 
         QMessageBox.information(engine.windows['Registr'], "Успешная регистрация",
                                 "Регистрация прошла успешно", QMessageBox.Ok)
+        Show.login(engine)
 
     @staticmethod
     def send_message(engine: WindowsEngine, email: str):
@@ -670,7 +693,7 @@ class Data:
         combo_dep.lineEdit().setText(text_dep)
 
     @staticmethod
-    def loar_railcars(db: DataBase, id_flight: int) -> list[list[str]]:
+    def load_railcars(db: DataBase, id_flight: int) -> list[list[str]]:
         data = db.get_data(f"call railcar_table({id_flight})")
 
         ret = []

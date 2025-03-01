@@ -3,7 +3,7 @@ from PySide6.QtWidgets import QApplication
 
 #  Импорт форм окон
 from layouts import (Ui_EditProfile, Ui_FastLogin, Ui_Login, Ui_MyTickets, Ui_Passenger, Ui_Profile, Ui_Railcar,
-                     Ui_Registr , Ui_Ticket, Ui_mail_message, Ui_AdminTickets, Ui_AdminUsers, Ui_AdminProfile)
+                     Ui_Registr, Ui_Ticket, Ui_mail_message, Ui_AdminTickets, Ui_AdminUsers, Ui_AdminProfile)
 
 #  Импорт вспомогательных классов
 from static_methods import *
@@ -149,10 +149,8 @@ class Main:
                     self.engine,
                     self.db,
                     self.engine.get_widget("Registr", "entry_mail").text(),
+                    self.engine.get_widget("Registr", "entry_passwd").text(),
                 ),
-                Show.login(
-                    self.engine,
-                )
             )
         )
 
