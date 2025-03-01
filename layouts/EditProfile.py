@@ -16,9 +16,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QCheckBox, QCommandLinkButton, QDateEdit,
-    QLabel, QLineEdit, QMainWindow, QPushButton,
-    QSizePolicy, QSplitter, QStatusBar, QVBoxLayout,
-    QWidget)
+    QGridLayout, QLabel, QLineEdit, QMainWindow,
+    QPushButton, QSizePolicy, QSplitter, QStatusBar,
+    QVBoxLayout, QWidget)
 
 class Ui_EditProfile(object):
     def setupUi(self, EditProfile):
@@ -26,12 +26,13 @@ class Ui_EditProfile(object):
             EditProfile.setObjectName(u"EditProfile")
         EditProfile.resize(387, 334)
         EditProfile.setMinimumSize(QSize(387, 334))
-        EditProfile.setMaximumSize(QSize(387, 334))
+        EditProfile.setMaximumSize(QSize(16777215, 16777215))
         self.centralwidget = QWidget(EditProfile)
         self.centralwidget.setObjectName(u"centralwidget")
+        self.gridLayout = QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName(u"gridLayout")
         self.splitter_2 = QSplitter(self.centralwidget)
         self.splitter_2.setObjectName(u"splitter_2")
-        self.splitter_2.setGeometry(QRect(20, 13, 351, 321))
         self.splitter_2.setOrientation(Qt.Orientation.Vertical)
         self.splitter_2.setHandleWidth(0)
         self.layoutWidget = QWidget(self.splitter_2)
@@ -146,6 +147,9 @@ class Ui_EditProfile(object):
         self.but_return.setFont(font1)
         self.but_return.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.splitter_2.addWidget(self.but_return)
+
+        self.gridLayout.addWidget(self.splitter_2, 0, 0, 1, 1)
+
         EditProfile.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(EditProfile)
         self.statusbar.setObjectName(u"statusbar")

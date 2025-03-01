@@ -24,7 +24,7 @@ class Ui_AdminTickets(object):
     def setupUi(self, AdminTickets):
         if not AdminTickets.objectName():
             AdminTickets.setObjectName(u"AdminTickets")
-        AdminTickets.resize(935, 446)
+        AdminTickets.resize(929, 495)
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(10)
         sizePolicy.setVerticalStretch(20)
@@ -35,18 +35,13 @@ class Ui_AdminTickets(object):
         AdminTickets.setFont(font)
         self.centralwidget = QWidget(AdminTickets)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.layoutWidget = QWidget(self.centralwidget)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(10, 10, 911, 401))
-        font1 = QFont()
-        font1.setPointSize(9)
-        self.layoutWidget.setFont(font1)
-        self.verticalLayout = QVBoxLayout(self.layoutWidget)
+        self.gridLayout = QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout_2 = QGridLayout()
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.table_timetable = QTableWidget(self.layoutWidget)
+        self.table_timetable = QTableWidget(self.centralwidget)
         if (self.table_timetable.columnCount() < 7):
             self.table_timetable.setColumnCount(7)
         __qtablewidgetitem = QTableWidgetItem()
@@ -75,6 +70,8 @@ class Ui_AdminTickets(object):
         self.table_timetable.setSizePolicy(sizePolicy1)
         self.table_timetable.setMinimumSize(QSize(699, 0))
         self.table_timetable.setMaximumSize(QSize(16777215, 16777215))
+        font1 = QFont()
+        font1.setPointSize(9)
         self.table_timetable.setFont(font1)
         self.table_timetable.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.table_timetable.setSortingEnabled(True)
@@ -92,19 +89,19 @@ class Ui_AdminTickets(object):
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.but_add = QPushButton(self.layoutWidget)
+        self.but_add = QPushButton(self.centralwidget)
         self.but_add.setObjectName(u"but_add")
         self.but_add.setFont(font1)
 
         self.horizontalLayout.addWidget(self.but_add)
 
-        self.but_del = QPushButton(self.layoutWidget)
+        self.but_del = QPushButton(self.centralwidget)
         self.but_del.setObjectName(u"but_del")
         self.but_del.setFont(font1)
 
         self.horizontalLayout.addWidget(self.but_del)
 
-        self.but_back = QPushButton(self.layoutWidget)
+        self.but_back = QPushButton(self.centralwidget)
         self.but_back.setObjectName(u"but_back")
         self.but_back.setFont(font1)
 
@@ -115,6 +112,9 @@ class Ui_AdminTickets(object):
 
 
         self.verticalLayout.addLayout(self.gridLayout_2)
+
+
+        self.gridLayout.addLayout(self.verticalLayout, 0, 0, 1, 1)
 
         AdminTickets.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(AdminTickets)

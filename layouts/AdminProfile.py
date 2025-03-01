@@ -15,28 +15,35 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QLabel, QMainWindow, QPushButton,
-    QSizePolicy, QSplitter, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QGridLayout, QLabel, QMainWindow,
+    QPushButton, QSizePolicy, QSplitter, QVBoxLayout,
+    QWidget)
 import res
 
 class Ui_AdminProfile(object):
     def setupUi(self, AdminProfile):
         if not AdminProfile.objectName():
             AdminProfile.setObjectName(u"AdminProfile")
-        AdminProfile.resize(321, 411)
+        AdminProfile.resize(302, 390)
         self.centralwidget = QWidget(AdminProfile)
         self.centralwidget.setObjectName(u"centralwidget")
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
+        self.centralwidget.setSizePolicy(sizePolicy)
+        self.gridLayout = QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName(u"gridLayout")
         self.splitter = QSplitter(self.centralwidget)
         self.splitter.setObjectName(u"splitter")
-        self.splitter.setGeometry(QRect(20, 20, 281, 371))
         self.splitter.setOrientation(Qt.Orientation.Vertical)
         self.label_image_2 = QLabel(self.splitter)
         self.label_image_2.setObjectName(u"label_image_2")
-        sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label_image_2.sizePolicy().hasHeightForWidth())
-        self.label_image_2.setSizePolicy(sizePolicy)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.label_image_2.sizePolicy().hasHeightForWidth())
+        self.label_image_2.setSizePolicy(sizePolicy1)
         self.label_image_2.setMinimumSize(QSize(0, 104))
         font = QFont()
         font.setFamilies([u"Times New Roman"])
@@ -59,11 +66,8 @@ class Ui_AdminProfile(object):
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.but_users = QPushButton(self.layoutWidget)
         self.but_users.setObjectName(u"but_users")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.but_users.sizePolicy().hasHeightForWidth())
-        self.but_users.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.but_users.sizePolicy().hasHeightForWidth())
+        self.but_users.setSizePolicy(sizePolicy)
         font1 = QFont()
         font1.setPointSize(9)
         self.but_users.setFont(font1)
@@ -72,21 +76,24 @@ class Ui_AdminProfile(object):
 
         self.but_flight = QPushButton(self.layoutWidget)
         self.but_flight.setObjectName(u"but_flight")
-        sizePolicy1.setHeightForWidth(self.but_flight.sizePolicy().hasHeightForWidth())
-        self.but_flight.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.but_flight.sizePolicy().hasHeightForWidth())
+        self.but_flight.setSizePolicy(sizePolicy)
         self.but_flight.setFont(font1)
 
         self.verticalLayout.addWidget(self.but_flight)
 
         self.but_logout = QPushButton(self.layoutWidget)
         self.but_logout.setObjectName(u"but_logout")
-        sizePolicy1.setHeightForWidth(self.but_logout.sizePolicy().hasHeightForWidth())
-        self.but_logout.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.but_logout.sizePolicy().hasHeightForWidth())
+        self.but_logout.setSizePolicy(sizePolicy)
         self.but_logout.setFont(font1)
 
         self.verticalLayout.addWidget(self.but_logout)
 
         self.splitter.addWidget(self.layoutWidget)
+
+        self.gridLayout.addWidget(self.splitter, 0, 0, 1, 1)
+
         AdminProfile.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(AdminProfile)

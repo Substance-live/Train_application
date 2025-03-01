@@ -15,28 +15,23 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLineEdit,
-    QMainWindow, QPushButton, QSizePolicy, QStatusBar,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QLabel,
+    QLineEdit, QMainWindow, QPushButton, QSizePolicy,
+    QStatusBar, QVBoxLayout, QWidget)
 import res
 
 class Ui_FastLogin(object):
     def setupUi(self, FastLogin):
         if not FastLogin.objectName():
             FastLogin.setObjectName(u"FastLogin")
-        FastLogin.resize(463, 492)
+        FastLogin.resize(438, 437)
         self.centralwidget = QWidget(FastLogin)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.layoutWidget = QWidget(self.centralwidget)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(20, 10, 421, 451))
-        font = QFont()
-        font.setPointSize(10)
-        self.layoutWidget.setFont(font)
-        self.verticalLayout = QVBoxLayout(self.layoutWidget)
+        self.gridLayout = QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.label_image = QLabel(self.layoutWidget)
+        self.label_image = QLabel(self.centralwidget)
         self.label_image.setObjectName(u"label_image")
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -44,12 +39,12 @@ class Ui_FastLogin(object):
         sizePolicy.setHeightForWidth(self.label_image.sizePolicy().hasHeightForWidth())
         self.label_image.setSizePolicy(sizePolicy)
         self.label_image.setMinimumSize(QSize(0, 104))
-        font1 = QFont()
-        font1.setFamilies([u"Times New Roman"])
-        font1.setPointSize(28)
-        font1.setBold(True)
-        font1.setItalic(True)
-        self.label_image.setFont(font1)
+        font = QFont()
+        font.setFamilies([u"Times New Roman"])
+        font.setPointSize(28)
+        font.setBold(True)
+        font.setItalic(True)
+        self.label_image.setFont(font)
         self.label_image.setContextMenuPolicy(Qt.ContextMenuPolicy.NoContextMenu)
 #if QT_CONFIG(accessibility)
         self.label_image.setAccessibleDescription(u"")
@@ -60,7 +55,7 @@ class Ui_FastLogin(object):
 
         self.verticalLayout.addWidget(self.label_image)
 
-        self.label_note = QLabel(self.layoutWidget)
+        self.label_note = QLabel(self.centralwidget)
         self.label_note.setObjectName(u"label_note")
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Preferred)
         sizePolicy1.setHorizontalStretch(0)
@@ -74,58 +69,63 @@ class Ui_FastLogin(object):
 
         self.verticalLayout.addWidget(self.label_note)
 
-        self.entry_email = QLineEdit(self.layoutWidget)
+        self.entry_email = QLineEdit(self.centralwidget)
         self.entry_email.setObjectName(u"entry_email")
         sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
         sizePolicy2.setHorizontalStretch(0)
         sizePolicy2.setVerticalStretch(0)
         sizePolicy2.setHeightForWidth(self.entry_email.sizePolicy().hasHeightForWidth())
         self.entry_email.setSizePolicy(sizePolicy2)
-        font2 = QFont()
-        font2.setFamilies([u"Segoe UI"])
-        font2.setPointSize(10)
-        self.entry_email.setFont(font2)
+        font1 = QFont()
+        font1.setFamilies([u"Segoe UI"])
+        font1.setPointSize(10)
+        self.entry_email.setFont(font1)
         self.entry_email.setClearButtonEnabled(False)
 
         self.verticalLayout.addWidget(self.entry_email)
 
-        self.but_send_messenge = QPushButton(self.layoutWidget)
+        self.but_send_messenge = QPushButton(self.centralwidget)
         self.but_send_messenge.setObjectName(u"but_send_messenge")
         sizePolicy2.setHeightForWidth(self.but_send_messenge.sizePolicy().hasHeightForWidth())
         self.but_send_messenge.setSizePolicy(sizePolicy2)
-        self.but_send_messenge.setFont(font)
+        font2 = QFont()
+        font2.setPointSize(10)
+        self.but_send_messenge.setFont(font2)
 
         self.verticalLayout.addWidget(self.but_send_messenge)
 
-        self.but_login = QPushButton(self.layoutWidget)
+        self.but_login = QPushButton(self.centralwidget)
         self.but_login.setObjectName(u"but_login")
         sizePolicy2.setHeightForWidth(self.but_login.sizePolicy().hasHeightForWidth())
         self.but_login.setSizePolicy(sizePolicy2)
-        self.but_login.setFont(font)
+        self.but_login.setFont(font2)
 
         self.verticalLayout.addWidget(self.but_login)
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.label = QLabel(self.layoutWidget)
+        self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
         sizePolicy2.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
         self.label.setSizePolicy(sizePolicy2)
-        self.label.setFont(font)
+        self.label.setFont(font2)
 
         self.horizontalLayout.addWidget(self.label)
 
-        self.but_registr = QPushButton(self.layoutWidget)
+        self.but_registr = QPushButton(self.centralwidget)
         self.but_registr.setObjectName(u"but_registr")
         sizePolicy2.setHeightForWidth(self.but_registr.sizePolicy().hasHeightForWidth())
         self.but_registr.setSizePolicy(sizePolicy2)
         self.but_registr.setMaximumSize(QSize(16777215, 16777215))
-        self.but_registr.setFont(font)
+        self.but_registr.setFont(font2)
 
         self.horizontalLayout.addWidget(self.but_registr)
 
 
         self.verticalLayout.addLayout(self.horizontalLayout)
+
+
+        self.gridLayout.addLayout(self.verticalLayout, 0, 0, 1, 1)
 
         FastLogin.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(FastLogin)

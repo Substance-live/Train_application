@@ -25,12 +25,13 @@ class Ui_Railcar(object):
     def setupUi(self, Railcar):
         if not Railcar.objectName():
             Railcar.setObjectName(u"Railcar")
-        Railcar.resize(905, 398)
+        Railcar.resize(901, 400)
         self.centralwidget = QWidget(Railcar)
         self.centralwidget.setObjectName(u"centralwidget")
+        self.gridLayout_2 = QGridLayout(self.centralwidget)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.splitter_2 = QSplitter(self.centralwidget)
         self.splitter_2.setObjectName(u"splitter_2")
-        self.splitter_2.setGeometry(QRect(20, 20, 871, 351))
         self.splitter_2.setOrientation(Qt.Orientation.Vertical)
         self.splitter = QSplitter(self.splitter_2)
         self.splitter.setObjectName(u"splitter")
@@ -214,6 +215,9 @@ class Ui_Railcar(object):
         self.horizontalLayout_6.addWidget(self.but_back)
 
         self.splitter_2.addWidget(self.layoutWidget2)
+
+        self.gridLayout_2.addWidget(self.splitter_2, 0, 0, 1, 1)
+
         Railcar.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(Railcar)
         self.statusbar.setObjectName(u"statusbar")

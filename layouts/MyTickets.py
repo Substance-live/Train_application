@@ -23,16 +23,14 @@ class Ui_MyTickets(object):
     def setupUi(self, MyTickets):
         if not MyTickets.objectName():
             MyTickets.setObjectName(u"MyTickets")
-        MyTickets.resize(530, 280)
+        MyTickets.resize(523, 260)
         self.centralwidget = QWidget(MyTickets)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.layoutWidget = QWidget(self.centralwidget)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(10, 10, 504, 241))
-        self.gridLayout = QGridLayout(self.layoutWidget)
+        self.gridLayout_2 = QGridLayout(self.centralwidget)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.gridLayout = QGridLayout()
         self.gridLayout.setObjectName(u"gridLayout")
-        self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.table = QTableWidget(self.layoutWidget)
+        self.table = QTableWidget(self.centralwidget)
         if (self.table.columnCount() < 5):
             self.table.setColumnCount(5)
         __qtablewidgetitem = QTableWidgetItem()
@@ -46,8 +44,8 @@ class Ui_MyTickets(object):
         __qtablewidgetitem4 = QTableWidgetItem()
         self.table.setHorizontalHeaderItem(4, __qtablewidgetitem4)
         self.table.setObjectName(u"table")
-        self.table.setMinimumSize(QSize(502, 0))
-        self.table.setMaximumSize(QSize(502, 16777215))
+        self.table.setMinimumSize(QSize(0, 0))
+        self.table.setMaximumSize(QSize(16777215, 16777215))
         font = QFont()
         font.setPointSize(9)
         self.table.setFont(font)
@@ -58,28 +56,31 @@ class Ui_MyTickets(object):
 
         self.gridLayout.addWidget(self.table, 0, 1, 1, 5)
 
-        self.but_print = QPushButton(self.layoutWidget)
+        self.but_print = QPushButton(self.centralwidget)
         self.but_print.setObjectName(u"but_print")
 
         self.gridLayout.addWidget(self.but_print, 1, 1, 1, 1)
 
-        self.but_refund = QPushButton(self.layoutWidget)
+        self.but_refund = QPushButton(self.centralwidget)
         self.but_refund.setObjectName(u"but_refund")
         self.but_refund.setFont(font)
 
         self.gridLayout.addWidget(self.but_refund, 1, 2, 1, 1)
 
-        self.but_del = QPushButton(self.layoutWidget)
+        self.but_del = QPushButton(self.centralwidget)
         self.but_del.setObjectName(u"but_del")
         self.but_del.setFont(font)
 
         self.gridLayout.addWidget(self.but_del, 1, 3, 1, 1)
 
-        self.but_return = QPushButton(self.layoutWidget)
+        self.but_return = QPushButton(self.centralwidget)
         self.but_return.setObjectName(u"but_return")
         self.but_return.setFont(font)
 
         self.gridLayout.addWidget(self.but_return, 1, 4, 1, 2)
+
+
+        self.gridLayout_2.addLayout(self.gridLayout, 0, 0, 1, 1)
 
         MyTickets.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MyTickets)

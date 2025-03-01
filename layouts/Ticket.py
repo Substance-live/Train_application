@@ -35,64 +35,61 @@ class Ui_Ticket(object):
         Ticket.setFont(font)
         self.centralwidget = QWidget(Ticket)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.layoutWidget = QWidget(self.centralwidget)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(10, 10, 911, 431))
-        font1 = QFont()
-        font1.setPointSize(9)
-        self.layoutWidget.setFont(font1)
-        self.verticalLayout = QVBoxLayout(self.layoutWidget)
+        self.gridLayout_3 = QGridLayout(self.centralwidget)
+        self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout = QGridLayout()
         self.gridLayout.setObjectName(u"gridLayout")
-        self.label = QLabel(self.layoutWidget)
+        self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
+        font1 = QFont()
+        font1.setPointSize(9)
         self.label.setFont(font1)
 
         self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
 
-        self.label_2 = QLabel(self.layoutWidget)
+        self.label_2 = QLabel(self.centralwidget)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setFont(font1)
 
         self.gridLayout.addWidget(self.label_2, 0, 2, 1, 1)
 
-        self.label_3 = QLabel(self.layoutWidget)
+        self.label_3 = QLabel(self.centralwidget)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setFont(font1)
 
         self.gridLayout.addWidget(self.label_3, 0, 3, 1, 1)
 
-        self.combo_departure = QComboBox(self.layoutWidget)
+        self.combo_departure = QComboBox(self.centralwidget)
         self.combo_departure.setObjectName(u"combo_departure")
         self.combo_departure.setFont(font1)
         self.combo_departure.setEditable(True)
 
         self.gridLayout.addWidget(self.combo_departure, 1, 0, 1, 1)
 
-        self.but_switch = QToolButton(self.layoutWidget)
+        self.but_switch = QToolButton(self.centralwidget)
         self.but_switch.setObjectName(u"but_switch")
         self.but_switch.setFont(font1)
 
         self.gridLayout.addWidget(self.but_switch, 1, 1, 1, 1)
 
-        self.combo_destination = QComboBox(self.layoutWidget)
+        self.combo_destination = QComboBox(self.centralwidget)
         self.combo_destination.setObjectName(u"combo_destination")
         self.combo_destination.setFont(font1)
         self.combo_destination.setEditable(True)
 
         self.gridLayout.addWidget(self.combo_destination, 1, 2, 1, 1)
 
-        self.date_edit = QDateEdit(self.layoutWidget)
+        self.date_edit = QDateEdit(self.centralwidget)
         self.date_edit.setObjectName(u"date_edit")
         self.date_edit.setFont(font1)
-        self.date_edit.setDateTime(QDateTime(QDate(2020, 9, 28), QTime(0, 0, 0)))
+        self.date_edit.setDateTime(QDateTime(QDate(2020, 9, 27), QTime(0, 0, 0)))
         self.date_edit.setCalendarPopup(True)
 
         self.gridLayout.addWidget(self.date_edit, 1, 3, 1, 1)
 
-        self.but_search = QPushButton(self.layoutWidget)
+        self.but_search = QPushButton(self.centralwidget)
         self.but_search.setObjectName(u"but_search")
         self.but_search.setFont(font1)
 
@@ -103,7 +100,7 @@ class Ui_Ticket(object):
 
         self.gridLayout_2 = QGridLayout()
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.table_timetable = QTableWidget(self.layoutWidget)
+        self.table_timetable = QTableWidget(self.centralwidget)
         if (self.table_timetable.columnCount() < 7):
             self.table_timetable.setColumnCount(7)
         __qtablewidgetitem = QTableWidgetItem()
@@ -143,13 +140,13 @@ class Ui_Ticket(object):
 
         self.gridLayout_2.addWidget(self.table_timetable, 0, 0, 1, 2)
 
-        self.but_back = QPushButton(self.layoutWidget)
+        self.but_back = QPushButton(self.centralwidget)
         self.but_back.setObjectName(u"but_back")
         self.but_back.setFont(font1)
 
         self.gridLayout_2.addWidget(self.but_back, 2, 1, 1, 1)
 
-        self.but_confirm = QPushButton(self.layoutWidget)
+        self.but_confirm = QPushButton(self.centralwidget)
         self.but_confirm.setObjectName(u"but_confirm")
         self.but_confirm.setFont(font1)
 
@@ -157,6 +154,9 @@ class Ui_Ticket(object):
 
 
         self.verticalLayout.addLayout(self.gridLayout_2)
+
+
+        self.gridLayout_3.addLayout(self.verticalLayout, 0, 0, 1, 1)
 
         Ticket.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(Ticket)

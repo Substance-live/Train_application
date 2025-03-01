@@ -23,16 +23,14 @@ class Ui_AdminUsers(object):
     def setupUi(self, AdminUsers):
         if not AdminUsers.objectName():
             AdminUsers.setObjectName(u"AdminUsers")
-        AdminUsers.resize(841, 346)
+        AdminUsers.resize(825, 379)
         self.centralwidget = QWidget(AdminUsers)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.layoutWidget = QWidget(self.centralwidget)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(10, 10, 811, 311))
-        self.gridLayout = QGridLayout(self.layoutWidget)
+        self.gridLayout_2 = QGridLayout(self.centralwidget)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.gridLayout = QGridLayout()
         self.gridLayout.setObjectName(u"gridLayout")
-        self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.but_add = QPushButton(self.layoutWidget)
+        self.but_add = QPushButton(self.centralwidget)
         self.but_add.setObjectName(u"but_add")
         font = QFont()
         font.setPointSize(9)
@@ -40,19 +38,19 @@ class Ui_AdminUsers(object):
 
         self.gridLayout.addWidget(self.but_add, 1, 0, 1, 1)
 
-        self.but_del = QPushButton(self.layoutWidget)
+        self.but_del = QPushButton(self.centralwidget)
         self.but_del.setObjectName(u"but_del")
         self.but_del.setFont(font)
 
         self.gridLayout.addWidget(self.but_del, 1, 1, 1, 1)
 
-        self.but_return = QPushButton(self.layoutWidget)
+        self.but_return = QPushButton(self.centralwidget)
         self.but_return.setObjectName(u"but_return")
         self.but_return.setFont(font)
 
         self.gridLayout.addWidget(self.but_return, 1, 2, 1, 1)
 
-        self.table = QTableWidget(self.layoutWidget)
+        self.table = QTableWidget(self.centralwidget)
         if (self.table.columnCount() < 8):
             self.table.setColumnCount(8)
         __qtablewidgetitem = QTableWidgetItem()
@@ -81,6 +79,9 @@ class Ui_AdminUsers(object):
         self.table.verticalHeader().setVisible(False)
 
         self.gridLayout.addWidget(self.table, 0, 0, 1, 3)
+
+
+        self.gridLayout_2.addLayout(self.gridLayout, 0, 0, 1, 1)
 
         AdminUsers.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(AdminUsers)

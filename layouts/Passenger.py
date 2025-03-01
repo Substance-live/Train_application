@@ -24,18 +24,16 @@ class Ui_Passenger(object):
     def setupUi(self, Passenger):
         if not Passenger.objectName():
             Passenger.setObjectName(u"Passenger")
-        Passenger.resize(690, 281)
+        Passenger.resize(670, 287)
         Passenger.setMinimumSize(QSize(0, 0))
         Passenger.setMaximumSize(QSize(16777215, 16777215))
         self.centralwidget = QWidget(Passenger)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.layoutWidget = QWidget(self.centralwidget)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(10, 10, 663, 241))
-        self.gridLayout = QGridLayout(self.layoutWidget)
+        self.gridLayout_2 = QGridLayout(self.centralwidget)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.gridLayout = QGridLayout()
         self.gridLayout.setObjectName(u"gridLayout")
-        self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.line_num_document = QLineEdit(self.layoutWidget)
+        self.line_num_document = QLineEdit(self.centralwidget)
         self.line_num_document.setObjectName(u"line_num_document")
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -48,25 +46,25 @@ class Ui_Passenger(object):
 
         self.gridLayout.addWidget(self.line_num_document, 6, 1, 1, 1)
 
-        self.line_surname = QLineEdit(self.layoutWidget)
+        self.line_surname = QLineEdit(self.centralwidget)
         self.line_surname.setObjectName(u"line_surname")
         self.line_surname.setFont(font)
 
         self.gridLayout.addWidget(self.line_surname, 3, 0, 1, 2)
 
-        self.check_patronymic = QCheckBox(self.layoutWidget)
+        self.check_patronymic = QCheckBox(self.centralwidget)
         self.check_patronymic.setObjectName(u"check_patronymic")
         self.check_patronymic.setFont(font)
 
         self.gridLayout.addWidget(self.check_patronymic, 4, 3, 1, 1)
 
-        self.label_birthday = QLabel(self.layoutWidget)
+        self.label_birthday = QLabel(self.centralwidget)
         self.label_birthday.setObjectName(u"label_birthday")
         self.label_birthday.setFont(font)
 
         self.gridLayout.addWidget(self.label_birthday, 2, 6, 1, 1)
 
-        self.label_name = QLabel(self.layoutWidget)
+        self.label_name = QLabel(self.centralwidget)
         self.label_name.setObjectName(u"label_name")
         self.label_name.setFont(font)
 
@@ -74,7 +72,7 @@ class Ui_Passenger(object):
 
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.label_passnger = QLabel(self.layoutWidget)
+        self.label_passnger = QLabel(self.centralwidget)
         self.label_passnger.setObjectName(u"label_passnger")
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy1.setHorizontalStretch(0)
@@ -89,7 +87,7 @@ class Ui_Passenger(object):
 
         self.verticalLayout.addWidget(self.label_passnger)
 
-        self.combo_passenger = QComboBox(self.layoutWidget)
+        self.combo_passenger = QComboBox(self.centralwidget)
         self.combo_passenger.setObjectName(u"combo_passenger")
         sizePolicy1.setHeightForWidth(self.combo_passenger.sizePolicy().hasHeightForWidth())
         self.combo_passenger.setSizePolicy(sizePolicy1)
@@ -101,51 +99,51 @@ class Ui_Passenger(object):
 
         self.gridLayout.addLayout(self.verticalLayout, 0, 0, 1, 2)
 
-        self.but_back = QPushButton(self.layoutWidget)
+        self.but_back = QPushButton(self.centralwidget)
         self.but_back.setObjectName(u"but_back")
         self.but_back.setFont(font)
 
         self.gridLayout.addWidget(self.but_back, 7, 4, 1, 3)
 
-        self.label_patronymic = QLabel(self.layoutWidget)
+        self.label_patronymic = QLabel(self.centralwidget)
         self.label_patronymic.setObjectName(u"label_patronymic")
         self.label_patronymic.setFont(font)
 
         self.gridLayout.addWidget(self.label_patronymic, 2, 3, 1, 1)
 
-        self.radio_male = QRadioButton(self.layoutWidget)
+        self.radio_male = QRadioButton(self.centralwidget)
         self.radio_male.setObjectName(u"radio_male")
         self.radio_male.setFont(font)
 
         self.gridLayout.addWidget(self.radio_male, 3, 4, 1, 1)
 
-        self.combo_document = QComboBox(self.layoutWidget)
+        self.combo_document = QComboBox(self.centralwidget)
         self.combo_document.setObjectName(u"combo_document")
         self.combo_document.setMinimumSize(QSize(99, 0))
         self.combo_document.setFont(font)
 
         self.gridLayout.addWidget(self.combo_document, 6, 0, 1, 1)
 
-        self.label_num_documnt = QLabel(self.layoutWidget)
+        self.label_num_documnt = QLabel(self.centralwidget)
         self.label_num_documnt.setObjectName(u"label_num_documnt")
         self.label_num_documnt.setFont(font)
 
         self.gridLayout.addWidget(self.label_num_documnt, 5, 1, 1, 1)
 
-        self.line_name = QLineEdit(self.layoutWidget)
+        self.line_name = QLineEdit(self.centralwidget)
         self.line_name.setObjectName(u"line_name")
         self.line_name.setFont(font)
 
         self.gridLayout.addWidget(self.line_name, 3, 2, 1, 1)
 
-        self.date_birthday = QDateEdit(self.layoutWidget)
+        self.date_birthday = QDateEdit(self.centralwidget)
         self.date_birthday.setObjectName(u"date_birthday")
         self.date_birthday.setFont(font)
         self.date_birthday.setCalendarPopup(True)
 
         self.gridLayout.addWidget(self.date_birthday, 3, 6, 1, 1)
 
-        self.but_buy = QPushButton(self.layoutWidget)
+        self.but_buy = QPushButton(self.centralwidget)
         self.but_buy.setObjectName(u"but_buy")
         sizePolicy.setHeightForWidth(self.but_buy.sizePolicy().hasHeightForWidth())
         self.but_buy.setSizePolicy(sizePolicy)
@@ -154,43 +152,43 @@ class Ui_Passenger(object):
 
         self.gridLayout.addWidget(self.but_buy, 7, 0, 1, 2)
 
-        self.line_patronymic = QLineEdit(self.layoutWidget)
+        self.line_patronymic = QLineEdit(self.centralwidget)
         self.line_patronymic.setObjectName(u"line_patronymic")
         self.line_patronymic.setFont(font)
 
         self.gridLayout.addWidget(self.line_patronymic, 3, 3, 1, 1)
 
-        self.label_surname = QLabel(self.layoutWidget)
+        self.label_surname = QLabel(self.centralwidget)
         self.label_surname.setObjectName(u"label_surname")
         self.label_surname.setFont(font)
 
         self.gridLayout.addWidget(self.label_surname, 2, 0, 1, 2)
 
-        self.label_gender = QLabel(self.layoutWidget)
+        self.label_gender = QLabel(self.centralwidget)
         self.label_gender.setObjectName(u"label_gender")
         self.label_gender.setFont(font)
 
         self.gridLayout.addWidget(self.label_gender, 2, 4, 1, 2)
 
-        self.label_document = QLabel(self.layoutWidget)
+        self.label_document = QLabel(self.centralwidget)
         self.label_document.setObjectName(u"label_document")
         self.label_document.setFont(font)
 
         self.gridLayout.addWidget(self.label_document, 5, 0, 1, 1)
 
-        self.radio_female = QRadioButton(self.layoutWidget)
+        self.radio_female = QRadioButton(self.centralwidget)
         self.radio_female.setObjectName(u"radio_female")
         self.radio_female.setFont(font)
 
         self.gridLayout.addWidget(self.radio_female, 3, 5, 1, 1)
 
-        self.checkBox = QCheckBox(self.layoutWidget)
+        self.checkBox = QCheckBox(self.centralwidget)
         self.checkBox.setObjectName(u"checkBox")
         self.checkBox.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
 
         self.gridLayout.addWidget(self.checkBox, 4, 0, 1, 2)
 
-        self.label_price = QLabel(self.layoutWidget)
+        self.label_price = QLabel(self.centralwidget)
         self.label_price.setObjectName(u"label_price")
         sizePolicy1.setHeightForWidth(self.label_price.sizePolicy().hasHeightForWidth())
         self.label_price.setSizePolicy(sizePolicy1)
@@ -202,6 +200,9 @@ class Ui_Passenger(object):
         self.label_price.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.gridLayout.addWidget(self.label_price, 7, 2, 1, 2)
+
+
+        self.gridLayout_2.addLayout(self.gridLayout, 0, 0, 1, 1)
 
         Passenger.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(Passenger)

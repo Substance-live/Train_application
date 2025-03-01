@@ -15,28 +15,23 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLineEdit,
-    QMainWindow, QPushButton, QSizePolicy, QStatusBar,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QLabel,
+    QLineEdit, QMainWindow, QPushButton, QSizePolicy,
+    QStatusBar, QVBoxLayout, QWidget)
 import res
 
 class Ui_Login(object):
     def setupUi(self, Login):
         if not Login.objectName():
             Login.setObjectName(u"Login")
-        Login.resize(408, 437)
+        Login.resize(384, 466)
         self.centralwidget = QWidget(Login)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.layoutWidget = QWidget(self.centralwidget)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(20, 10, 366, 401))
-        font = QFont()
-        font.setPointSize(10)
-        self.layoutWidget.setFont(font)
-        self.verticalLayout = QVBoxLayout(self.layoutWidget)
+        self.gridLayout = QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.label_image = QLabel(self.layoutWidget)
+        self.label_image = QLabel(self.centralwidget)
         self.label_image.setObjectName(u"label_image")
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -44,12 +39,12 @@ class Ui_Login(object):
         sizePolicy.setHeightForWidth(self.label_image.sizePolicy().hasHeightForWidth())
         self.label_image.setSizePolicy(sizePolicy)
         self.label_image.setMinimumSize(QSize(0, 104))
-        font1 = QFont()
-        font1.setFamilies([u"Times New Roman"])
-        font1.setPointSize(28)
-        font1.setBold(True)
-        font1.setItalic(True)
-        self.label_image.setFont(font1)
+        font = QFont()
+        font.setFamilies([u"Times New Roman"])
+        font.setPointSize(28)
+        font.setBold(True)
+        font.setItalic(True)
+        self.label_image.setFont(font)
         self.label_image.setContextMenuPolicy(Qt.ContextMenuPolicy.NoContextMenu)
 #if QT_CONFIG(accessibility)
         self.label_image.setAccessibleDescription(u"")
@@ -60,67 +55,72 @@ class Ui_Login(object):
 
         self.verticalLayout.addWidget(self.label_image)
 
-        self.entry_email = QLineEdit(self.layoutWidget)
+        self.entry_email = QLineEdit(self.centralwidget)
         self.entry_email.setObjectName(u"entry_email")
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.entry_email.sizePolicy().hasHeightForWidth())
         self.entry_email.setSizePolicy(sizePolicy1)
-        font2 = QFont()
-        font2.setFamilies([u"Segoe UI"])
-        font2.setPointSize(10)
-        self.entry_email.setFont(font2)
+        font1 = QFont()
+        font1.setFamilies([u"Segoe UI"])
+        font1.setPointSize(10)
+        self.entry_email.setFont(font1)
         self.entry_email.setClearButtonEnabled(False)
 
         self.verticalLayout.addWidget(self.entry_email)
 
-        self.entry_passwd = QLineEdit(self.layoutWidget)
+        self.entry_passwd = QLineEdit(self.centralwidget)
         self.entry_passwd.setObjectName(u"entry_passwd")
         sizePolicy1.setHeightForWidth(self.entry_passwd.sizePolicy().hasHeightForWidth())
         self.entry_passwd.setSizePolicy(sizePolicy1)
-        self.entry_passwd.setFont(font)
+        font2 = QFont()
+        font2.setPointSize(10)
+        self.entry_passwd.setFont(font2)
         self.entry_passwd.setEchoMode(QLineEdit.EchoMode.Password)
 
         self.verticalLayout.addWidget(self.entry_passwd)
 
-        self.but_login = QPushButton(self.layoutWidget)
+        self.but_login = QPushButton(self.centralwidget)
         self.but_login.setObjectName(u"but_login")
         sizePolicy1.setHeightForWidth(self.but_login.sizePolicy().hasHeightForWidth())
         self.but_login.setSizePolicy(sizePolicy1)
-        self.but_login.setFont(font)
+        self.but_login.setFont(font2)
 
         self.verticalLayout.addWidget(self.but_login)
 
-        self.but_alter_login = QPushButton(self.layoutWidget)
+        self.but_alter_login = QPushButton(self.centralwidget)
         self.but_alter_login.setObjectName(u"but_alter_login")
         sizePolicy1.setHeightForWidth(self.but_alter_login.sizePolicy().hasHeightForWidth())
         self.but_alter_login.setSizePolicy(sizePolicy1)
-        self.but_alter_login.setFont(font)
+        self.but_alter_login.setFont(font2)
 
         self.verticalLayout.addWidget(self.but_alter_login)
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.label = QLabel(self.layoutWidget)
+        self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
         sizePolicy1.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
         self.label.setSizePolicy(sizePolicy1)
-        self.label.setFont(font)
+        self.label.setFont(font2)
 
         self.horizontalLayout.addWidget(self.label)
 
-        self.but_registr = QPushButton(self.layoutWidget)
+        self.but_registr = QPushButton(self.centralwidget)
         self.but_registr.setObjectName(u"but_registr")
         sizePolicy1.setHeightForWidth(self.but_registr.sizePolicy().hasHeightForWidth())
         self.but_registr.setSizePolicy(sizePolicy1)
         self.but_registr.setMaximumSize(QSize(16777215, 16777215))
-        self.but_registr.setFont(font)
+        self.but_registr.setFont(font2)
 
         self.horizontalLayout.addWidget(self.but_registr)
 
 
         self.verticalLayout.addLayout(self.horizontalLayout)
+
+
+        self.gridLayout.addLayout(self.verticalLayout, 0, 0, 1, 1)
 
         Login.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(Login)

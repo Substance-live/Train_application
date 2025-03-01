@@ -6,135 +6,129 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>841</width>
-    <height>346</height>
+    <width>825</width>
+    <height>379</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>AdminUsers</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>811</width>
-      <height>311</height>
-     </rect>
-    </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="1" column="0">
-      <widget class="QPushButton" name="but_add">
-       <property name="font">
-        <font>
-         <pointsize>9</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Добавить запись</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QPushButton" name="but_del">
-       <property name="font">
-        <font>
-         <pointsize>9</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Удалить запись</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="2">
-      <widget class="QPushButton" name="but_return">
-       <property name="font">
-        <font>
-         <pointsize>9</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Назад</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0" colspan="3">
-      <widget class="QTableWidget" name="table">
-       <property name="minimumSize">
-        <size>
-         <width>502</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>1200</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>9</pointsize>
-        </font>
-       </property>
-       <property name="selectionBehavior">
-        <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
-       </property>
-       <property name="sortingEnabled">
-        <bool>true</bool>
-       </property>
-       <attribute name="horizontalHeaderVisible">
-        <bool>true</bool>
-       </attribute>
-       <attribute name="verticalHeaderVisible">
-        <bool>false</bool>
-       </attribute>
-       <column>
-        <property name="text">
-         <string>ID</string>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="1" column="0">
+       <widget class="QPushButton" name="but_add">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
         </property>
-       </column>
-       <column>
         <property name="text">
-         <string>Почта</string>
+         <string>Добавить запись</string>
         </property>
-       </column>
-       <column>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="but_del">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="text">
-         <string>Пароль</string>
+         <string>Удалить запись</string>
         </property>
-       </column>
-       <column>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="but_return">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="text">
-         <string>Имя</string>
+         <string>Назад</string>
         </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Фамилия</string>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="3">
+       <widget class="QTableWidget" name="table">
+        <property name="minimumSize">
+         <size>
+          <width>502</width>
+          <height>0</height>
+         </size>
         </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Отчество</string>
+        <property name="maximumSize">
+         <size>
+          <width>1200</width>
+          <height>16777215</height>
+         </size>
         </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Телефон</string>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
         </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>День Рождения</string>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
         </property>
-       </column>
-      </widget>
-     </item>
-    </layout>
-   </widget>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
+        <attribute name="horizontalHeaderVisible">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="verticalHeaderVisible">
+         <bool>false</bool>
+        </attribute>
+        <column>
+         <property name="text">
+          <string>ID</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Почта</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Пароль</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Имя</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Фамилия</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Отчество</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Телефон</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>День Рождения</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

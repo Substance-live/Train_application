@@ -24,6 +24,16 @@ def convert(path):
         # Выполнение команды
         os.system(command)
 
+        with open(output_file, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        # Заменяем import res_rc на import res
+        new_content = content.replace("import res_rc", "import res")
+
+        with open(output_file, "w", encoding="utf-8") as f:
+            f.write(new_content)
+        print(f"Файл {output_file} обновлен.")
+
 
 if __name__ == '__main__':
     convert('data/etc/')

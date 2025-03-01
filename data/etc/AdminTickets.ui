@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>935</width>
-    <height>446</height>
+    <width>929</width>
+    <height>495</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -25,167 +25,156 @@
    <string>AdminTickets</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>911</width>
-      <height>401</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0" colspan="2">
-        <widget class="QTableWidget" name="table_timetable">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>15</horstretch>
-           <verstretch>15</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>699</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>9</pointsize>
-          </font>
-         </property>
-         <property name="selectionBehavior">
-          <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
-         </property>
-         <property name="sortingEnabled">
-          <bool>true</bool>
-         </property>
-         <property name="rowCount">
-          <number>1</number>
-         </property>
-         <attribute name="horizontalHeaderVisible">
-          <bool>true</bool>
-         </attribute>
-         <attribute name="horizontalHeaderCascadingSectionResizes">
-          <bool>false</bool>
-         </attribute>
-         <attribute name="horizontalHeaderMinimumSectionSize">
-          <number>32</number>
-         </attribute>
-         <attribute name="horizontalHeaderDefaultSectionSize">
-          <number>129</number>
-         </attribute>
-         <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
-          <bool>true</bool>
-         </attribute>
-         <attribute name="horizontalHeaderStretchLastSection">
-          <bool>false</bool>
-         </attribute>
-         <attribute name="verticalHeaderVisible">
-          <bool>false</bool>
-         </attribute>
-         <attribute name="verticalHeaderCascadingSectionResizes">
-          <bool>false</bool>
-         </attribute>
-         <row>
-          <property name="text">
-           <string>Новая строка</string>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0" colspan="2">
+         <widget class="QTableWidget" name="table_timetable">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>15</horstretch>
+            <verstretch>15</verstretch>
+           </sizepolicy>
           </property>
-         </row>
-         <column>
-          <property name="text">
-           <string>ID</string>
+          <property name="minimumSize">
+           <size>
+            <width>699</width>
+            <height>0</height>
+           </size>
           </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Откуда</string>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
           </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Куда</string>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
           </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Время отправки</string>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
           </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Время прибытия</string>
+          <property name="sortingEnabled">
+           <bool>true</bool>
           </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Кол-во мест</string>
+          <property name="rowCount">
+           <number>1</number>
           </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Цена</string>
-          </property>
-         </column>
-        </widget>
-       </item>
-       <item row="1" column="0" colspan="2">
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QPushButton" name="but_add">
-           <property name="font">
-            <font>
-             <pointsize>9</pointsize>
-            </font>
-           </property>
+          <attribute name="horizontalHeaderVisible">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="horizontalHeaderCascadingSectionResizes">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="horizontalHeaderMinimumSectionSize">
+           <number>32</number>
+          </attribute>
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>129</number>
+          </attribute>
+          <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="verticalHeaderCascadingSectionResizes">
+           <bool>false</bool>
+          </attribute>
+          <row>
            <property name="text">
-            <string>Добавить запись</string>
+            <string>Новая строка</string>
            </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="but_del">
-           <property name="font">
-            <font>
-             <pointsize>9</pointsize>
-            </font>
-           </property>
+          </row>
+          <column>
            <property name="text">
-            <string>Удалить запись</string>
+            <string>ID</string>
            </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="but_back">
-           <property name="font">
-            <font>
-             <pointsize>9</pointsize>
-            </font>
-           </property>
+          </column>
+          <column>
            <property name="text">
-            <string>Назад</string>
+            <string>Откуда</string>
            </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
+          </column>
+          <column>
+           <property name="text">
+            <string>Куда</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Время отправки</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Время прибытия</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Кол-во мест</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Цена</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="2">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QPushButton" name="but_add">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Добавить запись</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="but_del">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Удалить запись</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="but_back">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Назад</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

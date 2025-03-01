@@ -4,12 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="updated dump">
+    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="update registration validation password">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/Registr.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Registr.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/Registr.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Registr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/static_methods.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/convet_ui_files.py" beforeDir="false" afterPath="$PROJECT_DIR$/convet_ui_files.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/AdminProfile.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/AdminProfile.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/AdminTickets.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/AdminTickets.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/AdminUsers.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/AdminUsers.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/EditProfile.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/EditProfile.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/FastLogin.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/FastLogin.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/Login.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Login.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/MyTickets.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/MyTickets.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/Passenger.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Passenger.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/Profile.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Profile.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/Railcar.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Railcar.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/Ticket.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Ticket.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/etc/mail_message.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/mail_message.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/AdminProfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/AdminProfile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/AdminTickets.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/AdminTickets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/AdminUsers.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/AdminUsers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/EditProfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/EditProfile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/FastLogin.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/FastLogin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/Login.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/MyTickets.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/MyTickets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/Passenger.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Passenger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/Profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Profile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/Railcar.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Railcar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/Ticket.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Ticket.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/mail_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/mail_message.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,9 +229,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.convet_ui_files" />
         <item itemvalue="Python.еуые" />
         <item itemvalue="Python.word_maker" />
-        <item itemvalue="Python.convet_ui_files" />
         <item itemvalue="Python.ticket" />
       </list>
     </recent_temporary>
@@ -455,7 +476,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740497404705</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="update registration validation password">
+      <option name="closed" value="true" />
+      <created>1740812639600</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1740812639600</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -509,7 +538,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Error correction" />
     <MESSAGE value="Added requirements file with versions of library" />
     <MESSAGE value="Windows Engine has been moved to a separate folder" />
     <MESSAGE value="Added assertion in WindowEngine" />
@@ -534,6 +562,7 @@
     <MESSAGE value="finish role admin" />
     <MESSAGE value="added printing ticket" />
     <MESSAGE value="updated dump" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated dump" />
+    <MESSAGE value="update registration validation password" />
+    <option name="LAST_COMMIT_MESSAGE" value="update registration validation password" />
   </component>
 </project>
