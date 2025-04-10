@@ -5,13 +5,13 @@ from pathlib import Path
 
 def create_venv():
     print("📦 Creating virtual environment...")
-    subprocess.run([sys.executable, "-m", "venv", "venv"])
+    subprocess.run([sys.executable, "-m", "venv", ".venv"])
 
 def activate_venv_command():
     if os.name == "nt":
-        return ".\\venv\\Scripts\\activate"
+        return ".\\.venv\\Scripts\\activate"
     else:
-        return "source venv/bin/activate"
+        return "source .venv/bin/activate"
 
 def install_requirements():
     print("⬇️ Installing dependencies...")
@@ -23,9 +23,10 @@ def create_env_file():
     if not Path(".env").exists():
         print("⚙️ Creating .env file...")
         with open(".env", "w") as f:
-            f.write("DB_NAME=default_db\n")
-            f.write("DB_USER=admin\n")
-            f.write("DB_PASSWORD=admin123\n")
+            f.write("DB_HOST=localhost")
+            f.write("DB_NAME=train\n")
+            f.write("DB_USER=root\n")
+            f.write("DB_PASSWORD=admin\n")
 
 def main():
     create_venv()
