@@ -4,34 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="update registration validation password">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/convet_ui_files.py" beforeDir="false" afterPath="$PROJECT_DIR$/convet_ui_files.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/AdminProfile.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/AdminProfile.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/AdminTickets.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/AdminTickets.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/AdminUsers.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/AdminUsers.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/EditProfile.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/EditProfile.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/FastLogin.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/FastLogin.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/Login.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Login.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/MyTickets.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/MyTickets.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/Passenger.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Passenger.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/Profile.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Profile.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/Railcar.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Railcar.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/Ticket.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/Ticket.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/etc/mail_message.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/etc/mail_message.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/AdminProfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/AdminProfile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/AdminTickets.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/AdminTickets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/AdminUsers.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/AdminUsers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/EditProfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/EditProfile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/FastLogin.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/FastLogin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/Login.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/MyTickets.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/MyTickets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/Passenger.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Passenger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/Profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Profile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/Railcar.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Railcar.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/Ticket.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/Ticket.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/mail_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/mail_message.py" afterDir="false" />
-    </list>
+    <list default="true" id="7aea717b-af74-44e3-9237-948fe57825e0" name="Changes" comment="update registration validation password" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,32 +44,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;Python.Connecter.executor&quot;: &quot;Run&quot;,
-    &quot;Python.blank.executor&quot;: &quot;Run&quot;,
-    &quot;Python.blank2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.blank3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.combo_line (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.combo_line.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.convet_ui_files.executor&quot;: &quot;Run&quot;,
-    &quot;Python.data_base.executor&quot;: &quot;Run&quot;,
-    &quot;Python.date_line.executor&quot;: &quot;Run&quot;,
-    &quot;Python.example.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ticket.executor&quot;: &quot;Run&quot;,
-    &quot;Python.word_maker.executor&quot;: &quot;Run&quot;,
-    &quot;Python.еуые.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Substance/PycharmProjects/kursk/Train_application/data/blueprint&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Python.Connecter.executor": "Run",
+    "Python.blank.executor": "Run",
+    "Python.blank2.executor": "Run",
+    "Python.blank3.executor": "Run",
+    "Python.combo_line (1).executor": "Run",
+    "Python.combo_line.executor": "Debug",
+    "Python.convet_ui_files.executor": "Run",
+    "Python.data_base.executor": "Run",
+    "Python.date_line.executor": "Run",
+    "Python.example.executor": "Run",
+    "Python.main (1).executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.ticket.executor": "Run",
+    "Python.word_maker.executor": "Run",
+    "Python.еуые.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Substance/PycharmProjects/kursk/Train_application/data/blueprint",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Substance\PycharmProjects\kursk\Train_application\data\blueprint" />
@@ -221,10 +195,10 @@
     </configuration>
     <list>
       <item itemvalue="Python.еуые" />
-      <item itemvalue="Python.word_maker" />
       <item itemvalue="Python.convet_ui_files" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.ticket" />
+      <item itemvalue="Python.word_maker" />
     </list>
     <recent_temporary>
       <list>
@@ -239,7 +213,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-d68999036c7f-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.14475.56" />
+        <option value="bundled-python-sdk-4f4e415b4190-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.26053.29" />
       </set>
     </attachedChunks>
   </component>
